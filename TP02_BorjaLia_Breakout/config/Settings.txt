@@ -3,5 +3,7 @@ graphics = 1 | 0 = NONE		1 = RAYLIB 	2 = SIGIL
 
 # Resolution
 
+fullscreen = 0
+
 resolution_width = 1920
 resolution_height = 1080

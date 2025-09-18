@@ -19,14 +19,18 @@ void GameLoop()
 	LoadSettings();
 	LoadDefaultFiles();
 
-	rend::activeGraphics = (rend::GraphicsLib)1;
+	rend::activeGraphics = (rend::GraphicsLib)2;
 	rend::nextGraphics = rend::activeGraphics;
-	rend::OpenWindow(rend::windowSize, gameTitle.c_str());
+	rend::OpenWindow(rend::windowSize, gameTitle.c_str(), isFullscreen);
 	snd::StartAudioDevice();
 
 	btn::InitButtonDefaults();
 
 	bool isRunning = true;
+
+	btn::Button mouse;
+
+	InitMouse(mouse);
 
 	btn::Container mainMenuContainer;
 
@@ -41,13 +45,15 @@ void GameLoop()
 
 
 	btn::Container levelsContainer;
+	btn::Container levelsGridContainer;
 
+	btn::Button levelOne;
 	btn::Button exitLevelsButton;
 
 	btn::Button levelsButtons[] = { exitLevelsButton };
+	btn::Button levelsGridButtons[] = { levelOne };
 
-	InitLevelsContext(levelsContainer, levelsButtons);
-
+	InitLevelsContext(levelsContainer, levelsGridContainer, levelsButtons, levelsGridButtons);
 
 	btn::Container settingsContainer;
 
@@ -72,8 +78,6 @@ void GameLoop()
 
 	snd::Init(backgroundMusic);
 
-	snd::Play(backgroundMusic);
-
 	GameStates gameState = GameStates::MAIN_MENU;
 	SubMenus subMenu = SubMenus::MAIN;
 
@@ -95,6 +99,8 @@ void GameLoop()
 		rend::windowSize = rend::GetWindowSize();
 		rend::mousePos = rend::GetMousePos();
 
+		BackgroundMusicManager(backgroundMusic);
+
 		//Inputs
 
 		if (ctrl::GetKeyDown(ctrl::Key::F1)) {
@@ -115,6 +121,8 @@ void GameLoop()
 		}
 		case GameStates::PLAYING: {
 
+
+
 			break;
 		}
 		default:
@@ -128,6 +136,8 @@ void GameLoop()
 		switch (gameState)
 		{
 		case GameStates::MAIN_MENU: {
+
+			MouseUpdate(mouse);
 
 			switch (subMenu)
 			{
@@ -182,31 +192,27 @@ void GameLoop()
 		{
 		case GameStates::MAIN_MENU: {
 
+
 			switch (subMenu)
 			{
 			case SubMenus::MAIN: {
-
-				btn::Draw(mainMenuContainer, mainMenuButtons, (int)MMButtons::AMOUNT);
+				MainMenuDraw(mainMenuContainer, mainMenuButtons);
 				break;
 			}
 			case SubMenus::SETTINGS: {
-
-				btn::Draw(settingsContainer, settingsButtons, (int)SButtons::AMOUNT);
+				SettingsDraw(settingsContainer, settingsButtons);
 				break;
 			}
 			case SubMenus::LEVEL_SELECTOR: {
-
-				btn::Draw(levelsContainer, levelsButtons, (int)LButtons::AMOUNT);
+				LevelsDraw(levelsContainer, levelsButtons);
 				break;
 			}
 			case SubMenus::CREDTIS: {
-
-				btn::Draw(creditsContainer, creditsButtons, (int)CButtons::AMOUNT);
+				CreditsDraw(creditsContainer, creditsButtons);
 				break;
 			}
 			case SubMenus::EXIT: {
-
-				btn::Draw(mainMenuContainer, mainMenuButtons, (int)MMButtons::AMOUNT);
+				MainMenuDraw(mainMenuContainer, mainMenuButtons);
 				break;
 			}
 			default: {
@@ -214,6 +220,8 @@ void GameLoop()
 				break;
 			}
 			}
+
+			MouseDraw(mouse);
 
 			break;
 		}

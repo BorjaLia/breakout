@@ -7,11 +7,17 @@ void LoadSettings()
 
 	rend::windowSize.x = stoi(utl::SearchInFile(settingsFilePath.c_str(), "resolution_width"));
 	rend::windowSize.y = stoi(utl::SearchInFile(settingsFilePath.c_str(), "resolution_height"));
+
+	isFullscreen = stoi(utl::SearchInFile(settingsFilePath.c_str(), "fullscreen"));
+}
+
+void SaveSettings() {
+
 }
 
 void LoadDefaultFiles()
 {
-	rend::defaultContainerTexture.file = "res/sprites/Background.png";
+	rend::defaultContainerTexture.file = "res/sprites/Background2.png";
 
 	rend::defaultButtonMainTexture.file = "res/sprites/NoTexture.png";
 	rend::defaultButtonHoveredTexture.file = "res/sprites/NoTexture.png";
@@ -19,6 +25,40 @@ void LoadDefaultFiles()
 	rend::defaultButtonClickDownSound.file = "res/audio/ButtonClick.wav";
 	rend::defaultButtonClickUpSound.file = "res/audio/ButtonClick.wav";
 	rend::defaultButtonHoverSound.file = "res/audio/ButtonHover.wav";
+
+	rend::defaultFont.file = "res/fonts/ReemKufiFun-Regular.ttf";
+}
+
+void BackgroundMusicManager(rend::AudioData& music)
+{
+	backgroundMusicLoopTimer += rend::deltaTime;
+
+	if (backgroundMusicLoopTimer > backgroundMusicLoopTimerLimit) {
+		snd::Stop(music);
+		snd::Play(music);
+		backgroundMusicLoopTimer = 0;
+	}
+
+}
+
+void InitMouse(btn::Button& mouse)
+{
+	mouse.signalTimerLimit = 0.1f;
+	mouse.size = { 0.03,0.03 };
+	mouse.offset = { 0.01,-0.01 };
+	mouse.clickedOffset = { -0.1,0 };
+	mouse.useText = false;
+	mouse.useSprite = true;
+	
+	mouse.text = "Mouse";
+	mouse.pos = { 0.1,0.65 };
+
+	btn::Init(mouse);
+
+	mouse.mainTexture.file = "res/sprites/mouseTexture.png";
+	mouse.hoveredTexture.file = "res/sprites/mouseTexture.png";
+	drw::InitSpriteData(mouse.mainTexture);
+	drw::InitSpriteData(mouse.hoveredTexture);
 }
 
 void InitMainMenuContext(btn::Container& container, btn::Button buttons[])
@@ -140,6 +180,24 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 	drw::InitSpriteData(buttons[(int)SButtons::RENDERER].hoveredTexture);
 
 
+	buttons[(int)SButtons::APPLY].text = "Apply";
+	buttons[(int)SButtons::APPLY].pos = { 0.9,0.2 };
+	buttons[(int)SButtons::APPLY].clickedOffset = { 0.4,0 };
+	buttons[(int)SButtons::APPLY].useText = true;
+	buttons[(int)SButtons::APPLY].textColor = WHITE;
+
+	btn::Init(buttons[(int)SButtons::APPLY], container, true);
+
+	buttons[(int)SButtons::APPLY].clickedUpSound = rend::defaultButtonClickUpSound;
+	buttons[(int)SButtons::APPLY].clickedDownSound = rend::defaultButtonClickDownSound;
+	buttons[(int)SButtons::APPLY].hoveredSound = rend::defaultButtonHoverSound;
+
+	buttons[(int)SButtons::APPLY].mainTexture.file = "res/sprites/applyButtonTexture.png";
+	buttons[(int)SButtons::APPLY].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
+	drw::InitSpriteData(buttons[(int)SButtons::APPLY].mainTexture);
+	drw::InitSpriteData(buttons[(int)SButtons::APPLY].hoveredTexture);
+
+
 	buttons[(int)SButtons::EXIT].text = "Exit";
 	buttons[(int)SButtons::EXIT].pos = { 0.1,0.2 };
 
@@ -189,7 +247,7 @@ void InitCreditsContext(btn::Container& container, btn::Button buttons[])
 	drw::InitSpriteData(buttons[(int)CButtons::EXIT].hoveredTexture);
 }
 
-void InitLevelsContext(btn::Container& container, btn::Button buttons[])
+void InitLevelsContext(btn::Container& container, btn::Container& gridContainer, btn::Button buttons[], btn::Button gridButtons[])
 {
 	container.pos = { 0.5,0.5 };
 	container.size = { 1.8,1.1 };
@@ -198,6 +256,14 @@ void InitLevelsContext(btn::Container& container, btn::Button buttons[])
 	container.texture = rend::defaultContainerTexture;
 
 	btn::Init(container);
+
+	gridContainer.pos = { 0.5,0.5 };
+	gridContainer.size = { 1,0.6 };
+	gridContainer.isRendered = true;
+	gridContainer.useTexture = true;
+	gridContainer.texture = rend::defaultButtonHoveredTexture;
+
+	btn::Init(gridContainer);
 
 	for (int b = 0; b < (int)LButtons::AMOUNT; b++)
 	{
@@ -221,6 +287,12 @@ void InitLevelsContext(btn::Container& container, btn::Button buttons[])
 	buttons[(int)LButtons::EXIT].hoveredTexture.file = "res/sprites/exitButtonHoverTexture.png";
 	drw::InitSpriteData(buttons[(int)LButtons::EXIT].mainTexture);
 	drw::InitSpriteData(buttons[(int)LButtons::EXIT].hoveredTexture);
+}
+
+void MouseUpdate(btn::Button& mouse)
+{
+	mouse.pos = rend::mousePos;
+	btn::UpdateInput(mouse);
 }
 
 void MainMenuUpdate(btn::Button mainMenuButtons[], SubMenus& subMenu)
@@ -268,6 +340,33 @@ void CreditsUpdate(btn::Button creditsButtons[], SubMenus& subMenu)
 	}
 }
 
+void MouseDraw(btn::Button mouse)
+{
+	btn::Draw(mouse);
+}
+
 void MainMenuDraw(btn::Container mainMenuContainer, btn::Button mainMenuButtons[])
 {
+	btn::Draw(mainMenuContainer, mainMenuButtons, (int)MMButtons::AMOUNT);
 }
+
+void LevelsDraw(btn::Container levelsContainer, btn::Button levelsButtons[])
+{
+	btn::Draw(levelsContainer, levelsButtons, (int)LButtons::AMOUNT);
+
+}
+
+void SettingsDraw(btn::Container settingsContainer, btn::Button settingsButtons[])
+{
+	btn::Draw(settingsContainer, settingsButtons, (int)SButtons::AMOUNT);
+}
+
+void CreditsDraw(btn::Container creditsContainer, btn::Button creditsButtons[])
+{
+	btn::Draw(creditsContainer, creditsButtons, (int)CButtons::AMOUNT);
+	drw::Rectangle({ 0.5,0.25 }, {0.2,0.6},GREY);
+	drw::Text("Made by", rend::defaultFont, {0.5,0.7},70);
+	drw::Text("Borja Lia", rend::defaultFont, {0.5,0.6}, 120);
+	drw::Text("Special thanks to", rend::defaultFont, {0.5,0.4}, 50);
+}
+

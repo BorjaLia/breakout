@@ -427,7 +427,7 @@ namespace rend {
 		bool raylibInitialized = false;
 
 		std::string name = "No Audio";
-		std::string file = "res/audio/NoNoise.wav";
+		std::string file = "res/audio/ButtonClick.wav";
 		int soundFileID = -1;
 
 		int id = -1;
@@ -435,25 +435,46 @@ namespace rend {
 		Sound sound;
 	};
 
-extern rend::GraphicsLib activeGraphics;
-extern rend::GraphicsLib nextGraphics;
+	struct TextData {
 
-extern float deltaTime;
+		bool slInitialized = false;
+		bool raylibInitialized = false;
 
-extern vec::Vector2 windowSize;
-extern float windowRatio;
+		vec::Vector2 origin = {0,0};
+		float rotation = 0;
 
-extern std::string mouseSprite;
-extern vec::Vector2 mousePos;
+		float spacing = 1.0f;
 
-extern rend::SpriteData defaultContainerTexture;
+		std::string name = "No Font";
+		std::string file = "res/fonts/ReemKufiFun-Regular.ttf";
+		int fontFileID = -1;
 
-extern rend::SpriteData defaultButtonMainTexture;
-extern rend::SpriteData defaultButtonHoveredTexture;
+		int id = -1;
 
-extern rend::AudioData defaultButtonClickDownSound;
-extern rend::AudioData defaultButtonClickUpSound;
-extern rend::AudioData defaultButtonHoverSound;
+		Font font;
+	};
+
+	extern rend::GraphicsLib activeGraphics;
+	extern rend::GraphicsLib nextGraphics;
+
+	extern float deltaTime;
+
+	extern vec::Vector2 windowSize;
+	extern float windowRatio;
+
+	extern std::string mouseSprite;
+	extern vec::Vector2 mousePos;
+
+	extern rend::SpriteData defaultContainerTexture;
+
+	extern rend::SpriteData defaultButtonMainTexture;
+	extern rend::SpriteData defaultButtonHoveredTexture;
+
+	extern rend::AudioData defaultButtonClickDownSound;
+	extern rend::AudioData defaultButtonClickUpSound;
+	extern rend::AudioData defaultButtonHoverSound;
+
+	extern rend::TextData defaultFont;
 }
 
 namespace btn {
@@ -509,13 +530,15 @@ namespace btn {
 		std::string text = "Text";
 		float fontSize = 50;
 
+		rend::TextData textData;
+
 		//colors
 		Color activeColor = LIGHTGREY;
 
 		Color mainColor = LIGHTGREY;
 		Color hoveredColor = DARKGREY;
 
-		Color textColor = BLACK;
+		Color textColor = GREEN;
 
 		//textures
 		bool useSprite = false;
@@ -551,10 +574,10 @@ namespace btn {
 
 	void Sound(Button button);
 	void Sound(Button buttons[], int buttonsSize);
-	void Draw(Button button);
+	void Draw(Button& button);
 	void Draw(Container container);
 	void Draw(Button buttons[], int buttonsSize);
-	void Draw(Container container,Button buttons[], int buttonsSize);
+	void Draw(Container container, Button buttons[], int buttonsSize);
 
 }
 
@@ -571,7 +594,7 @@ namespace drw {
 	void End();
 
 	bool Sprite(rend::SpriteData sprite, vec::Vector2 pos = { 0,0 }, vec::Vector2 size = { 0,0 }, vec::Vector2 offset = { 0,0 }, Color color = WHITE);
-	void Text(const char* text, vec::Vector2 pos = { 0,0 }, int fontSize = 10, vec::Vector2 offset = { 0,0 }, Color color = WHITE);
+	void Text(const char* text, rend::TextData& textData, vec::Vector2 pos = { 0,0 }, int fontSize = 10, vec::Vector2 offset = { 0,0 }, Color color = WHITE);
 	void Triangle(vec::Vector2 p1, vec::Vector2 p2, vec::Vector2 p3, Color color = WHITE);
 	void Rectangle(vec::Vector2 pos, vec::Vector2 size, Color color = WHITE, vec::Vector2 offset = { 0,0 });
 	void Circle(vec::Vector2 pos, vec::Vector2 size, Color color = WHITE);
@@ -585,12 +608,18 @@ namespace snd {
 
 	void Init(rend::AudioData& audioData);
 	void DeInit(rend::AudioData& audioData);
-
 	void Play(rend::AudioData& audioData, bool loop = false);
 	void Pause(rend::AudioData& audioData, bool pause = true);
 	void Stop(rend::AudioData& audioData);
 
 	bool IsPlaying(rend::AudioData& audioData);
+
+}
+
+namespace fnt {
+
+	void Init(rend::TextData& textData);
+	void DeInit(rend::TextData& textData);
 
 }
 
