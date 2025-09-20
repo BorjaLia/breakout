@@ -17,7 +17,7 @@ void SaveSettings() {
 
 void LoadDefaultFiles()
 {
-	rend::defaultContainerTexture.file = "res/sprites/Background2.png";
+	rend::defaultContainerTexture.file = "res/sprites/Background4.png";
 
 	rend::defaultButtonMainTexture.file = "res/sprites/NoTexture.png";
 	rend::defaultButtonHoveredTexture.file = "res/sprites/NoTexture.png";
@@ -78,6 +78,7 @@ void InitMainMenuContext(btn::Container& container, btn::Button buttons[])
 		buttons[b].clickedOffset = { -0.4,0 };
 		buttons[b].useText = false;
 		buttons[b].useSprite = true;
+		buttons[b].isActive = true;
 	}
 
 
@@ -160,6 +161,7 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 		buttons[b].clickedOffset = { -0.4,0 };
 		buttons[b].useText = false;
 		buttons[b].useSprite = true;
+		buttons[b].isActive = true;
 	}
 
 	buttons[(int)SButtons::RENDERER].text = "Renderer";
@@ -230,6 +232,7 @@ void InitCreditsContext(btn::Container& container, btn::Button buttons[])
 		buttons[b].clickedOffset = { -0.4,0 };
 		buttons[b].useText = false;
 		buttons[b].useSprite = true;
+		buttons[b].isActive = true;;
 	}
 
 	buttons[(int)CButtons::EXIT].text = "Exit";
@@ -260,8 +263,9 @@ void InitLevelsContext(btn::Container& container, btn::Container& gridContainer,
 	gridContainer.pos = { 0.5,0.5 };
 	gridContainer.size = { 1,0.6 };
 	gridContainer.isRendered = true;
-	gridContainer.useTexture = true;
-	gridContainer.texture = rend::defaultButtonHoveredTexture;
+	gridContainer.useTexture = false;
+	//gridContainer.texture = rend::defaultButtonHoveredTexture;
+	gridContainer.color = {128,128,128,128};
 
 	btn::Init(gridContainer);
 
@@ -272,6 +276,7 @@ void InitLevelsContext(btn::Container& container, btn::Container& gridContainer,
 		buttons[b].clickedOffset = { -0.4,0 };
 		buttons[b].useText = false;
 		buttons[b].useSprite = true;
+		buttons[b].isActive = true;
 	}
 
 	buttons[(int)LButtons::EXIT].text = "Exit";
@@ -287,6 +292,146 @@ void InitLevelsContext(btn::Container& container, btn::Container& gridContainer,
 	buttons[(int)LButtons::EXIT].hoveredTexture.file = "res/sprites/exitButtonHoverTexture.png";
 	drw::InitSpriteData(buttons[(int)LButtons::EXIT].mainTexture);
 	drw::InitSpriteData(buttons[(int)LButtons::EXIT].hoveredTexture);
+
+
+	for (int b = 0; b < (int)Levels::AMOUNT; b++)
+	{
+		gridButtons[b].signalTimerLimit = 0.1f;
+		gridButtons[b].size = { 0.2,0.1 };
+		gridButtons[b].clickedOffset = { 0,-0.2 };
+		gridButtons[b].textColor = WHITE;
+		gridButtons[b].useText = true;
+		gridButtons[b].useSprite = true;
+		gridButtons[b].isActive = true;
+	}
+
+	gridButtons[(int)Levels::LEVEL1].text = "Level 1";
+	gridButtons[(int)Levels::LEVEL1].pos = { 0.2,0.8 };
+
+	btn::Init(gridButtons[(int)Levels::LEVEL1], gridContainer, true);
+
+	gridButtons[(int)Levels::LEVEL1].clickedUpSound = rend::defaultButtonClickUpSound;
+	gridButtons[(int)Levels::LEVEL1].clickedDownSound = rend::defaultButtonClickDownSound;
+	gridButtons[(int)Levels::LEVEL1].hoveredSound = rend::defaultButtonHoverSound;
+
+	gridButtons[(int)Levels::LEVEL1].mainTexture.file = "res/sprites/buttonTexture.png";
+	gridButtons[(int)Levels::LEVEL1].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
+	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL1].mainTexture);
+	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL1].hoveredTexture);
+
+
+	gridButtons[(int)Levels::LEVEL2].text = "Level 2";
+	gridButtons[(int)Levels::LEVEL2].pos = { 0.8,0.8 };
+
+	btn::Init(gridButtons[(int)Levels::LEVEL2], gridContainer, true);
+
+	gridButtons[(int)Levels::LEVEL2].clickedUpSound = rend::defaultButtonClickUpSound;
+	gridButtons[(int)Levels::LEVEL2].clickedDownSound = rend::defaultButtonClickDownSound;
+	gridButtons[(int)Levels::LEVEL2].hoveredSound = rend::defaultButtonHoverSound;
+
+	gridButtons[(int)Levels::LEVEL2].mainTexture.file = "res/sprites/buttonTexture.png";
+	gridButtons[(int)Levels::LEVEL2].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
+	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL2].mainTexture);
+	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL2].hoveredTexture);
+
+	gridButtons[(int)Levels::LEVEL3].text = "Level 3";
+	gridButtons[(int)Levels::LEVEL3].pos = { 0.2,0.2 };
+
+	btn::Init(gridButtons[(int)Levels::LEVEL3], gridContainer, true);
+
+	gridButtons[(int)Levels::LEVEL3].clickedUpSound = rend::defaultButtonClickUpSound;
+	gridButtons[(int)Levels::LEVEL3].clickedDownSound = rend::defaultButtonClickDownSound;
+	gridButtons[(int)Levels::LEVEL3].hoveredSound = rend::defaultButtonHoverSound;
+
+	gridButtons[(int)Levels::LEVEL3].mainTexture.file = "res/sprites/buttonTexture.png";
+	gridButtons[(int)Levels::LEVEL3].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
+	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL3].mainTexture);
+	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL3].hoveredTexture);
+
+
+	gridButtons[(int)Levels::LEVEL4].text = "Level 4";
+	gridButtons[(int)Levels::LEVEL4].pos = { 0.8,0.2 };
+
+	btn::Init(gridButtons[(int)Levels::LEVEL4], gridContainer, true);
+
+	gridButtons[(int)Levels::LEVEL4].clickedUpSound = rend::defaultButtonClickUpSound;
+	gridButtons[(int)Levels::LEVEL4].clickedDownSound = rend::defaultButtonClickDownSound;
+	gridButtons[(int)Levels::LEVEL4].hoveredSound = rend::defaultButtonHoverSound;
+
+	gridButtons[(int)Levels::LEVEL4].mainTexture.file = "res/sprites/buttonTexture.png";
+	gridButtons[(int)Levels::LEVEL4].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
+	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL4].mainTexture);
+	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL4].hoveredTexture);
+}
+
+void InitPlayContext(btn::Container& playContainer, btn::Button playButtons[], pdl::Paddle& paddle, bll::Ball& ball, blk::Block blocks[])
+{
+	playContainer.pos = { 0.5,0.5 };
+	playContainer.size = { 1.8,1.1 };
+	playContainer.isRendered = true;
+	playContainer.useTexture = true;
+	playContainer.texture = rend::defaultContainerTexture;
+
+	btn::Init(playContainer);
+
+	for (int b = 0; b < (int)PButtons::AMOUNT; b++)
+	{
+		playButtons[b].signalTimerLimit = 0.1f;
+		playButtons[b].size = { 0.2,0.1 };
+		playButtons[b].clickedOffset = { 0,-0.1 };
+		playButtons[b].textColor = WHITE;
+		playButtons[b].useText = true;
+		playButtons[b].useSprite = true;
+		playButtons[b].isActive = true;
+	}
+
+	playButtons[(int)PButtons::PAUSE].text = "| |";
+	playButtons[(int)PButtons::PAUSE].fontSize *= 0.75f;
+	playButtons[(int)PButtons::PAUSE].pos = { 0.5,0.925 };
+	playButtons[(int)PButtons::PAUSE].size = { 0.05,0.075 };
+
+	btn::Init(playButtons[(int)PButtons::PAUSE], playContainer, true);
+
+	playButtons[(int)PButtons::PAUSE].clickedUpSound = rend::defaultButtonClickUpSound;
+	playButtons[(int)PButtons::PAUSE].clickedDownSound = rend::defaultButtonClickDownSound;
+	playButtons[(int)PButtons::PAUSE].hoveredSound = rend::defaultButtonHoverSound;
+
+	playButtons[(int)PButtons::PAUSE].mainTexture.file = "res/sprites/buttonTexture.png";
+	playButtons[(int)PButtons::PAUSE].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
+	drw::InitSpriteData(playButtons[(int)PButtons::PAUSE].mainTexture);
+	drw::InitSpriteData(playButtons[(int)PButtons::PAUSE].hoveredTexture);
+
+	playButtons[(int)PButtons::RETURN].text = "Return";
+	playButtons[(int)PButtons::RETURN].pos = { 0.5,0.6 };
+
+	btn::Init(playButtons[(int)PButtons::RETURN], playContainer, true);
+
+	playButtons[(int)PButtons::RETURN].clickedUpSound = rend::defaultButtonClickUpSound;
+	playButtons[(int)PButtons::RETURN].clickedDownSound = rend::defaultButtonClickDownSound;
+	playButtons[(int)PButtons::RETURN].hoveredSound = rend::defaultButtonHoverSound;
+
+	playButtons[(int)PButtons::RETURN].mainTexture.file = "res/sprites/buttonTexture.png";
+	playButtons[(int)PButtons::RETURN].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
+	drw::InitSpriteData(playButtons[(int)PButtons::RETURN].mainTexture);
+	drw::InitSpriteData(playButtons[(int)PButtons::RETURN].hoveredTexture);
+
+
+	playButtons[(int)PButtons::EXIT].text = "Exit";
+	playButtons[(int)PButtons::EXIT].pos = { 0.5,0.4 };
+
+	btn::Init(playButtons[(int)PButtons::EXIT], playContainer, true);
+
+	playButtons[(int)PButtons::EXIT].clickedUpSound = rend::defaultButtonClickUpSound;
+	playButtons[(int)PButtons::EXIT].clickedDownSound = rend::defaultButtonClickDownSound;
+	playButtons[(int)PButtons::EXIT].hoveredSound = rend::defaultButtonHoverSound;
+
+	playButtons[(int)PButtons::EXIT].mainTexture.file = "res/sprites/buttonTexture.png";
+	playButtons[(int)PButtons::EXIT].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
+	drw::InitSpriteData(playButtons[(int)PButtons::EXIT].mainTexture);
+	drw::InitSpriteData(playButtons[(int)PButtons::EXIT].hoveredTexture);
+
+	pdl::Init(paddle);
+	bll::Init(ball);
 }
 
 void MouseUpdate(btn::Button& mouse)
@@ -313,12 +458,34 @@ void MainMenuUpdate(btn::Button mainMenuButtons[], SubMenus& subMenu)
 	}
 }
 
-void LevelsUpdate(btn::Button levelsButtons[], SubMenus& subMenu, GameStates& gameState)
+void LevelsUpdate(btn::Container& container, btn::Container& gridContainer, btn::Button levelsButtons[], btn::Button gridButtons[], SubMenus& subMenu, GameStates& gameState)
 {
 	btn::UpdateInput(levelsButtons, (int)LButtons::AMOUNT);
+	btn::UpdateInput(gridButtons, (int)Levels::AMOUNT);
 
 	if (levelsButtons[(int)LButtons::EXIT].signal) {
 		subMenu = SubMenus::MAIN;
+	}
+
+	if (gridButtons[(int)Levels::LEVEL1].signal) {
+		subMenu = SubMenus::MAIN;
+		gameState = GameStates::PLAYING;
+		currentLevel = (int)Levels::LEVEL1 + 1;
+	}
+	if (gridButtons[(int)Levels::LEVEL2].signal) {
+		subMenu = SubMenus::MAIN;
+		gameState = GameStates::PLAYING;
+		currentLevel = (int)Levels::LEVEL2 + 1;
+	}
+	if (gridButtons[(int)Levels::LEVEL3].signal) {
+		subMenu = SubMenus::MAIN;
+		gameState = GameStates::PLAYING;
+		currentLevel = (int)Levels::LEVEL3 + 1;
+	}
+	if (gridButtons[(int)Levels::LEVEL4].signal) {
+		subMenu = SubMenus::MAIN;
+		gameState = GameStates::PLAYING;
+		currentLevel = (int)Levels::LEVEL4 + 1;
 	}
 }
 
@@ -340,6 +507,51 @@ void CreditsUpdate(btn::Button creditsButtons[], SubMenus& subMenu)
 	}
 }
 
+void PlayInputUpdate(pdl::Paddle& paddle, bll::Ball& ball, blk::Block blocks[])
+{
+	if (isGamePaused) {
+		return;
+	}
+	pdl::Input(paddle);
+	bll::Input(ball);
+	pdl::Update(paddle);
+	bll::Update(ball,paddle);
+}
+
+void PlayUpdate(btn::Container& playContainer, btn::Button playButtons[], GameStates& gameState)
+{
+	if (isGamePaused) {
+		playButtons[(int)PButtons::PAUSE].isActive = false;
+		playButtons[(int)PButtons::PAUSE].isRendered = false;
+		playButtons[(int)PButtons::RETURN].isActive = true;
+		playButtons[(int)PButtons::RETURN].isRendered = true;
+		playButtons[(int)PButtons::EXIT].isActive = true;
+		playButtons[(int)PButtons::EXIT].isRendered = true;
+	}
+	else {
+		playButtons[(int)PButtons::PAUSE].isActive = true;
+		playButtons[(int)PButtons::PAUSE].isRendered = true;
+		playButtons[(int)PButtons::RETURN].isActive = false;
+		playButtons[(int)PButtons::RETURN].isRendered = false;
+		playButtons[(int)PButtons::EXIT].isActive = false;
+		playButtons[(int)PButtons::EXIT].isRendered = false;
+	}
+
+	btn::UpdateInput(playButtons, (int)PButtons::AMOUNT);
+
+	if (playButtons[(int)PButtons::PAUSE].signal) {
+		isGamePaused = true;
+	}
+	if (playButtons[(int)PButtons::RETURN].signal) {
+		isGamePaused = false;
+	}
+	if (playButtons[(int)PButtons::EXIT].signal) {
+		isGamePaused = false;
+		gameState = GameStates::MAIN_MENU;
+	}
+}
+
+
 void MouseDraw(btn::Button mouse)
 {
 	btn::Draw(mouse);
@@ -350,9 +562,10 @@ void MainMenuDraw(btn::Container mainMenuContainer, btn::Button mainMenuButtons[
 	btn::Draw(mainMenuContainer, mainMenuButtons, (int)MMButtons::AMOUNT);
 }
 
-void LevelsDraw(btn::Container levelsContainer, btn::Button levelsButtons[])
+void LevelsDraw(btn::Container& container, btn::Container& gridContainer, btn::Button buttons[], btn::Button gridButtons[])
 {
-	btn::Draw(levelsContainer, levelsButtons, (int)LButtons::AMOUNT);
+	btn::Draw(container, buttons, (int)LButtons::AMOUNT);
+	btn::Draw(gridContainer, gridButtons, (int)Levels::AMOUNT);
 
 }
 
@@ -370,3 +583,57 @@ void CreditsDraw(btn::Container creditsContainer, btn::Button creditsButtons[])
 	drw::Text("Special thanks to", rend::defaultFont, {0.5,0.4}, 50);
 }
 
+void PlayDraw(btn::Container playContainer, btn::Button playButtons[], pdl::Paddle& paddle, bll::Ball& ball, blk::Block blocks[])
+{
+	btn::Draw(playContainer, playButtons, (int)PButtons::AMOUNT);
+
+	pdl::Draw(paddle);
+	bll::Draw(ball);
+
+
+}
+
+void LoadLevel(lvl::LevelData& levelData)
+{
+	switch ((Levels)currentLevel)
+	{
+	case Levels::LEVEL1:
+
+		levelData.paddle = pdl::Paddle();
+		levelData.ball = bll::Ball();
+
+		levelData.blockAmount = 6;
+
+		for (int i = 0; i < levelData.blockAmount; i++)
+		{
+			levelData.blocks[i].pos = {0.1f + ((float)i/10),0.7f};
+		}
+
+		break;
+	case Levels::LEVEL2:
+		break;
+	case Levels::LEVEL3:
+		break;
+	case Levels::LEVEL4:
+		break;
+	case Levels::AMOUNT:
+		break;
+	default:
+		break;
+	}
+}
+
+void InitLevel(lvl::LevelData& levelData, pdl::Paddle& paddle, bll::Ball& ball, blk::Block blocks[])
+{
+
+	pdl::Init(levelData.paddle);
+	bll::Init(levelData.ball);
+
+	paddle = levelData.paddle;
+	ball = levelData.ball;
+
+	for (int i = 0; i < levelData.blockAmount; i++)
+	{
+		blocks[i] = levelData.blocks[i];
+	}
+}

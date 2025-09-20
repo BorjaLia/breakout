@@ -10,4 +10,9 @@ bool isFullscreen = false;
 float backgroundMusicLoopTimerLimit = 160.0f;
 float backgroundMusicLoopTimer = backgroundMusicLoopTimerLimit;
 
+int currentLevel = 1;
+int currentScore = 0;
+
+bool isGamePaused = false;
+
 rend::SpriteData spr::defaultPaddleTexture = {};

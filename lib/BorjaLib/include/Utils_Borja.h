@@ -498,6 +498,7 @@ namespace btn {
 
 		// active
 		bool isActive = false;
+		bool isRendered = true;
 
 		//signal
 

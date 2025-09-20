@@ -1,7 +1,7 @@
 #pragma once
 #include "Utils_Borja.h"
 #include "Globals.h"
-#include "Block.h"
+#include "Levels.h"
 
 enum class GameStates {
 
@@ -36,6 +36,14 @@ enum class LButtons
 	AMOUNT
 };
 
+enum class Levels {
+	LEVEL1,
+	LEVEL2,
+	LEVEL3,
+	LEVEL4,
+	AMOUNT
+};
+
 // Settings Menu Buttons
 enum class SButtons
 {
@@ -48,6 +56,14 @@ enum class SButtons
 // Credits Menu Buttons
 enum class CButtons
 {
+	EXIT,
+	AMOUNT
+};
+
+//Gameplay buttons
+enum class PButtons {
+	PAUSE,
+	RETURN,
 	EXIT,
 	AMOUNT
 };
@@ -65,19 +81,26 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[]);
 void InitCreditsContext(btn::Container& container, btn::Button buttons[]);
 void InitLevelsContext(btn::Container& container, btn::Container& gridContainer, btn::Button buttons[], btn::Button gridButtons[]);
 
+void InitPlayContext(btn::Container& playContainer, btn::Button playButtons[], pdl::Paddle& paddle,bll::Ball& ball, blk::Block blocks[]);
+
 void MouseUpdate(btn::Button& mouse);
 
 void MainMenuUpdate(btn::Button mainMenuButtons[], SubMenus& subMenu);
-void LevelsUpdate(btn::Container& container, btn::Container& gridContainer, btn::Button buttons[], btn::Button gridButtons[], GameStates& gameState);
+void LevelsUpdate(btn::Container& container, btn::Container& gridContainer, btn::Button levelsButtons[], btn::Button gridButtons[], SubMenus& subMenu, GameStates& gameState);
 void SettingsUpdate(btn::Button settingsButtons[], SubMenus& subMenu);
 void CreditsUpdate(btn::Button creditsButtons[], SubMenus& subMenu);
+
+void PlayInputUpdate(pdl::Paddle& paddle, bll::Ball& ball, blk::Block blocks[]);
+void PlayUpdate(btn::Container& playContainer, btn::Button playButtons[], GameStates& gameState);
 
 void MouseDraw(btn::Button mouse);
 
 void MainMenuDraw(btn::Container mainMenuContainer,btn::Button mainMenuButtons[]);
-void LevelsDraw(btn::Container levelsContainer,btn::Button levelsButtons[]);
+void LevelsDraw(btn::Container& container, btn::Container& gridContainer, btn::Button buttons[], btn::Button gridButtons[]);
 void SettingsDraw(btn::Container settingsContainer,btn::Button settingsButtons[]);
 void CreditsDraw(btn::Container creditsContainer,btn::Button creditsButtons[]);
 
+void PlayDraw(btn::Container playContainer, btn::Button playButtons[], pdl::Paddle& paddle, bll::Ball& ball, blk::Block blocks[]);
 
-void LoadLevel();
+void LoadLevel(lvl::LevelData& levelData);
+void InitLevel(lvl::LevelData& levelData, pdl::Paddle& paddle, bll::Ball& ball, blk::Block blocks[]);

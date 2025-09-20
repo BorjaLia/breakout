@@ -19,7 +19,7 @@ void GameLoop()
 	LoadSettings();
 	LoadDefaultFiles();
 
-	rend::activeGraphics = (rend::GraphicsLib)2;
+	rend::activeGraphics = (rend::GraphicsLib)1;
 	rend::nextGraphics = rend::activeGraphics;
 	rend::OpenWindow(rend::windowSize, gameTitle.c_str(), isFullscreen);
 	snd::StartAudioDevice();
@@ -48,10 +48,13 @@ void GameLoop()
 	btn::Container levelsGridContainer;
 
 	btn::Button levelOne;
+	btn::Button levelTwo;
+	btn::Button levelThree;
+	btn::Button levelFour;
 	btn::Button exitLevelsButton;
 
 	btn::Button levelsButtons[] = { exitLevelsButton };
-	btn::Button levelsGridButtons[] = { levelOne };
+	btn::Button levelsGridButtons[] = { levelOne,levelTwo,levelThree,levelFour };
 
 	InitLevelsContext(levelsContainer, levelsGridContainer, levelsButtons, levelsGridButtons);
 
@@ -80,6 +83,25 @@ void GameLoop()
 
 	GameStates gameState = GameStates::MAIN_MENU;
 	SubMenus subMenu = SubMenus::MAIN;
+
+
+	btn::Container playContainer;
+
+	btn::Button pausePlayButton;
+	btn::Button returnPlayButton;
+	btn::Button exitPlayButton;
+
+	btn::Button playButtons[] = { pausePlayButton ,returnPlayButton ,exitPlayButton };
+
+	lvl::LevelData activeLevel;
+
+	pdl::Paddle paddle;
+	bll::Ball ball;
+	blk::Block block;
+	blk::Block blocks[] = {block};
+	int blocksAmount = 1;
+
+	InitPlayContext(playContainer,playButtons, paddle,ball, blocks);
 
 	while (isRunning) {
 
@@ -117,26 +139,6 @@ void GameLoop()
 		{
 		case GameStates::MAIN_MENU: {
 
-			break;
-		}
-		case GameStates::PLAYING: {
-
-
-
-			break;
-		}
-		default:
-			break;
-		}
-
-
-		//Update
-
-
-		switch (gameState)
-		{
-		case GameStates::MAIN_MENU: {
-
 			MouseUpdate(mouse);
 
 			switch (subMenu)
@@ -153,7 +155,12 @@ void GameLoop()
 			}
 			case SubMenus::LEVEL_SELECTOR: {
 
-				LevelsUpdate(levelsButtons, subMenu, gameState);
+				LevelsUpdate(levelsContainer, levelsGridContainer, levelsButtons, levelsGridButtons, subMenu, gameState);
+
+				if (gameState == GameStates::PLAYING) {
+					LoadLevel(activeLevel);
+					InitLevel(activeLevel,paddle,ball,blocks);
+				}
 				break;
 			}
 			case SubMenus::CREDTIS: {
@@ -165,7 +172,6 @@ void GameLoop()
 
 				isRunning = false;
 
-
 				break;
 			}
 			default: {
@@ -176,7 +182,28 @@ void GameLoop()
 
 			break;
 		}
+		case GameStates::PLAYING: {
+
+			PlayInputUpdate(paddle,ball,blocks);
+
+			break;
+		}
+		default:
+			break;
+		}
+
+
+		//Update
+
+
+		switch (gameState)
+		{
+		case GameStates::MAIN_MENU: {
+
+			break;
+		}
 		case GameStates::PLAYING:
+			PlayUpdate(playContainer, playButtons, gameState);
 			break;
 		default:
 			break;
@@ -192,7 +219,6 @@ void GameLoop()
 		{
 		case GameStates::MAIN_MENU: {
 
-
 			switch (subMenu)
 			{
 			case SubMenus::MAIN: {
@@ -204,7 +230,7 @@ void GameLoop()
 				break;
 			}
 			case SubMenus::LEVEL_SELECTOR: {
-				LevelsDraw(levelsContainer, levelsButtons);
+				LevelsDraw(levelsContainer, levelsGridContainer, levelsButtons, levelsGridButtons);
 				break;
 			}
 			case SubMenus::CREDTIS: {
@@ -226,6 +252,8 @@ void GameLoop()
 			break;
 		}
 		case GameStates::PLAYING: {
+
+			PlayDraw(playContainer, playButtons, paddle, ball, blocks);
 
 			break;
 		}
@@ -278,6 +306,8 @@ void GameLoop()
 			break;
 		}
 		case GameStates::PLAYING: {
+
+			btn::Sound(playButtons, (int)PButtons::AMOUNT);
 
 			break;
 		}

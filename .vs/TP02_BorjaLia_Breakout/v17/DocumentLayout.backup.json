@@ -3,60 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\StateManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\StateManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\USERS\\VORYZ\\DESKTOP\\UNIVERSIDAD\\IMAGE\\FUNDAMENTOS DE PROGRAMACION\\TRABAJOS PRACTICOS\\TP02_BORJALIA_BREAKOUT\\LIB\\BORJALIB\\INCLUDE\\UTILS_BORJA.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:LIB\\BORJALIB\\INCLUDE\\UTILS_BORJA.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Block.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Block.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Paddle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Paddle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Globals.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Globals.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Levels.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Levels.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Levels.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Levels.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Block.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Block.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Globals.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Globals.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Paddle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Paddle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Paddle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Paddle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\PowerDrop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\PowerDrop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Ball.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Ball.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Power.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Power.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Block.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Block.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\StateManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\StateManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\PowerDrop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\PowerDrop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Power.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB121637-EBF0-4C6F-938B-0B19C2F8A9D2}|TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout.vcxproj|solutionrelative:TP02_BorjaLia_Breakout\\Power.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\lib\\BorjaLib\\include\\Utils_Borja.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\BorjaLib\\include\\Utils_Borja.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -65,12 +81,12 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 216,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 227,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Main.cpp",
               "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Main.cpp",
@@ -83,52 +99,83 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "StateManager.cpp",
               "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\StateManager.cpp",
               "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\StateManager.cpp",
               "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\StateManager.cpp",
               "RelativeToolTip": "TP02_BorjaLia_Breakout\\StateManager.cpp",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADcAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-15T18:15:16.279Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "GameManager.cpp",
               "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\GameManager.cpp",
               "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\GameManager.cpp",
               "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\GameManager.cpp",
               "RelativeToolTip": "TP02_BorjaLia_Breakout\\GameManager.cpp",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAAwPkAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAKUBAAAAAAAAAAAMwG4BAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-15T18:17:04.47Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Paddle.cpp",
-              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Paddle.cpp",
-              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Paddle.cpp",
-              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Paddle.cpp",
-              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Paddle.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Levels.cpp",
+              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Levels.cpp",
+              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Levels.cpp",
+              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Levels.cpp",
+              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Levels.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-09-17T21:38:41.156Z",
+              "WhenOpened": "2025-09-19T15:19:35.6Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
+              "Title": "Ball.cpp",
+              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Ball.cpp",
+              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Ball.cpp",
+              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Ball.cpp",
+              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Ball.cpp",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAjwFkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-19T13:38:28.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Block.cpp",
+              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Block.cpp",
+              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Block.cpp",
+              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Block.cpp",
+              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Block.cpp",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-20T05:34:52.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Globals.cpp",
               "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Globals.cpp",
               "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Globals.cpp",
               "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Globals.cpp",
               "RelativeToolTip": "TP02_BorjaLia_Breakout\\Globals.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-15T18:22:36.401Z",
               "EditorCaption": ""
@@ -136,65 +183,78 @@
           ]
         },
         {
-          "DockedWidth": 220,
-          "SelectedChildIndex": 7,
+          "DockedWidth": 209,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Paddle.h",
-              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Paddle.h",
-              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Paddle.h",
-              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Paddle.h",
-              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Paddle.h",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAABcAAAAUAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Block.h",
+              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Block.h",
+              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Block.h",
+              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Block.h",
+              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Block.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-17T06:52:25.455Z",
+              "WhenOpened": "2025-09-17T22:04:26.99Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Globals.h",
-              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Globals.h",
-              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Globals.h",
-              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Globals.h",
-              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Globals.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-15T18:22:31.485Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PowerDrop.h",
-              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\PowerDrop.h",
-              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\PowerDrop.h",
-              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\PowerDrop.h",
-              "RelativeToolTip": "TP02_BorjaLia_Breakout\\PowerDrop.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-17T22:07:06.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "Ball.h",
               "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Ball.h",
               "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Ball.h",
               "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Ball.h",
               "RelativeToolTip": "TP02_BorjaLia_Breakout\\Ball.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAC4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-17T22:04:50.366Z"
+              "WhenOpened": "2025-09-17T22:04:50.366Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
+              "Title": "Globals.h",
+              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Globals.h",
+              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Globals.h",
+              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Globals.h",
+              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Globals.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-15T18:22:31.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Paddle.h",
+              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Paddle.h",
+              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Paddle.h",
+              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Paddle.h",
+              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Paddle.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-17T06:52:25.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PowerDrop.h",
+              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\PowerDrop.h",
+              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\PowerDrop.h",
+              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\PowerDrop.h",
+              "RelativeToolTip": "TP02_BorjaLia_Breakout\\PowerDrop.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-17T22:07:06.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "Power.h",
               "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Power.h",
               "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Power.h",
@@ -206,45 +266,57 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Block.h",
-              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Block.h",
-              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Block.h",
-              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Block.h",
-              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Block.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-17T22:04:26.99Z"
+              "DocumentIndex": 10,
+              "Title": "Paddle.cpp",
+              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Paddle.cpp",
+              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Paddle.cpp",
+              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Paddle.cpp",
+              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Paddle.cpp",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-17T21:38:41.156Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "Levels.h",
+              "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Levels.h",
+              "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\Levels.h",
+              "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\Levels.h",
+              "RelativeToolTip": "TP02_BorjaLia_Breakout\\Levels.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-19T15:16:54.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Utils_Borja.h",
               "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\lib\\BorjaLib\\include\\Utils_Borja.h",
               "RelativeDocumentMoniker": "lib\\BorjaLib\\include\\Utils_Borja.h",
               "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\lib\\BorjaLib\\include\\Utils_Borja.h",
               "RelativeToolTip": "lib\\BorjaLib\\include\\Utils_Borja.h",
-              "ViewState": "AgIAAMQBAAAAAAAAAAArwN0BAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABcBAAAAAAAAAAAIwCYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-15T18:11:51.313Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T18:11:51.313Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
               "Title": "GameManager.h",
               "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\GameManager.h",
               "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\GameManager.h",
               "ToolTip": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\GameManager.h",
               "RelativeToolTip": "TP02_BorjaLia_Breakout\\GameManager.h",
-              "ViewState": "AgIAADgAAAAAAAAAAAArwEgAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAArwGkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-15T18:15:25.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T18:15:25.253Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "StateManager.h",
               "DocumentMoniker": "C:\\Users\\Voryz\\Desktop\\Universidad\\Image\\Fundamentos de programacion\\Trabajos practicos\\TP02_BorjaLia_Breakout\\TP02_BorjaLia_Breakout\\StateManager.h",
               "RelativeDocumentMoniker": "TP02_BorjaLia_Breakout\\StateManager.h",

@@ -2,7 +2,6 @@
 #include <iostream>
 #include "Utils_Borja.h"
 
-
 extern bool devMode;
 
 extern std::string settingsFilePath;
@@ -12,6 +11,11 @@ extern bool isFullscreen;
 
 extern float backgroundMusicLoopTimerLimit;
 extern float backgroundMusicLoopTimer;
+
+extern int currentLevel;
+extern int currentScore;
+
+extern bool isGamePaused;
 
 namespace spr {
 

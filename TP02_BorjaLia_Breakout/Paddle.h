@@ -3,12 +3,16 @@
 #include "PowerDrop.h"
 
 
-namespace paddle {
+namespace pdl {
 
 	struct Paddle {
 
+		int healthPoints = 3;
+
 		//positions
-		vec::Vector2 pos = { 0.1,0.5 };
+		vec::Vector2 pos = { 0.5,0.05 };
+		float currentSpeed = 0;
+		float defaultSpeed = 1;
 
 		vec::Vector2 bounceOffset = { 0,-0.25f };
 
@@ -44,11 +48,11 @@ namespace paddle {
 		rend::AudioData powerDown;
 	};
 
-	void Init(paddle::Paddle& paddle);
-	void Reset(paddle::Paddle& paddle);
-	void Input(paddle::Paddle& paddle);
-	void Update(paddle::Paddle& paddle);
-	void Draw(paddle::Paddle paddle);
-	void Sound(paddle::Paddle paddle);
+	void Init(pdl::Paddle& paddle);
+	void Reset(pdl::Paddle& paddle);
+	void Input(pdl::Paddle& paddle);
+	void Update(pdl::Paddle& paddle);
+	void Draw(pdl::Paddle paddle);
+	void Sound(pdl::Paddle paddle);
 
 }
