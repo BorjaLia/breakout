@@ -10,7 +10,7 @@
 /// </summary>
 
 void GameLoop()
-{
+{ 
 	//Init
 
 	rend::windowSize = { 1920 ,1080 };
@@ -19,7 +19,7 @@ void GameLoop()
 	LoadSettings();
 	LoadDefaultFiles();
 
-	rend::activeGraphics = (rend::GraphicsLib)1;
+	rend::activeGraphics = (rend::GraphicsLib)2;
 	rend::nextGraphics = rend::activeGraphics;
 	rend::OpenWindow(rend::windowSize, gameTitle.c_str(), isFullscreen);
 	snd::StartAudioDevice();
@@ -68,6 +68,18 @@ void GameLoop()
 
 	InitSettingsContext(settingsContainer, settingsButtons);
 
+	btn::Container endScreenContainer;
+
+	btn::Button nextEndScreenButton;
+	btn::Button lastEndScreenButton;
+	btn::Button retryEndScreenButton;
+	btn::Button exitEndScreenButton;
+
+	btn::Button endScreenButtons[] = { nextEndScreenButton,lastEndScreenButton, retryEndScreenButton, exitEndScreenButton };
+
+	InitEndScreenContext(endScreenContainer, endScreenButtons);
+
+
 	btn::Container creditsContainer;
 
 	btn::Button exitCreditsButton;
@@ -89,19 +101,22 @@ void GameLoop()
 
 	btn::Button pausePlayButton;
 	btn::Button returnPlayButton;
+	btn::Button retryPlayButton;
 	btn::Button exitPlayButton;
 
-	btn::Button playButtons[] = { pausePlayButton ,returnPlayButton ,exitPlayButton };
+	btn::Button playButtons[] = { pausePlayButton ,returnPlayButton,retryPlayButton ,exitPlayButton };
 
 	lvl::LevelData activeLevel;
 
-	pdl::Paddle paddle;
-	bll::Ball ball;
-	blk::Block block;
-	blk::Block blocks[] = {block};
+	//pdl::Paddle paddle;
+	//bll::Ball ball;
+	//blk::Block block;
+	//blk::Block blocks[] = {block};
 	int blocksAmount = 1;
 
-	InitPlayContext(playContainer,playButtons, paddle,ball, blocks);
+	LoadLevel(activeLevel);
+
+	InitPlayContext(playContainer,playButtons);
 
 	while (isRunning) {
 
@@ -159,13 +174,17 @@ void GameLoop()
 
 				if (gameState == GameStates::PLAYING) {
 					LoadLevel(activeLevel);
-					InitLevel(activeLevel,paddle,ball,blocks);
 				}
 				break;
 			}
 			case SubMenus::CREDTIS: {
 
 				CreditsUpdate(creditsButtons, subMenu);
+				break;
+			}
+			case SubMenus::ENDSCREEN: {
+
+				EndScreenUpdate(endScreenButtons, subMenu,gameState,activeLevel);
 				break;
 			}
 			case SubMenus::EXIT: {
@@ -184,7 +203,7 @@ void GameLoop()
 		}
 		case GameStates::PLAYING: {
 
-			PlayInputUpdate(paddle,ball,blocks);
+			PlayInputUpdate(activeLevel);
 
 			break;
 		}
@@ -203,7 +222,7 @@ void GameLoop()
 			break;
 		}
 		case GameStates::PLAYING:
-			PlayUpdate(playContainer, playButtons, gameState);
+			PlayUpdate(playContainer, playButtons, subMenu, gameState,activeLevel);
 			break;
 		default:
 			break;
@@ -237,6 +256,11 @@ void GameLoop()
 				CreditsDraw(creditsContainer, creditsButtons);
 				break;
 			}
+			case SubMenus::ENDSCREEN: {
+
+				EndScreenDraw(endScreenContainer, endScreenButtons);
+				break;
+			}
 			case SubMenus::EXIT: {
 				MainMenuDraw(mainMenuContainer, mainMenuButtons);
 				break;
@@ -253,7 +277,7 @@ void GameLoop()
 		}
 		case GameStates::PLAYING: {
 
-			PlayDraw(playContainer, playButtons, paddle, ball, blocks);
+			PlayDraw(playContainer, playButtons, activeLevel);
 
 			break;
 		}
@@ -308,6 +332,7 @@ void GameLoop()
 		case GameStates::PLAYING: {
 
 			btn::Sound(playButtons, (int)PButtons::AMOUNT);
+			PlaySounds(activeLevel);
 
 			break;
 		}

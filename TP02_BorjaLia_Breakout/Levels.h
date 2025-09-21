@@ -16,9 +16,10 @@ namespace lvl {
 
 		int blockAmount;
 
-		blk::Block blocks[];
+		blk::Block blocks[100];
 	};
 
 	void LoadLevelData(LevelData& levelData);
+	int BlocksLeft(LevelData levelData);
 
 }

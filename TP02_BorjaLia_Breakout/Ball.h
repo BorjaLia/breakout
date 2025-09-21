@@ -22,12 +22,12 @@ namespace bll {
 		int rotationDirecton = 1;
 
 		//positions
-		vec::Vector2 pos = { 0.1,0.5 };
+		vec::Vector2 pos = { 0.5, 0.07 };
 		vec::Vector2 vel = { 0,0 };
 
 		vec::Vector2 bounceOffset = { 0,-0.25f };
 
-		vec::Vector2 size = { 0.02,0.02 };
+		vec::Vector2 size = { 0.008,0.008 };
 
 		//Control
 
@@ -50,7 +50,7 @@ namespace bll {
 	void Init(bll::Ball& ball);
 	void Reset(bll::Ball& ball);
 	void Input(bll::Ball& ball);
-	void Update(bll::Ball& ball, pdl::Paddle paddle);
+	void Update(bll::Ball& ball,pdl::Paddle& paddle, blk::Block blocks[], int blocksAmount);
 	void Draw(bll::Ball ball);
 	void Sound(bll::Ball ball);
 

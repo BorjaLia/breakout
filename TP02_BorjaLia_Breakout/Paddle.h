@@ -7,7 +7,10 @@ namespace pdl {
 
 	struct Paddle {
 
+		// gameplay
 		int healthPoints = 3;
+
+		int score = 0;
 
 		//positions
 		vec::Vector2 pos = { 0.5,0.05 };
@@ -16,7 +19,7 @@ namespace pdl {
 
 		vec::Vector2 bounceOffset = { 0,-0.25f };
 
-		vec::Vector2 size = { 0.2,0.05 };
+		vec::Vector2 size = { 0.15,0.025 };
 
 		//Controls
 

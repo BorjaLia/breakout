@@ -13,6 +13,6 @@ enum class PowerType {
 
 struct Power {
 
-
+	PowerType powerType = PowerType::NONE;
 
 };

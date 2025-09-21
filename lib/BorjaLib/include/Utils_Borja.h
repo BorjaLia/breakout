@@ -162,6 +162,7 @@ extern ctrl::ButtonMouse menuSelectionMouseButton;
 namespace utl {
 
 	void Clamp(float& num, float min = 0, float max = 1.0f);		// clamp number between min and max
+	float Clamped(float num, float min = 0, float max = 1.0f);		// clamp number between min and max
 	float Abs(float& num);										// makes the number positive
 
 	char LastKeyPressed();										// returns last key press. false if none
@@ -416,7 +417,7 @@ namespace rend {
 	struct SpriteData {
 
 		std::string name = "Sprite";
-		std::string file = "res/sprites/NoTexture.png";
+		std::string file = "NoTexture.png";
 		int id = 0;
 		vec::Vector2 offset = { 0,0 };
 	};
@@ -427,7 +428,7 @@ namespace rend {
 		bool raylibInitialized = false;
 
 		std::string name = "No Audio";
-		std::string file = "res/audio/ButtonClick.wav";
+		std::string file = "ButtonClick.wav";
 		int soundFileID = -1;
 
 		int id = -1;
@@ -446,7 +447,7 @@ namespace rend {
 		float spacing = 1.0f;
 
 		std::string name = "No Font";
-		std::string file = "res/fonts/ReemKufiFun-Regular.ttf";
+		std::string file = "font.ttf";
 		int fontFileID = -1;
 
 		int id = -1;

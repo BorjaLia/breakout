@@ -18,17 +18,17 @@ void pdl::Init(pdl::Paddle& paddle)
 
 	paddle.activeTexture = paddle.normalTexture;
 
-	pdl::Reset(paddle);
+	//pdl::Reset(paddle);
 }
 
 void pdl::Reset(pdl::Paddle& paddle)
 {
-	paddle.pos = {0.5,0.05};
+	paddle.pos = pdl::Paddle().pos;
 	
 	paddle.currentSpeed = 0;
-	paddle.defaultSpeed = 1;
+	paddle.defaultSpeed = pdl::Paddle().defaultSpeed;
 	
-	paddle.size = { 0.2,0.05 };
+	paddle.size = pdl::Paddle().size;
 
 	paddle.activePower = {};
 

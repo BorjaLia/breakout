@@ -1,1 +1,170 @@
-﻿  TP02_BorjaLia_Breakout.vcxproj -> C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\bin\Debug\TP02_BorjaLia_Breakout.exe
+﻿  GameManager.cpp
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(303,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'GameManager.cpp')
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(304,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'GameManager.cpp')
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(379,9): warning C4005: 'WHITE': macro redefinition
+  (compiling source file 'GameManager.cpp')
+      C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\raylib-5.5_win64_msvc16\include\raylib.h(197,9):
+      see previous definition of 'WHITE'
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(383,9): warning C4005: 'BLACK': macro redefinition
+  (compiling source file 'GameManager.cpp')
+      C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\raylib-5.5_win64_msvc16\include\raylib.h(198,9):
+      see previous definition of 'BLACK'
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(385,9): warning C4005: 'RED': macro redefinition
+  (compiling source file 'GameManager.cpp')
+      C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\raylib-5.5_win64_msvc16\include\raylib.h(182,9):
+      see previous definition of 'RED'
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(386,9): warning C4005: 'GREEN': macro redefinition
+  (compiling source file 'GameManager.cpp')
+      C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\raylib-5.5_win64_msvc16\include\raylib.h(184,9):
+      see previous definition of 'GREEN'
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(387,9): warning C4005: 'BLUE': macro redefinition
+  (compiling source file 'GameManager.cpp')
+      C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\raylib-5.5_win64_msvc16\include\raylib.h(188,9):
+      see previous definition of 'BLUE'
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(389,9): warning C4005: 'YELLOW': macro redefinition
+  (compiling source file 'GameManager.cpp')
+      C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\raylib-5.5_win64_msvc16\include\raylib.h(178,9):
+      see previous definition of 'YELLOW'
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(391,9): warning C4005: 'MAGENTA': macro redefinition
+  (compiling source file 'GameManager.cpp')
+      C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\raylib-5.5_win64_msvc16\include\raylib.h(200,9):
+      see previous definition of 'MAGENTA'
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(393,9): warning C4005: 'ORANGE': macro redefinition
+  (compiling source file 'GameManager.cpp')
+      C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\raylib-5.5_win64_msvc16\include\raylib.h(180,9):
+      see previous definition of 'ORANGE'
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(394,9): warning C4005: 'LIME': macro redefinition
+  (compiling source file 'GameManager.cpp')
+      C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\raylib-5.5_win64_msvc16\include\raylib.h(185,9):
+      see previous definition of 'LIME'
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\BorjaLib\include\Utils_Borja.h(396,9): warning C4005: 'PURPLE': macro redefinition
+  (compiling source file 'GameManager.cpp')
+      C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\lib\raylib-5.5_win64_msvc16\include\raylib.h(190,9):
+      see previous definition of 'PURPLE'
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\Paddle.h(16,28): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'GameManager.cpp')
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\Paddle.h(22,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'GameManager.cpp')
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\Paddle.h(22,25): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'GameManager.cpp')
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\Block.h(34,31): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'GameManager.cpp')
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\Block.h(34,25): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'GameManager.cpp')
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\Ball.h(25,29): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'GameManager.cpp')
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\Ball.h(30,31): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'GameManager.cpp')
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\Ball.h(30,25): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'GameManager.cpp')
+  
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(8,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(9,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(47,22): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(47,17): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(48,24): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(48,19): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(49,26): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(54,20): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(54,16): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(71,25): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(71,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(81,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(81,23): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(82,32): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(90,44): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(90,40): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(105,44): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(122,47): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(122,43): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(139,44): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(139,40): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(158,25): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(158,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(168,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(168,23): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(169,32): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(176,47): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(176,43): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(195,44): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(195,40): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(196,50): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(214,43): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(214,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(232,25): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(232,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(242,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(242,23): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(243,32): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(250,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(251,45): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(251,40): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(269,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(270,45): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(270,40): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(328,25): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(328,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(338,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(338,23): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(339,32): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(346,43): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(346,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(364,25): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(364,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(372,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(383,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(383,23): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(384,32): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(391,43): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(391,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(409,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(409,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(410,38): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(418,47): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(418,43): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(434,47): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(434,43): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(449,47): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(449,43): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(465,47): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(465,43): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(483,29): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(483,25): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(493,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(493,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(494,38): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(503,48): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(504,50): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(504,45): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(519,49): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(535,48): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(550,47): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(827,37): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(827,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(828,48): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(829,50): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(830,58): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(968,36): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\TP02_BorjaLia_Breakout\GameManager.cpp(968,32): warning C4305: 'argument': truncation from 'double' to 'float'
+  TP02_BorjaLia_Breakout.vcxproj -> C:\Users\Voryz\Desktop\Universidad\Image\Fundamentos de programacion\Trabajos practicos\TP02_BorjaLia_Breakout\bin\Debug\TP02_BorjaLia_Breakout.exe
