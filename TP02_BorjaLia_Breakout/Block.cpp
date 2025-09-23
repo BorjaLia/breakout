@@ -2,34 +2,13 @@
 
 void blk::Init(blk::Block& block)
 {
+	block.stage = Stages::FULL;
 
-	//block.normalTexture.file = "res/sprites/buttonHoverTexture.png";
-	//block.largeTexture.file = "res/sprites/buttonHoverTexture.png";
-	//block.smallTexture.file = "res/sprites/buttonHoverTexture.png";
-	//block.fastTexture.file = "res/sprites/buttonHoverTexture.png";
-	//block.slowTexture.file = "res/sprites/buttonHoverTexture.png";
-	//block.mirrorTexture.file = "res/sprites/buttonHoverTexture.png";
+	block.activeTexture = normalTexture;
 
-	//drw::InitSpriteData(block.normalTexture);
-	//drw::InitSpriteData(block.largeTexture);
-	//drw::InitSpriteData(block.smallTexture);
-	//drw::InitSpriteData(block.fastTexture);
-	//drw::InitSpriteData(block.slowTexture);
-	//drw::InitSpriteData(block.mirrorTexture);
+	block.activeOverlayTexture = blk::fullTexture;
 
-	//block.activeTexture = block.normalTexture;
-
-	//block.fullTexture.file = "res/sprites/buttonHoverTexture.png";
-	//block.mediumTexture.file = "res/sprites/buttonHoverTexture.png";
-	//block.depletedTexture.file = "res/sprites/buttonHoverTexture.png";
-
-	//drw::InitSpriteData(block.fullTexture);
-	//drw::InitSpriteData(block.mediumTexture);
-	//drw::InitSpriteData(block.depletedTexture);
-
-	block.activeOverlayTexture = fullTexture;
-
-	block.activeSound = rend::AudioData();
+	block.activeSound = blk::blockHitSound;
 
 	block.isActive = true;
 
@@ -42,13 +21,14 @@ void blk::Reset(blk::Block& block)
 
 	block.pos = {0.5,0.5};
 
-	block.activeTexture = normalTexture;
+	block.activeTexture = blk::normalTexture;
+
 	block.activeOverlayTexture = fullTexture;
 
 	block.currentHitPoints = block.maxHitPoints;
 }
 
-void blk::Update(blk::Block& block, pdl::Paddle& paddle)
+void blk::Update(blk::Block& block, pdl::Paddle& paddle,pwr::PowerDrop& powerDrop)
 {
 	if (!block.isActive) {
 		return;
@@ -84,38 +64,39 @@ void blk::Update(blk::Block& block, pdl::Paddle& paddle)
 		block.activeSound = blockBrokenSound;
 		block.isActive = false;
 
-		paddle.score += block.breakScore;
+		if (pwr::isComboPowerActive) {
+			paddle.score += block.breakScore * pwr::comboMultiplier;
+		}
+		else {
+			paddle.score += block.breakScore;
+		}
+
+		if (block.heldPowerType != pwr::PowerType::NONE) {
+			pwr::Init(powerDrop,block.pos,block.heldPowerType);
+			block.heldPowerType = pwr::PowerType();
+		}
 	}
 
-	switch ((PowerType)block.heldPower.powerType)
+	switch ((pwr::PowerType)block.heldPowerType)
 	{
-	case PowerType::NONE: {
+	case pwr::PowerType::NONE: {
 		block.activeTexture = normalTexture;
 		break;
 	}
-	case PowerType::LARGE: {
+	case pwr::PowerType::LARGE: {
 		block.activeTexture = largeTexture;
-
 		break;
 	}
-	case PowerType::SMALL: {
-		block.activeTexture = smallTexture;
-
-		break;
-	}
-	case PowerType::FAST: {
-		block.activeTexture = fastTexture;
-
-		break;
-	}
-	case PowerType::SLOW: {
-		block.activeTexture = slowTexture;
-
-		break;
-	}
-	case PowerType::MIRROR: {
+	case pwr::PowerType::MIRROR: {
 		block.activeTexture = mirrorTexture;
-
+		break;
+	}
+	case pwr::PowerType::HOMING: {
+		block.activeTexture = mirrorTexture;
+		break;
+	}
+	case pwr::PowerType::MULTIPLY: {
+		block.activeTexture = mirrorTexture;
 		break;
 	}
 	default:
@@ -126,12 +107,11 @@ void blk::Update(blk::Block& block, pdl::Paddle& paddle)
 
 void blk::Draw(blk::Block block)
 {
-	if (!block.isActive) {
-		return;
-	}
+	if (block.isActive) {
 	drw::Rectangle(block.pos,block.size,block.color);
 	drw::Sprite(block.activeTexture, block.pos, block.size);
 	drw::Sprite(block.activeOverlayTexture, block.pos, block.size);
+	}
 }
 
 void blk::Sound(blk::Block& block)

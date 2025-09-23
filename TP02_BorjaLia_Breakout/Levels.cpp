@@ -1,7 +1,11 @@
 #include "Levels.h"
 
-void lvl::LoadLevelData(LevelData& levelData)
+void lvl::NextAvailablePowerDrop(LevelData& levelData)
 {
+	levelData.availablePowerDrop++;
+	if (levelData.availablePowerDrop == levelData.powerDropAmount) {
+		levelData.availablePowerDrop = 0;
+	}
 }
 
 int lvl::BlocksLeft(LevelData levelData)

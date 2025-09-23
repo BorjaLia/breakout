@@ -1,18 +1,15 @@
 #pragma once
 
-enum class PowerType {
+namespace pwr {
 
-	NONE,
-	LARGE,
-	SMALL,
-	FAST,
-	SLOW,
-	MIRROR
+	enum class PowerType {
 
-};
-
-struct Power {
-
-	PowerType powerType = PowerType::NONE;
-
-};
+		NONE,
+		LARGE,
+		MIRROR,
+		HOMING,
+		MULTIPLY,
+		COMBO,
+		AMOUNT
+	};
+}

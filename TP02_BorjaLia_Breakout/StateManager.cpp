@@ -25,6 +25,7 @@ void GameLoop()
 	snd::StartAudioDevice();
 
 	btn::InitButtonDefaults();
+	InitLocalDefaults();
 
 	bool isRunning = true;
 
@@ -42,7 +43,6 @@ void GameLoop()
 	btn::Button mainMenuButtons[] = { playButton, settingsButton, creditsButton, exitButton };
 
 	InitMainMenuContext(mainMenuContainer, mainMenuButtons);
-
 
 	btn::Container levelsContainer;
 	btn::Container levelsGridContainer;
@@ -96,7 +96,6 @@ void GameLoop()
 	GameStates gameState = GameStates::MAIN_MENU;
 	SubMenus subMenu = SubMenus::MAIN;
 
-
 	btn::Container playContainer;
 
 	btn::Button pausePlayButton;
@@ -108,10 +107,6 @@ void GameLoop()
 
 	lvl::LevelData activeLevel;
 
-	//pdl::Paddle paddle;
-	//bll::Ball ball;
-	//blk::Block block;
-	//blk::Block blocks[] = {block};
 	int blocksAmount = 1;
 
 	LoadLevel(activeLevel);
@@ -342,5 +337,10 @@ void GameLoop()
 		}
 		}
 	}
+
+	DeInitMouse(mouse);
+	DeInitLocalDefaults();
+	btn::DeInitButtonDefaults();
+
 	rend::Close();
 }

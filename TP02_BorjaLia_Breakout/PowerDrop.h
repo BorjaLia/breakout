@@ -1,15 +1,31 @@
 #pragma once
 #include "Utils_Borja.h"
+#include "Paddle.h"
 #include "Power.h"
 
-struct PowerDrop {
+namespace pwr {
 
-	vec::Vector2 pos = { 0,0 };
-	vec::Vector2 direction = { 0,0 };
+	struct PowerDrop {
 
-	float speed = 1.0f;
+		bool isActive = false;
 
-	vec::Vector2 size = { 0,0 };
+		vec::Vector2 pos = { 0.5f,0.5f };
+		vec::Vector2 vel = { 0,-1 };
 
-	Power power;
-};
+		float speed = 0.5f;
+
+		vec::Vector2 size = { 0.01f,0.01f };
+
+		Color color;
+
+		PowerType powerType = PowerType::NONE;
+	};
+
+	void Init(pwr::PowerDrop& powerDrop, vec::Vector2 pos, PowerType powerType);
+	void Reset(pwr::PowerDrop& powerDrop);
+	void Update(pwr::PowerDrop& powerDrop, vec::Vector2 pos, vec::Vector2 size);
+	void Draw(pwr::PowerDrop powerDrop);
+	void Sound(pwr::PowerDrop powerDrop);
+
+	bool CheckCollision(pwr::PowerDrop& powerDrop, vec::Vector2 pos, vec::Vector2 size);
+}

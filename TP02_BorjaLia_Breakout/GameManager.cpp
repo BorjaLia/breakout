@@ -12,15 +12,29 @@ void LoadSettings()
 }
 
 void SaveSettings() {
+	utl::SaveToFile(settingsFilePath.c_str(), "graphics", (int)sett::graphics);
+	
+	utl::SaveToFile(settingsFilePath.c_str(), "fullscreen", (int)sett::fullscreen);
+	utl::SaveToFile(settingsFilePath.c_str(), "resolution_width", (int)sett::resolution.x);
+	utl::SaveToFile(settingsFilePath.c_str(), "resolution_height", (int)sett::resolution.y);
 
+	utl::SaveToFile(settingsFilePath.c_str(), "use_powers", (int)sett::usePowers);
+
+	utl::SaveToFile(settingsFilePath.c_str(), "use_large", (int)sett::usePowers);
+	utl::SaveToFile(settingsFilePath.c_str(), "use_mirror", (int)sett::usePowers);
+	utl::SaveToFile(settingsFilePath.c_str(), "use_homing", (int)sett::usePowers);
+	utl::SaveToFile(settingsFilePath.c_str(), "use_combo", (int)sett::usePowers);
+	utl::SaveToFile(settingsFilePath.c_str(), "use_multiply", (int)sett::usePowers);
+
+	utl::SaveToFile(settingsFilePath.c_str(), "use_multiply", (int)sett::usePowers);
 }
 
 void LoadDefaultFiles()
 {
 	rend::defaultContainerTexture.file = "res/sprites/Background4.png";
 
-	rend::defaultButtonMainTexture.file = "res/sprites/NoTexture.png";
-	rend::defaultButtonHoveredTexture.file = "res/sprites/NoTexture.png";
+	rend::defaultButtonMainTexture.file = "res/sprites/ButtonTexture.png";
+	rend::defaultButtonHoveredTexture.file = "res/sprites/ButtonHoverTexture.png";
 
 	rend::defaultButtonClickDownSound.file = "res/audio/ButtonClick.wav";
 	rend::defaultButtonClickUpSound.file = "res/audio/ButtonClick.wav";
@@ -65,6 +79,12 @@ void InitMouse(btn::Button& mouse)
 	drw::InitSpriteData(mouse.hoveredTexture);
 }
 
+void DeInitMouse(btn::Button& mouse)
+{
+	drw::DeInitSpriteData(mouse.mainTexture);
+	drw::DeInitSpriteData(mouse.hoveredTexture);
+}
+
 void InitMainMenuContext(btn::Container& container, btn::Button buttons[])
 {
 	container.pos = { 0.5,0.5 };
@@ -83,73 +103,48 @@ void InitMainMenuContext(btn::Container& container, btn::Button buttons[])
 		buttons[b].useText = false;
 		buttons[b].useSprite = true;
 		buttons[b].isActive = true;
+		buttons[b].textData = rend::defaultFont;
+		buttons[b].mainTexture = rend::defaultButtonMainTexture;
+		buttons[b].hoveredTexture = rend::defaultButtonHoveredTexture;
+		buttons[b].clickedDownSound = rend::defaultButtonClickDownSound;
+		buttons[b].clickedUpSound = rend::defaultButtonClickUpSound;
+		buttons[b].hoveredSound = rend::defaultButtonHoverSound;
 	}
-
 
 	buttons[(int)MMButtons::PLAY].text = "Play";
 	buttons[(int)MMButtons::PLAY].pos = { 0.1,0.65 };
 
-
-	buttons[(int)MMButtons::PLAY].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)MMButtons::PLAY].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)MMButtons::PLAY].hoveredSound = rend::defaultButtonHoverSound;
-
 	btn::Init(buttons[(int)MMButtons::PLAY], container, true);
 
-	buttons[(int)MMButtons::PLAY].mainTexture.file = "res/sprites/playButtonTexture.png";
-	buttons[(int)MMButtons::PLAY].hoveredTexture.file = "res/sprites/playButtonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)MMButtons::PLAY].mainTexture);
-	drw::InitSpriteData(buttons[(int)MMButtons::PLAY].hoveredTexture);
+	buttons[(int)MMButtons::PLAY].mainTexture = menu::playButtonTexture;
+	buttons[(int)MMButtons::PLAY].hoveredTexture = menu::playButtonHoveredTexture;
+
 
 	buttons[(int)MMButtons::SETTINGS].text = "Settings";
 	buttons[(int)MMButtons::SETTINGS].pos = { 0.1,0.5 };
 
-
-	buttons[(int)MMButtons::SETTINGS].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)MMButtons::SETTINGS].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)MMButtons::SETTINGS].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)MMButtons::SETTINGS], container, true);
 
-	buttons[(int)MMButtons::SETTINGS].mainTexture.file = "res/sprites/settingsButtonTexture.png";
-	buttons[(int)MMButtons::SETTINGS].hoveredTexture.file = "res/sprites/settingsButtonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)MMButtons::SETTINGS].mainTexture);
-	drw::InitSpriteData(buttons[(int)MMButtons::SETTINGS].hoveredTexture);
-
+	buttons[(int)MMButtons::SETTINGS].mainTexture = menu::settingsButtonTexture;
+	buttons[(int)MMButtons::SETTINGS].hoveredTexture = menu::settingsButtonHoveredTexture;
 
 
 	buttons[(int)MMButtons::CREDITS].text = "Credits";
 	buttons[(int)MMButtons::CREDITS].pos = { 0.1,0.35 };
 
-
-	buttons[(int)MMButtons::CREDITS].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)MMButtons::CREDITS].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)MMButtons::CREDITS].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)MMButtons::CREDITS], container, true);
 
-	buttons[(int)MMButtons::CREDITS].mainTexture.file = "res/sprites/creditsButtonTexture.png";
-	buttons[(int)MMButtons::CREDITS].hoveredTexture.file = "res/sprites/creditsButtonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)MMButtons::CREDITS].mainTexture);
-	drw::InitSpriteData(buttons[(int)MMButtons::CREDITS].hoveredTexture);
-
+	buttons[(int)MMButtons::CREDITS].mainTexture = menu::creditsButtonTexture;
+	buttons[(int)MMButtons::CREDITS].hoveredTexture = menu::creditsButtonHoveredTexture;
 
 
 	buttons[(int)MMButtons::EXIT].text = "Exit";
 	buttons[(int)MMButtons::EXIT].pos = { 0.1,0.2 };
 
-
-	buttons[(int)MMButtons::EXIT].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)MMButtons::EXIT].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)MMButtons::EXIT].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)MMButtons::EXIT], container, true);
 
-	buttons[(int)MMButtons::EXIT].mainTexture.file = "res/sprites/exitButtonTexture.png";
-	buttons[(int)MMButtons::EXIT].hoveredTexture.file = "res/sprites/exitButtonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)MMButtons::EXIT].mainTexture);
-	drw::InitSpriteData(buttons[(int)MMButtons::EXIT].hoveredTexture);
-
+	buttons[(int)MMButtons::EXIT].mainTexture = menu::exitButtonTexture;
+	buttons[(int)MMButtons::EXIT].hoveredTexture = menu::exitButtonHoveredTexture;
 }
 
 void InitSettingsContext(btn::Container& container, btn::Button buttons[])
@@ -166,64 +161,46 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 	{
 		buttons[b].signalTimerLimit = 0.1f;
 		buttons[b].size = { 0.2,0.1 };
-		buttons[b].clickedOffset = { -0.4,0 };
-		buttons[b].useText = false;
+		buttons[b].clickedOffset = { 0,-0.1f };
+		buttons[b].textColor = WHITE;
+		buttons[b].useText = true;
 		buttons[b].useSprite = true;
 		buttons[b].isActive = true;
+		buttons[b].textData = rend::defaultFont;
+		buttons[b].mainTexture = rend::defaultButtonMainTexture;
+		buttons[b].hoveredTexture = rend::defaultButtonHoveredTexture;
+		buttons[b].clickedDownSound = rend::defaultButtonClickDownSound;
+		buttons[b].clickedUpSound = rend::defaultButtonClickUpSound;
+		buttons[b].hoveredSound = rend::defaultButtonHoverSound;
+		buttons[b].activeTexture = rend::defaultButtonMainTexture;
 	}
 
 	buttons[(int)SButtons::RENDERER].text = "Renderer";
 	buttons[(int)SButtons::RENDERER].pos = { 0.8,0.8 };
-	buttons[(int)SButtons::RENDERER].clickedOffset = { 0,-0.1f };
-	buttons[(int)SButtons::RENDERER].useText = true;
-	buttons[(int)SButtons::RENDERER].textColor = WHITE;
 
-
-	buttons[(int)SButtons::RENDERER].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)SButtons::RENDERER].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)SButtons::RENDERER].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)SButtons::RENDERER], container, true);
-
-	buttons[(int)SButtons::RENDERER].mainTexture.file = "res/sprites/buttonTexture.png";
-	buttons[(int)SButtons::RENDERER].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)SButtons::RENDERER].mainTexture);
-	drw::InitSpriteData(buttons[(int)SButtons::RENDERER].hoveredTexture);
 
 
 	buttons[(int)SButtons::APPLY].text = "Apply";
 	buttons[(int)SButtons::APPLY].pos = { 0.9,0.2 };
 	buttons[(int)SButtons::APPLY].clickedOffset = { 0.4,0 };
-	buttons[(int)SButtons::APPLY].useText = true;
-	buttons[(int)SButtons::APPLY].textColor = WHITE;
+	buttons[(int)SButtons::APPLY].useText = false;
 
-
-	buttons[(int)SButtons::APPLY].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)SButtons::APPLY].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)SButtons::APPLY].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)SButtons::APPLY], container, true);
 
-	buttons[(int)SButtons::APPLY].mainTexture.file = "res/sprites/applyButtonTexture.png";
-	buttons[(int)SButtons::APPLY].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)SButtons::APPLY].mainTexture);
-	drw::InitSpriteData(buttons[(int)SButtons::APPLY].hoveredTexture);
+	buttons[(int)SButtons::APPLY].mainTexture = menu::applyButtonTexture;
+	buttons[(int)SButtons::APPLY].hoveredTexture = menu::applyButtonHoveredTexture;
 
 
 	buttons[(int)SButtons::EXIT].text = "Exit";
 	buttons[(int)SButtons::EXIT].pos = { 0.1,0.2 };
+	buttons[(int)SButtons::EXIT].clickedOffset = { -0.4,0 };
+	buttons[(int)SButtons::EXIT].useText = false;
 
-
-	buttons[(int)SButtons::EXIT].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)SButtons::EXIT].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)SButtons::EXIT].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)SButtons::EXIT], container, true);
 
-	buttons[(int)SButtons::EXIT].mainTexture.file = "res/sprites/exitButtonTexture.png";
-	buttons[(int)SButtons::EXIT].hoveredTexture.file = "res/sprites/exitButtonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)SButtons::EXIT].mainTexture);
-	drw::InitSpriteData(buttons[(int)SButtons::EXIT].hoveredTexture);
+	buttons[(int)SButtons::EXIT].mainTexture = menu::exitButtonTexture;
+	buttons[(int)SButtons::EXIT].hoveredTexture = menu::exitButtonHoveredTexture;
 }
 
 void InitEndScreenContext(btn::Container& container, btn::Button buttons[]) {
@@ -241,85 +218,45 @@ void InitEndScreenContext(btn::Container& container, btn::Button buttons[]) {
 		buttons[b].signalTimerLimit = 0.1f;
 		buttons[b].size = { 0.2,0.1 };
 		buttons[b].clickedOffset = { -0.4,0 };
-		buttons[b].useText = false;
+		buttons[b].textColor = WHITE;
+		buttons[b].useText = true;
 		buttons[b].useSprite = true;
 		buttons[b].isActive = true;
+		buttons[b].textData = rend::defaultFont;
+		buttons[b].mainTexture = rend::defaultButtonMainTexture;
+		buttons[b].hoveredTexture = rend::defaultButtonHoveredTexture;
+		buttons[b].clickedDownSound = rend::defaultButtonClickDownSound;
+		buttons[b].clickedUpSound = rend::defaultButtonClickUpSound;
+		buttons[b].hoveredSound = rend::defaultButtonHoverSound;
 	}
 
 	buttons[(int)EButtons::NEXT].text = ">";
 	buttons[(int)EButtons::NEXT].pos = { 0.8,0.5 };
 	buttons[(int)EButtons::NEXT].size = { 0.15,0.1 };
 	buttons[(int)EButtons::NEXT].clickedOffset = { 0,-0.1f };
-	buttons[(int)EButtons::NEXT].useText = true;
-	buttons[(int)EButtons::NEXT].textColor = WHITE;
 
-
-	buttons[(int)EButtons::NEXT].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)EButtons::NEXT].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)EButtons::NEXT].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)EButtons::NEXT], container, true);
 
-	buttons[(int)EButtons::NEXT].mainTexture.file = "res/sprites/buttonTexture.png";
-	buttons[(int)EButtons::NEXT].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)EButtons::NEXT].mainTexture);
-	drw::InitSpriteData(buttons[(int)EButtons::NEXT].hoveredTexture);
 
 	buttons[(int)EButtons::LAST].text = "<";
 	buttons[(int)EButtons::LAST].pos = { 0.2,0.5 };
 	buttons[(int)EButtons::LAST].size = { 0.15,0.1 };
-	buttons[(int)EButtons::LAST].clickedOffset = { 0,-0.1f };
-	buttons[(int)EButtons::LAST].useText = true;
-	buttons[(int)EButtons::LAST].textColor = WHITE;
+	buttons[(int)EButtons::LAST].clickedOffset = { 0,-0.1f };;
 
-
-	buttons[(int)EButtons::LAST].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)EButtons::LAST].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)EButtons::LAST].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)EButtons::LAST], container, true);
 
-	buttons[(int)EButtons::LAST].mainTexture.file = "res/sprites/buttonTexture.png";
-	buttons[(int)EButtons::LAST].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)EButtons::LAST].mainTexture);
-	drw::InitSpriteData(buttons[(int)EButtons::LAST].hoveredTexture);
 
 	buttons[(int)EButtons::RETRY].text = "Retry";
 	buttons[(int)EButtons::RETRY].pos = { 0.5,0.5 };
 	buttons[(int)EButtons::RETRY].clickedOffset = { 0,-0.1f };
-	buttons[(int)EButtons::RETRY].useText = true;
-	buttons[(int)EButtons::RETRY].textColor = WHITE;
 
-
-	buttons[(int)EButtons::RETRY].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)EButtons::RETRY].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)EButtons::RETRY].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)EButtons::RETRY], container, true);
-
-	buttons[(int)EButtons::RETRY].mainTexture.file = "res/sprites/buttonTexture.png";
-	buttons[(int)EButtons::RETRY].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)EButtons::RETRY].mainTexture);
-	drw::InitSpriteData(buttons[(int)EButtons::RETRY].hoveredTexture);
 
 	buttons[(int)EButtons::EXIT].text = "Exit";
 	buttons[(int)EButtons::EXIT].pos = { 0.5,0.25 };
 	buttons[(int)EButtons::EXIT].clickedOffset = { 0,-0.1f };
-	buttons[(int)EButtons::EXIT].useText = true;
-	buttons[(int)EButtons::EXIT].textColor = WHITE;
 
-
-	buttons[(int)EButtons::EXIT].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)EButtons::EXIT].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)EButtons::EXIT].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)EButtons::EXIT], container, true);
-
-	buttons[(int)EButtons::EXIT].mainTexture.file = "res/sprites/buttonTexture.png";
-	buttons[(int)EButtons::EXIT].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)EButtons::EXIT].mainTexture);
-	drw::InitSpriteData(buttons[(int)EButtons::EXIT].hoveredTexture);
-
 }
 
 void InitCreditsContext(btn::Container& container, btn::Button buttons[])
@@ -337,25 +274,25 @@ void InitCreditsContext(btn::Container& container, btn::Button buttons[])
 		buttons[b].signalTimerLimit = 0.1f;
 		buttons[b].size = { 0.2,0.1 };
 		buttons[b].clickedOffset = { -0.4,0 };
+		buttons[b].textColor = WHITE;
 		buttons[b].useText = false;
 		buttons[b].useSprite = true;
-		buttons[b].isActive = true;;
+		buttons[b].isActive = true;
+		buttons[b].textData = rend::defaultFont;
+		buttons[b].mainTexture = rend::defaultButtonMainTexture;
+		buttons[b].hoveredTexture = rend::defaultButtonHoveredTexture;
+		buttons[b].clickedDownSound = rend::defaultButtonClickDownSound;
+		buttons[b].clickedUpSound = rend::defaultButtonClickUpSound;
+		buttons[b].hoveredSound = rend::defaultButtonHoverSound;
 	}
 
 	buttons[(int)CButtons::EXIT].text = "Exit";
 	buttons[(int)CButtons::EXIT].pos = { 0.1,0.2 };
 
-
-	buttons[(int)CButtons::EXIT].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)CButtons::EXIT].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)CButtons::EXIT].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)CButtons::EXIT], container, true);
 
-	buttons[(int)CButtons::EXIT].mainTexture.file = "res/sprites/exitButtonTexture.png";
-	buttons[(int)CButtons::EXIT].hoveredTexture.file = "res/sprites/exitButtonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)CButtons::EXIT].mainTexture);
-	drw::InitSpriteData(buttons[(int)CButtons::EXIT].hoveredTexture);
+	buttons[(int)CButtons::EXIT].mainTexture = menu::exitButtonTexture;
+	buttons[(int)CButtons::EXIT].hoveredTexture = menu::exitButtonHoveredTexture;
 }
 
 void InitLevelsContext(btn::Container& container, btn::Container& gridContainer, btn::Button buttons[], btn::Button gridButtons[])
@@ -370,7 +307,7 @@ void InitLevelsContext(btn::Container& container, btn::Container& gridContainer,
 
 	gridContainer.pos = { 0.5,0.5 };
 	gridContainer.size = { 1,0.6 };
-	gridContainer.isRendered = true;
+	gridContainer.isRendered = false;
 	gridContainer.useTexture = false;
 	//gridContainer.texture = rend::defaultButtonHoveredTexture;
 	gridContainer.color = { 128,128,128,128 };
@@ -382,25 +319,26 @@ void InitLevelsContext(btn::Container& container, btn::Container& gridContainer,
 		buttons[b].signalTimerLimit = 0.1f;
 		buttons[b].size = { 0.2,0.1 };
 		buttons[b].clickedOffset = { -0.4,0 };
-		buttons[b].useText = false;
+		buttons[b].textColor = WHITE;
+		buttons[b].useText = true;
 		buttons[b].useSprite = true;
 		buttons[b].isActive = true;
+		buttons[b].textData = rend::defaultFont;
+		buttons[b].mainTexture = rend::defaultButtonMainTexture;
+		buttons[b].hoveredTexture = rend::defaultButtonHoveredTexture;
+		buttons[b].clickedDownSound = rend::defaultButtonClickDownSound;
+		buttons[b].clickedUpSound = rend::defaultButtonClickUpSound;
+		buttons[b].hoveredSound = rend::defaultButtonHoverSound;
 	}
 
 	buttons[(int)LButtons::EXIT].text = "Exit";
 	buttons[(int)LButtons::EXIT].pos = { 0.1,0.2 };
+	buttons[(int)LButtons::EXIT].useText = false;
 
-
-	buttons[(int)LButtons::EXIT].clickedUpSound = rend::defaultButtonClickUpSound;
-	buttons[(int)LButtons::EXIT].clickedDownSound = rend::defaultButtonClickDownSound;
-	buttons[(int)LButtons::EXIT].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(buttons[(int)LButtons::EXIT], container, true);
 
-	buttons[(int)LButtons::EXIT].mainTexture.file = "res/sprites/exitButtonTexture.png";
-	buttons[(int)LButtons::EXIT].hoveredTexture.file = "res/sprites/exitButtonHoverTexture.png";
-	drw::InitSpriteData(buttons[(int)LButtons::EXIT].mainTexture);
-	drw::InitSpriteData(buttons[(int)LButtons::EXIT].hoveredTexture);
+	buttons[(int)LButtons::EXIT].mainTexture = menu::exitButtonTexture;
+	buttons[(int)LButtons::EXIT].hoveredTexture = menu::exitButtonHoveredTexture;
 
 
 	for (int b = 0; b < (int)Levels::AMOUNT; b++)
@@ -409,72 +347,40 @@ void InitLevelsContext(btn::Container& container, btn::Container& gridContainer,
 		gridButtons[b].size = { 0.2,0.1 };
 		gridButtons[b].clickedOffset = { 0,-0.2 };
 		gridButtons[b].textColor = WHITE;
+		gridButtons[b].textData = rend::defaultFont;
 		gridButtons[b].useText = true;
 		gridButtons[b].useSprite = true;
 		gridButtons[b].isActive = true;
+		gridButtons[b].textData = rend::defaultFont;
+		gridButtons[b].mainTexture = rend::defaultButtonMainTexture;
+		gridButtons[b].hoveredTexture = rend::defaultButtonHoveredTexture;
+		gridButtons[b].clickedDownSound = rend::defaultButtonClickDownSound;
+		gridButtons[b].clickedUpSound = rend::defaultButtonClickUpSound;
+		gridButtons[b].hoveredSound = rend::defaultButtonHoverSound;
 	}
 
-	gridButtons[(int)Levels::LEVEL1].text = "Level 1";
+	gridButtons[(int)Levels::LEVEL1].text = "Level	1";
 	gridButtons[(int)Levels::LEVEL1].pos = { 0.2,0.8 };
 
-
-	gridButtons[(int)Levels::LEVEL1].clickedUpSound = rend::defaultButtonClickUpSound;
-	gridButtons[(int)Levels::LEVEL1].clickedDownSound = rend::defaultButtonClickDownSound;
-	gridButtons[(int)Levels::LEVEL1].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(gridButtons[(int)Levels::LEVEL1], gridContainer, true);
 
-	gridButtons[(int)Levels::LEVEL1].mainTexture.file = "res/sprites/buttonTexture.png";
-	gridButtons[(int)Levels::LEVEL1].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL1].mainTexture);
-	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL1].hoveredTexture);
 
-
-	gridButtons[(int)Levels::LEVEL2].text = "Level 2";
+	gridButtons[(int)Levels::LEVEL2].text = "Level	2";
 	gridButtons[(int)Levels::LEVEL2].pos = { 0.8,0.8 };
-
-
-	gridButtons[(int)Levels::LEVEL2].clickedUpSound = rend::defaultButtonClickUpSound;
-	gridButtons[(int)Levels::LEVEL2].clickedDownSound = rend::defaultButtonClickDownSound;
-	gridButtons[(int)Levels::LEVEL2].hoveredSound = rend::defaultButtonHoverSound;
 
 	btn::Init(gridButtons[(int)Levels::LEVEL2], gridContainer, true);
 
-	gridButtons[(int)Levels::LEVEL2].mainTexture.file = "res/sprites/buttonTexture.png";
-	gridButtons[(int)Levels::LEVEL2].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL2].mainTexture);
-	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL2].hoveredTexture);
 
-	gridButtons[(int)Levels::LEVEL3].text = "Level 3";
+	gridButtons[(int)Levels::LEVEL3].text = "Level	3";
 	gridButtons[(int)Levels::LEVEL3].pos = { 0.2,0.2 };
 
-
-	gridButtons[(int)Levels::LEVEL3].clickedUpSound = rend::defaultButtonClickUpSound;
-	gridButtons[(int)Levels::LEVEL3].clickedDownSound = rend::defaultButtonClickDownSound;
-	gridButtons[(int)Levels::LEVEL3].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(gridButtons[(int)Levels::LEVEL3], gridContainer, true);
 
-	gridButtons[(int)Levels::LEVEL3].mainTexture.file = "res/sprites/buttonTexture.png";
-	gridButtons[(int)Levels::LEVEL3].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL3].mainTexture);
-	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL3].hoveredTexture);
 
-
-	gridButtons[(int)Levels::LEVEL4].text = "Level 4";
+	gridButtons[(int)Levels::LEVEL4].text = "Level	4";
 	gridButtons[(int)Levels::LEVEL4].pos = { 0.8,0.2 };
 
-
-	gridButtons[(int)Levels::LEVEL4].clickedUpSound = rend::defaultButtonClickUpSound;
-	gridButtons[(int)Levels::LEVEL4].clickedDownSound = rend::defaultButtonClickDownSound;
-	gridButtons[(int)Levels::LEVEL4].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(gridButtons[(int)Levels::LEVEL4], gridContainer, true);
-
-	gridButtons[(int)Levels::LEVEL4].mainTexture.file = "res/sprites/buttonTexture.png";
-	gridButtons[(int)Levels::LEVEL4].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL4].mainTexture);
-	drw::InitSpriteData(gridButtons[(int)Levels::LEVEL4].hoveredTexture);
 }
 
 void InitPlayContext(btn::Container& playContainer, btn::Button playButtons[])
@@ -496,6 +402,13 @@ void InitPlayContext(btn::Container& playContainer, btn::Button playButtons[])
 		playButtons[b].useText = true;
 		playButtons[b].useSprite = true;
 		playButtons[b].isActive = true;
+		playButtons[b].textData = rend::defaultFont;
+		playButtons[b].mainTexture = rend::defaultButtonMainTexture;
+		playButtons[b].hoveredTexture = rend::defaultButtonHoveredTexture;
+		playButtons[b].clickedDownSound = rend::defaultButtonClickDownSound;
+		playButtons[b].clickedUpSound = rend::defaultButtonClickUpSound;
+		playButtons[b].hoveredSound = rend::defaultButtonHoverSound;
+
 	}
 
 	playButtons[(int)PButtons::PAUSE].text = "| |";
@@ -503,63 +416,25 @@ void InitPlayContext(btn::Container& playContainer, btn::Button playButtons[])
 	playButtons[(int)PButtons::PAUSE].pos = { 0.5,0.925 };
 	playButtons[(int)PButtons::PAUSE].size = { 0.05,0.075 };
 
-
-	playButtons[(int)PButtons::PAUSE].clickedUpSound = rend::defaultButtonClickUpSound;
-	playButtons[(int)PButtons::PAUSE].clickedDownSound = rend::defaultButtonClickDownSound;
-	playButtons[(int)PButtons::PAUSE].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(playButtons[(int)PButtons::PAUSE], playContainer, true);
 
-	playButtons[(int)PButtons::PAUSE].mainTexture.file = "res/sprites/buttonTexture.png";
-	playButtons[(int)PButtons::PAUSE].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(playButtons[(int)PButtons::PAUSE].mainTexture);
-	drw::InitSpriteData(playButtons[(int)PButtons::PAUSE].hoveredTexture);
 
 	playButtons[(int)PButtons::RETURN].text = "Return";
 	playButtons[(int)PButtons::RETURN].pos = { 0.5,0.6 };
 
-
-	playButtons[(int)PButtons::RETURN].clickedUpSound = rend::defaultButtonClickUpSound;
-	playButtons[(int)PButtons::RETURN].clickedDownSound = rend::defaultButtonClickDownSound;
-	playButtons[(int)PButtons::RETURN].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(playButtons[(int)PButtons::RETURN], playContainer, true);
-
-	playButtons[(int)PButtons::RETURN].mainTexture.file = "res/sprites/buttonTexture.png";
-	playButtons[(int)PButtons::RETURN].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(playButtons[(int)PButtons::RETURN].mainTexture);
-	drw::InitSpriteData(playButtons[(int)PButtons::RETURN].hoveredTexture);
 
 
 	playButtons[(int)PButtons::RETRY].text = "Retry";
 	playButtons[(int)PButtons::RETRY].pos = { 0.5,0.4 };
 
-
-	playButtons[(int)PButtons::RETRY].clickedUpSound = rend::defaultButtonClickUpSound;
-	playButtons[(int)PButtons::RETRY].clickedDownSound = rend::defaultButtonClickDownSound;
-	playButtons[(int)PButtons::RETRY].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(playButtons[(int)PButtons::RETRY], playContainer, true);
 
-	playButtons[(int)PButtons::RETRY].mainTexture.file = "res/sprites/buttonTexture.png";
-	playButtons[(int)PButtons::RETRY].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(playButtons[(int)PButtons::RETRY].mainTexture);
-	drw::InitSpriteData(playButtons[(int)PButtons::RETRY].hoveredTexture);
 
 	playButtons[(int)PButtons::EXIT].text = "Exit";
 	playButtons[(int)PButtons::EXIT].pos = { 0.5,0.2 };
 
-
-	playButtons[(int)PButtons::EXIT].clickedUpSound = rend::defaultButtonClickUpSound;
-	playButtons[(int)PButtons::EXIT].clickedDownSound = rend::defaultButtonClickDownSound;
-	playButtons[(int)PButtons::EXIT].hoveredSound = rend::defaultButtonHoverSound;
-	
 	btn::Init(playButtons[(int)PButtons::EXIT], playContainer, true);
-
-	playButtons[(int)PButtons::EXIT].mainTexture.file = "res/sprites/buttonTexture.png";
-	playButtons[(int)PButtons::EXIT].hoveredTexture.file = "res/sprites/buttonHoverTexture.png";
-	drw::InitSpriteData(playButtons[(int)PButtons::EXIT].mainTexture);
-	drw::InitSpriteData(playButtons[(int)PButtons::EXIT].hoveredTexture);
 
 	blk::normalTexture.file = "res/sprites/BrickTexture.png";
 	blk::largeTexture.file = "res/sprites/BrickTexture.png";
@@ -718,12 +593,20 @@ void PlayInputUpdate(lvl::LevelData& levelData)
 
 	for (int i = 0; i < levelData.blockAmount; i++)
 	{
-		blk::Update(levelData.blocks[i], levelData.paddle);
+		lvl::NextAvailablePowerDrop(levelData);
+		blk::Update(levelData.blocks[i], levelData.paddle, levelData.powerDrops[levelData.availablePowerDrop]);
+	}
+
+	for (int i = 0; i < levelData.powerDropAmount; i++)
+	{
+		pwr::Update(levelData.powerDrops[i],levelData.paddle.pos,levelData.paddle.size);
 	}
 
 	if (currentScore != -1) {
 		currentScore = levelData.paddle.score;
 	}
+
+	PowerManager(levelData);
 }
 
 void PlayUpdate(btn::Container& playContainer, btn::Button playButtons[], SubMenus& subMenu, GameStates& gameState, lvl::LevelData& activeLevel)
@@ -762,7 +645,7 @@ void PlayUpdate(btn::Container& playContainer, btn::Button playButtons[], SubMen
 	if (playButtons[(int)PButtons::RETRY].signal) {
 		isGamePaused = false;
 		ResetLevel(activeLevel);
-		LoadLevel(activeLevel);
+		//LoadLevel(activeLevel);
 	}
 	if (playButtons[(int)PButtons::EXIT].signal) {
 		isGamePaused = false;
@@ -771,6 +654,11 @@ void PlayUpdate(btn::Container& playContainer, btn::Button playButtons[], SubMen
 	}
 
 	if (lvl::BlocksLeft(activeLevel) <= 0) {
+		
+		if (currentScore > activeLevel.hiScore || (currentScore == activeLevel.hiScore && levelTimer < activeLevel.bestTime)) {
+			SaveLevel(activeLevel);
+		}
+		
 		subMenu = SubMenus::ENDSCREEN;
 		gameState = GameStates::MAIN_MENU;
 	}
@@ -797,6 +685,48 @@ void LevelsDraw(btn::Container& container, btn::Container& gridContainer, btn::B
 	btn::Draw(container, buttons, (int)LButtons::AMOUNT);
 	btn::Draw(gridContainer, gridButtons, (int)Levels::AMOUNT);
 
+	for (int i = 0; i < (int)Levels::AMOUNT; i++)
+	{
+
+		std::string levelFile = "data/level.txt";
+
+		switch ((Levels)i)
+		{
+		case Levels::LEVEL1: {
+			levelFile = "data/level1.txt";
+			break;
+		}
+		case Levels::LEVEL2: {
+			levelFile = "data/level2.txt";
+			break;
+		}
+		case Levels::LEVEL3: {
+			levelFile = "data/level3.txt";
+			break;
+		}
+		case Levels::LEVEL4: {
+			levelFile = "data/level4.txt";
+			break;
+		}
+		case Levels::AMOUNT:
+			break;
+		default:
+			break;
+		}
+
+		int hiScore = stoi(utl::SearchInFile(levelFile.c_str(),"best_score"));
+		int bestTime = stoi(utl::SearchInFile(levelFile.c_str(),"best_time"));
+
+		std::string hiScoreString = "Best Score: ";
+		hiScoreString.append(std::to_string(hiScore));
+
+		std::string bestTimeString = "Best Time: ";
+		bestTimeString.append(std::to_string((int)bestTime));
+
+		drw::Text(hiScoreString.c_str(), rend::defaultFont, { gridButtons[i].pos.x,gridButtons[i].pos.y - gridButtons[i].size.y }, 40);
+		drw::Text(bestTimeString.c_str(), rend::defaultFont, { gridButtons[i].pos.x,gridButtons[i].pos.y - 1.5f * (gridButtons[i].size.y) }, 40);
+	}
+
 }
 
 void SettingsDraw(btn::Container settingsContainer, btn::Button settingsButtons[])
@@ -817,7 +747,7 @@ void EndScreenDraw(btn::Container endScreenContainer, btn::Button endScreenButto
 		drw::Text(timer.append(std::to_string((int)levelTimer)).c_str(), rend::defaultFont, { 0.5f,0.6f }, 60);
 	}
 	else {
-		drw::Text("You lost!", rend::defaultFont, {0.5f,0.65f}, 60);
+		drw::Text("You lost!", rend::defaultFont, { 0.5f,0.65f }, 60);
 	}
 }
 
@@ -842,6 +772,11 @@ void PlayDraw(btn::Container& playContainer, btn::Button playButtons[], lvl::Lev
 		blk::Draw(levelData.blocks[i]);
 	}
 
+	for (int i = 0; i < levelData.powerDropAmount; i++)
+	{
+		pwr::Draw(levelData.powerDrops[i]);
+	}
+
 	btn::Draw(playButtons, (int)PButtons::AMOUNT);
 	std::string score = "Score: ";
 	drw::Text((score.append(std::to_string(levelData.paddle.score))).c_str(), rend::defaultFont, { 0.1f,0.965f }, 50);
@@ -851,8 +786,12 @@ void PlayDraw(btn::Container& playContainer, btn::Button playButtons[], lvl::Lev
 	std::string timer = "Time: ";
 	drw::Text((timer.append(std::to_string((int)levelTimer))).c_str(), rend::defaultFont, { 0.6f,0.965f }, 50);
 
-	//drw::Text(score.c_str(), rend::defaultFont, { 0.05f,0.95f }, 50);
-	//drw::Text(std::to_string(levelData.paddle.score).c_str(), rend::defaultFont, { 0.1f,0.95f }, 50);
+	if (pwr::isLargePowerActive) {
+		drw::Text("L!", rend::defaultFont, {0.8f,0.965f}, 50);
+	}
+	if (pwr::isHomingPowerActive) {
+		drw::Text("H!", rend::defaultFont, { 0.9f,0.965f }, 50);
+	}
 }
 
 void PlaySounds(lvl::LevelData& levelData)
@@ -878,6 +817,38 @@ void LoadLevel(lvl::LevelData& levelData)
 	//	}
 	//}
 
+	pwr::largePowerTimer = pwr::largePowerTimerLimit;
+	pwr::mirrorPowerTimer = pwr::mirrorPowerTimerLimit;
+	pwr::homingPowerTimer = pwr::homingPowerTimerLimit;
+	pwr::comboPowerTimer = pwr::comboPowerTimerLimit;
+
+	pwr::multiplyPowerActivation = false;
+
+	pwr::isLargePowerActive = false;
+	pwr::isMirrorPowerActive = false;
+	pwr::isHomingPowerActive = false;
+	pwr::isComboPowerActive = false;
+	pwr::isMultiplyPowerActive = false;
+
+	pwr::isLargePowerActiveChange = false;
+	pwr::isMirrorPowerActiveChange = false;
+	pwr::isHomingPowerActiveChange = false;
+	pwr::isComboPowerActiveChange = false;
+	pwr::isMultiplyPowerActiveChange = false;
+
+	pwr::isLargePowerDeActiveChange = false;
+	pwr::isMirrorPowerDeActiveChange = false;
+	pwr::isHomingPowerDeActiveChange = false;
+	pwr::isComboPowerDeActiveChange = false;
+	pwr::isMultiplyPowerDeActiveChange = false;
+
+	for (int i = 0; i < levelData.powerDropAmount; i++)
+	{
+		pwr::Reset(levelData.powerDrops[i]);
+	}
+
+	std::string levelFile = "data/level.txt";
+
 	levelData.blockAmount = 0;
 	int m = 0;
 
@@ -885,6 +856,9 @@ void LoadLevel(lvl::LevelData& levelData)
 	{
 	case Levels::LEVEL1: {
 
+		levelData.id = 1;
+
+		levelFile = "data/level1.txt";
 
 		levelData.paddle = pdl::Paddle();
 		levelData.ball = bll::Ball();
@@ -896,23 +870,38 @@ void LoadLevel(lvl::LevelData& levelData)
 			if (m >= 8) {
 				m = 0;
 			}
+			levelData.blocks[i].isActive = true;
+			levelData.blocks[i].heldPowerType = pwr::PowerType::NONE;
 
 			levelData.blocks[i].color = WHITE;
+			levelData.blocks[i].playSound = false;
+			levelData.blocks[i].activeSound = blk::blockHitSound;
+
 			levelData.blocks[i].pos = { 0.5f + ((float)((m - 8 / 2) * levelData.blocks[i].size.x) * 1.5f), 0.6f };
 			levelData.blocks[i].pos.x += levelData.blocks[i].size.x / 1.33f;
+			levelData.blocks[i].heldPowerType = pwr::PowerType::MIRROR;
 
 			if (i >= 8) {
+				levelData.blocks[i].heldPowerType = pwr::PowerType::LARGE;
 				levelData.blocks[i].pos.y += 0.15f;
 			}
 			if (i >= 16) {
+				levelData.blocks[i].heldPowerType = pwr::PowerType::HOMING;
 				levelData.blocks[i].pos.y += 0.15f;
 			}
 			m++;
 		}
 
+		//levelData.blocks[3].heldPowerType = pwr::PowerType::HOMING;
+
 		break;
 	}
 	case Levels::LEVEL2: {
+
+		levelData.id = 2;
+
+		levelFile = "data/level2.txt";
+
 		levelData.paddle = pdl::Paddle();
 		levelData.ball = bll::Ball();
 
@@ -959,6 +948,10 @@ void LoadLevel(lvl::LevelData& levelData)
 	}
 	case Levels::LEVEL3: {
 
+		levelData.id = 3;
+
+		levelFile = "data/level3.txt";
+
 		levelData.paddle = pdl::Paddle();
 		levelData.ball = bll::Ball();
 
@@ -972,7 +965,9 @@ void LoadLevel(lvl::LevelData& levelData)
 		break;
 	}
 	case Levels::LEVEL4: {
+		levelData.id = 4;
 
+		levelFile = "data/level4.txt";
 		break;
 	}
 	case Levels::AMOUNT:
@@ -980,9 +975,57 @@ void LoadLevel(lvl::LevelData& levelData)
 	default:
 		break;
 	}
+
+	levelData.hiScore = stoi(utl::SearchInFile(levelFile.c_str(), "best_score"));
+	levelData.bestTime = stoi(utl::SearchInFile(levelFile.c_str(), "best_time"));
+
 	InitLevel(levelData);
 
 	levelTimer = 0;
+}
+
+void SaveLevel(lvl::LevelData& levelData)
+{
+	std::string levelFile = "data/level.txt";
+
+	switch ((Levels)(levelData.id - 1))
+	{
+	case Levels::LEVEL1: {
+		levelFile = "data/level1.txt";
+
+		levelData.hiScore = currentScore;
+		levelData.bestTime = levelTimer;
+		break;
+	}
+	case Levels::LEVEL2: {
+		levelFile = "data/level2.txt";
+
+		levelData.hiScore = currentScore;
+		levelData.bestTime = levelTimer;
+		break;
+	}
+	case Levels::LEVEL3: {
+		levelFile = "data/level3.txt";
+
+		levelData.hiScore = currentScore;
+		levelData.bestTime = levelTimer;
+		break;
+	}
+	case Levels::LEVEL4: {
+		levelFile = "data/level4.txt";
+
+		levelData.hiScore = currentScore;
+		levelData.bestTime = levelTimer;
+		break;
+	}
+	case Levels::AMOUNT:
+		break;
+	
+	default:
+		break;
+	}
+		utl::SaveToFile(levelFile.c_str(), "best_score", currentScore);
+		utl::SaveToFile(levelFile.c_str(), "best_time", levelTimer);
 }
 
 void InitLevel(lvl::LevelData& levelData)
@@ -1009,4 +1052,94 @@ void ResetLevel(lvl::LevelData& levelData) {
 		blk::Reset(levelData.blocks[i]);
 	}
 	LoadLevel(levelData);
+}
+
+void PowerManager(lvl::LevelData& levelData)
+{
+	pwr::largePowerTimer += rend::deltaTime;
+	pwr::mirrorPowerTimer += rend::deltaTime;
+	pwr::homingPowerTimer += rend::deltaTime;
+	pwr::comboPowerTimer += rend::deltaTime;
+
+	if (pwr::largePowerTimer < pwr::largePowerTimerLimit) {
+		if (!pwr::isLargePowerActive) {
+			pwr::isLargePowerActiveChange = true;
+		}
+		pwr::isLargePowerActive = true;
+	}
+	else {
+		if (pwr::isLargePowerActive) {
+			pwr::isLargePowerDeActiveChange = true;
+		}
+		pwr::isLargePowerActive = false;
+	}
+
+	if (pwr::mirrorPowerTimer < pwr::mirrorPowerTimerLimit) {
+		if (!pwr::isMirrorPowerActive) {
+			pwr::isMirrorPowerActiveChange = true;
+		}
+		pwr::isMirrorPowerActive = true;
+	}
+	else {
+		if (pwr::isMirrorPowerActive) {
+			pwr::isMirrorPowerDeActiveChange = true;
+		}
+		pwr::isMirrorPowerActive = false;
+	}
+
+	if (pwr::homingPowerTimer < pwr::homingPowerTimerLimit) {
+		if (!pwr::isHomingPowerActive) {
+			pwr::isHomingPowerActiveChange = true;
+		}
+		pwr::isHomingPowerActive = true;
+	}
+	else {
+		if (pwr::isHomingPowerActive) {
+			pwr::isHomingPowerDeActiveChange = true;
+		}
+		pwr::isHomingPowerActive = false;
+	}
+
+	if (pwr::comboPowerTimer < pwr::comboPowerTimerLimit) {
+		if (!pwr::isComboPowerActive) {
+			pwr::isComboPowerActiveChange = true;
+		}
+		pwr::isComboPowerActive = true;
+	}
+	else {
+		if (pwr::isComboPowerActive) {
+			pwr::isComboPowerDeActiveChange = true;
+		}
+		pwr::isComboPowerActive = false;
+	}
+
+	if (pwr::isLargePowerActiveChange) {
+		pwr::isLargePowerActiveChange = false;
+		levelData.paddle.size.x *= pwr::largeMultiplier;
+	}
+	if (pwr::isLargePowerDeActiveChange) {
+		pwr::isLargePowerDeActiveChange = false;
+		levelData.paddle.size.x /= pwr::largeMultiplier;
+	}
+
+	if (pwr::isMirrorPowerActiveChange) {
+		pwr::isMirrorPowerActiveChange = false;
+	}
+	if (pwr::isMirrorPowerDeActiveChange) {
+		pwr::isMirrorPowerDeActiveChange = false;
+	}
+
+	if (pwr::isHomingPowerActiveChange) {
+		pwr::isHomingPowerActiveChange = false;
+	}
+	if (pwr::isHomingPowerDeActiveChange) {
+		pwr::isHomingPowerDeActiveChange = false;
+	}
+
+	if (pwr::isComboPowerActiveChange) {
+		pwr::isComboPowerActiveChange = false;
+	}
+	if (pwr::isComboPowerDeActiveChange) {
+		pwr::isComboPowerDeActiveChange = false;
+	}
 }

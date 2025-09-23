@@ -51,8 +51,26 @@ void bll::Update(bll::Ball& ball, pdl::Paddle& paddle, blk::Block blocks[], int 
 		ball.pos.y += paddle.size.y;
 		return;
 	}
-	ball.vel.normalize();
 
+	vec::Vector2 vel = ball.vel;
+
+	utl::Abs(vel.x);
+	utl::Abs(vel.y);
+
+	if (vel.y / vel.x < 1.0f/3.0f) {
+		ball.vel.x = 3 * ball.vel.x / vel.x;
+		ball.vel.y = ball.vel.y / vel.y;
+	}
+
+	if (pwr::isHomingPowerActive) {
+		ball.vel.x += (paddle.pos.x - ball.pos.x) * 1/(ball.pos.y-paddle.pos.y);
+	}
+
+	if (pwr::isHomingPowerDeActiveChange) {
+		ball.vel.y = 5.0f;
+	}
+
+	ball.vel.normalize();
 	ball.pos += ball.vel * rend::deltaTime;
 
 	if (CheckCollision(ball, paddle.pos, paddle.size)) {
@@ -67,6 +85,21 @@ void bll::Update(bll::Ball& ball, pdl::Paddle& paddle, blk::Block blocks[], int 
 		//utl::Clamp(rotationAmount, -25,25);
 
 		ball.vel.rotate(utl::DegreeToRadian(rotationAmount));
+	}
+	else if (pwr::isMirrorPowerActive) {
+		if (CheckCollision(ball, { (1.0f - paddle.pos.x),paddle.pos.y }, paddle.size)) {
+
+			//ball.vel.x += utl::Clamped(paddle.currentSpeed,-0.15f,0.15f );
+
+			ball.pos.y = paddle.pos.y + (paddle.size.y / 2) + (ball.size.y / 2);
+			ball.vel.y = utl::Abs(ball.vel.y);
+
+			float rotationAmount = 300.0f * ((1.0f - paddle.pos.x) - ball.pos.x);
+
+			//utl::Clamp(rotationAmount, -25,25);
+
+			ball.vel.rotate(utl::DegreeToRadian(rotationAmount));
+		}
 	}
 
 	for (int b = 0; b < blocksAmount; b++)
@@ -133,8 +166,11 @@ void bll::Draw(bll::Ball ball)
 	drw::Sprite(ball.activeTexture, ball.pos, ball.size);
 
 	if (!ball.isActive) {
-		//drw::Rectangle({ ball.pos.x + (ball.vel.x / 50.0f),ball.pos.y + (ball.vel.y / 50.0f) }, { 0.1,0.1 });
-		drw::Circle({ ball.pos.x + (ball.vel.x / 50.0f),ball.pos.y + (ball.vel.y / 50.0f) }, { 0.01,0.01 });
+		//drw::Circle({ ball.pos.x + (ball.vel.x / 50.0f),ball.pos.y + (ball.vel.y / 50.0f) }, { 0.0025,0.0025 });
+	
+		drw::Circle(ball.pos + ball.vel.normalized() * 0.075f, {0.005,0.005});
+		drw::Circle(ball.pos + ball.vel.normalized() * 0.05f, {0.004,0.004});
+		drw::Circle(ball.pos + ball.vel.normalized() * 0.025f, {0.003,0.003});
 	}
 }
 

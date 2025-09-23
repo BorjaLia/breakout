@@ -35,7 +35,7 @@ namespace blk {
 
 		//Powers
 
-		Power heldPower;
+		pwr::PowerType heldPowerType;
 
 		//color
 
@@ -44,8 +44,6 @@ namespace blk {
 		//base textures
 
 		rend::SpriteData activeTexture;
-
-		
 
 		//overlay textures
 		
@@ -66,7 +64,7 @@ namespace blk {
 
 	void Init(blk::Block& block);
 	void Reset(blk::Block& block);
-	void Update(blk::Block& block, pdl::Paddle& paddle);
+	void Update(blk::Block& block, pdl::Paddle& paddle, pwr::PowerDrop& powerDrop);
 	void Draw(blk::Block block);
 	void Sound(blk::Block& block);
 

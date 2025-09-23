@@ -11,15 +11,24 @@ namespace lvl {
 
 	struct LevelData {
 
+		int id = 0;
+
+		int hiScore = 0;
+		float bestTime = 0;
+
 		pdl::Paddle paddle;
 		bll::Ball ball;
 
 		int blockAmount;
 
-		blk::Block blocks[100];
+		blk::Block blocks[70];
+
+		int powerDropAmount = 10;
+		int availablePowerDrop = 0;
+		pwr::PowerDrop powerDrops[10];
 	};
 
-	void LoadLevelData(LevelData& levelData);
+	void NextAvailablePowerDrop(LevelData& levelData);
 	int BlocksLeft(LevelData levelData);
 
 }

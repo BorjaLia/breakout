@@ -1,7 +1,5 @@
 #pragma once
 #include "Globals.h"
-#include "PowerDrop.h"
-
 
 namespace pdl {
 
@@ -25,10 +23,6 @@ namespace pdl {
 
 		ctrl::Key rightKey = ctrl::Key::D;
 		ctrl::Key leftKey = ctrl::Key::A;
-
-		//Powers
-
-		Power activePower;
 
 		//textures
 

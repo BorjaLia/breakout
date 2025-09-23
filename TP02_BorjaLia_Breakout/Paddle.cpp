@@ -27,10 +27,6 @@ void pdl::Reset(pdl::Paddle& paddle)
 	
 	paddle.currentSpeed = 0;
 	paddle.defaultSpeed = pdl::Paddle().defaultSpeed;
-	
-	paddle.size = pdl::Paddle().size;
-
-	paddle.activePower = {};
 
 	paddle.activeTexture = paddle.normalTexture;
 }
@@ -57,6 +53,11 @@ void pdl::Update(pdl::Paddle& paddle)
 void pdl::Draw(pdl::Paddle paddle)
 {
 	//drw::Rectangle(paddle.pos,paddle.size);
+	if (pwr::isMirrorPowerActive) {
+		Color color = SKYBLUE;
+		color.a /= 2;
+		drw::Sprite(paddle.activeTexture, { (1.0f - paddle.pos.x) ,paddle.pos.y }, paddle.size, {0,0}, color);
+	}
 	drw::Sprite(paddle.activeTexture, paddle.pos, paddle.size);
 }
 

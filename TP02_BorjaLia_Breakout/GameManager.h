@@ -21,7 +21,6 @@ enum class SubMenus {
 
 };
 
-
 // Main Menu Buttons
 enum class MMButtons
 {
@@ -83,12 +82,13 @@ enum class PButtons {
 };
 
 void LoadSettings();
-void SaveSettings(int savedGraphics, vec::Vector2 savedWindowSize, int savedIsFullscreen);
+void SaveSettings();
 void LoadDefaultFiles();
 
 void BackgroundMusicManager(rend::AudioData& music);
 
 void InitMouse(btn::Button& mouse);
+void DeInitMouse(btn::Button& mouse);
 
 void InitMainMenuContext(btn::Container& container,btn::Button buttons[]);
 void InitSettingsContext(btn::Container& container, btn::Button buttons[]);
@@ -122,5 +122,8 @@ void PlayDraw(btn::Container& playContainer, btn::Button playButtons[], lvl::Lev
 void PlaySounds(lvl::LevelData& levelData);
 
 void LoadLevel(lvl::LevelData& levelData);
+void SaveLevel(lvl::LevelData& levelData);
 void InitLevel(lvl::LevelData& levelData);
 void ResetLevel(lvl::LevelData& levelData);
+
+void PowerManager(lvl::LevelData& levelData);
