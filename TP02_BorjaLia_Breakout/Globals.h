@@ -3,6 +3,8 @@
 #include "Utils_Borja.h"
 #include "PowerDrop.h"
 
+extern bool shouldReset;
+
 namespace sett{
 
 	extern rend::GraphicsLib graphics;
@@ -11,15 +13,14 @@ namespace sett{
 	extern vec::Vector2 resolution;
 
 	extern bool usePowers;
-	extern bool useLargePower;
-	extern bool useMirrorPower;
-	extern bool useHomingPower;
-	extern bool useMultiplyPower;
-	extern bool useComboPower;
 
 	extern ctrl::Key keyUp;
 	extern ctrl::Key keyLeft;
 	extern ctrl::Key keyRight;
+
+	extern bool changingKeyUp;
+	extern bool changingKeyLeft;
+	extern bool changingKeyRight;
 }
 
 extern bool devMode;
@@ -92,10 +93,10 @@ namespace blk {
 
 	extern	rend::SpriteData normalTexture;
 	extern	rend::SpriteData largeTexture;
-	extern	rend::SpriteData smallTexture;
-	extern	rend::SpriteData fastTexture;
-	extern	rend::SpriteData slowTexture;
 	extern	rend::SpriteData mirrorTexture;
+	extern	rend::SpriteData homingTexture;
+	extern	rend::SpriteData multiplyTexture;
+	extern	rend::SpriteData comboTexture;
 
 	extern	rend::SpriteData fullTexture;
 	extern	rend::SpriteData mediumTexture;

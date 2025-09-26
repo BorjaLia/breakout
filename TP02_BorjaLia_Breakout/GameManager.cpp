@@ -1,5 +1,10 @@
 #include "GameManager.h"
 
+void CopyDllFiles()
+{
+
+}
+
 void LoadSettings()
 {
 	rend::activeGraphics = (rend::GraphicsLib)stoi(utl::SearchInFile(settingsFilePath.c_str(), "graphics"));
@@ -9,6 +14,18 @@ void LoadSettings()
 	rend::windowSize.y = stoi(utl::SearchInFile(settingsFilePath.c_str(), "resolution_height"));
 
 	isFullscreen = stoi(utl::SearchInFile(settingsFilePath.c_str(), "fullscreen"));
+
+	sett::graphics = rend::activeGraphics;
+
+	sett::fullscreen = isFullscreen;
+	sett::resolution = { rend::windowSize.x ,rend::windowSize.y};
+
+	sett::usePowers = stoi(utl::SearchInFile(settingsFilePath.c_str(), "use_powers"));
+
+	sett::keyUp = (ctrl::Key)stoi(utl::SearchInFile(settingsFilePath.c_str(), "key_up"));
+	sett::keyLeft = (ctrl::Key)stoi(utl::SearchInFile(settingsFilePath.c_str(), "key_left"));;
+	sett::keyRight = (ctrl::Key)stoi(utl::SearchInFile(settingsFilePath.c_str(), "key_right"));;
+
 }
 
 void SaveSettings() {
@@ -19,12 +36,6 @@ void SaveSettings() {
 	utl::SaveToFile(settingsFilePath.c_str(), "resolution_height", (int)sett::resolution.y);
 
 	utl::SaveToFile(settingsFilePath.c_str(), "use_powers", (int)sett::usePowers);
-
-	utl::SaveToFile(settingsFilePath.c_str(), "use_large", (int)sett::usePowers);
-	utl::SaveToFile(settingsFilePath.c_str(), "use_mirror", (int)sett::usePowers);
-	utl::SaveToFile(settingsFilePath.c_str(), "use_homing", (int)sett::usePowers);
-	utl::SaveToFile(settingsFilePath.c_str(), "use_combo", (int)sett::usePowers);
-	utl::SaveToFile(settingsFilePath.c_str(), "use_multiply", (int)sett::usePowers);
 
 	utl::SaveToFile(settingsFilePath.c_str(), "use_multiply", (int)sett::usePowers);
 }
@@ -161,6 +172,7 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 	{
 		buttons[b].signalTimerLimit = 0.1f;
 		buttons[b].size = { 0.2,0.1 };
+		buttons[b].pos = { 0.5,0.5 };
 		buttons[b].clickedOffset = { 0,-0.1f };
 		buttons[b].textColor = WHITE;
 		buttons[b].useText = true;
@@ -175,10 +187,59 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 		buttons[b].activeTexture = rend::defaultButtonMainTexture;
 	}
 
-	buttons[(int)SButtons::RENDERER].text = "Renderer";
+	std::string renderer = "";
+
+	switch (sett::graphics)
+	{
+	case rend::GraphicsLib::RAYLIB: {
+		renderer = "Raylib";
+		break;
+	}
+	case rend::GraphicsLib::SIGIL: {
+		renderer = "Sigil";
+		break;
+	}
+	default:
+		break;
+	}
+
+	buttons[(int)SButtons::RENDERER].text = renderer;
 	buttons[(int)SButtons::RENDERER].pos = { 0.8,0.8 };
 
 	btn::Init(buttons[(int)SButtons::RENDERER], container, true);
+
+	buttons[(int)SButtons::FULLSCREEN].text = "Fullscreen";
+	buttons[(int)SButtons::FULLSCREEN].pos = { 0.8,0.7 };
+
+	btn::Init(buttons[(int)SButtons::FULLSCREEN], container, true);
+
+	buttons[(int)SButtons::RESOLUTION].text = "Resolution";
+	buttons[(int)SButtons::RESOLUTION].pos = { 0.8,0.6 };
+
+	btn::Init(buttons[(int)SButtons::RESOLUTION], container, true);
+
+	buttons[(int)SButtons::USE_POWERS].text = "Use Powers";
+	buttons[(int)SButtons::USE_POWERS].pos = { 0.8,0.5 };
+
+	btn::Init(buttons[(int)SButtons::USE_POWERS], container, true);
+
+	buttons[(int)SButtons::KEY_UP].text = "Key up";
+	buttons[(int)SButtons::KEY_UP].pos = { 0.4,0.6 };
+	buttons[(int)SButtons::KEY_UP].size = { 0.1,0.1 };
+
+	btn::Init(buttons[(int)SButtons::KEY_UP], container, true);
+
+	buttons[(int)SButtons::KEY_LEFT].text = "key Left";
+	buttons[(int)SButtons::KEY_LEFT].pos = { 0.6,0.6 };
+	buttons[(int)SButtons::KEY_LEFT].size = { 0.1,0.1 };
+
+	btn::Init(buttons[(int)SButtons::KEY_LEFT], container, true);
+
+	buttons[(int)SButtons::KEY_RIGHT].text = "Key Right";
+	buttons[(int)SButtons::KEY_RIGHT].pos = { 0.5,0.7 };
+	buttons[(int)SButtons::KEY_RIGHT].size = { 0.1,0.1 };
+
+	btn::Init(buttons[(int)SButtons::KEY_RIGHT], container, true);
 
 
 	buttons[(int)SButtons::APPLY].text = "Apply";
@@ -437,18 +498,18 @@ void InitPlayContext(btn::Container& playContainer, btn::Button playButtons[])
 	btn::Init(playButtons[(int)PButtons::EXIT], playContainer, true);
 
 	blk::normalTexture.file = "res/sprites/BrickTexture.png";
-	blk::largeTexture.file = "res/sprites/BrickTexture.png";
-	blk::smallTexture.file = "res/sprites/BrickTexture.png";
-	blk::fastTexture.file = "res/sprites/BrickTexture.png";
-	blk::slowTexture.file = "res/sprites/BrickTexture.png";
-	blk::mirrorTexture.file = "res/sprites/BrickTexture.png";
+	blk::largeTexture.file = "res/sprites/LargeBrickTexture.png";
+	blk::mirrorTexture.file = "res/sprites/MirrorBrickTexture.png";
+	blk::homingTexture.file = "res/sprites/HomingBrickTexture.png";
+	blk::multiplyTexture.file = "res/sprites/MultBrickTexture.png";
+	blk::comboTexture.file = "res/sprites/ComboBrickTexture.png";
 
 	drw::InitSpriteData(blk::normalTexture);
 	drw::InitSpriteData(blk::largeTexture);
-	drw::InitSpriteData(blk::smallTexture);
-	drw::InitSpriteData(blk::fastTexture);
-	drw::InitSpriteData(blk::slowTexture);
 	drw::InitSpriteData(blk::mirrorTexture);
+	drw::InitSpriteData(blk::homingTexture);
+	drw::InitSpriteData(blk::multiplyTexture);
+	drw::InitSpriteData(blk::comboTexture);
 
 	blk::fullTexture.file = "res/sprites/Full.png";
 	blk::mediumTexture.file = "res/sprites/Medium.png";
@@ -465,7 +526,6 @@ void InitPlayContext(btn::Container& playContainer, btn::Button playButtons[])
 	snd::Init(blk::blockHitSound);
 	snd::Init(blk::blockBrokenSound);
 	snd::Init(blk::blockBrokenPowerSound);
-
 }
 
 void MouseUpdate(btn::Button& mouse)
@@ -525,7 +585,83 @@ void LevelsUpdate(btn::Container& container, btn::Container& gridContainer, btn:
 
 void SettingsUpdate(btn::Button settingsButtons[], SubMenus& subMenu)
 {
+	if (sett::changingKeyUp || sett::changingKeyLeft || sett::changingKeyRight) {
+
+
+
+	}
+
+
+
 	btn::UpdateInput(settingsButtons, (int)SButtons::AMOUNT);
+
+	if (settingsButtons[(int)SButtons::RENDERER].signal) {
+
+		switch (sett::graphics)
+		{
+		case rend::GraphicsLib::RAYLIB: {
+			sett::graphics = rend::GraphicsLib::SIGIL;
+			settingsButtons[(int)SButtons::RENDERER].text = "Sigil";
+			break;
+		}
+		case rend::GraphicsLib::SIGIL: {
+			sett::graphics = rend::GraphicsLib::RAYLIB;
+			settingsButtons[(int)SButtons::RENDERER].text = "Raylib";
+			break;
+		}
+		default:
+			break;
+		}
+
+		if (sett::graphics != rend::activeGraphics) {
+			shouldReset = true;
+		}
+		else {
+			shouldReset = false;
+		}
+	}
+	if (settingsButtons[(int)SButtons::FULLSCREEN].signal) {
+		
+		sett::fullscreen = !sett::fullscreen;
+
+		if (sett::fullscreen != isFullscreen) {
+			shouldReset = true;
+		}
+		else {
+			shouldReset = false;
+		}
+
+	}
+	if (settingsButtons[(int)SButtons::RESOLUTION].signal) {
+		
+	}
+	if (settingsButtons[(int)SButtons::USE_POWERS].signal) {
+		
+	}
+	if (settingsButtons[(int)SButtons::KEY_UP].signal) {
+		sett::changingKeyUp = true;
+	}
+	if (settingsButtons[(int)SButtons::KEY_LEFT].signal) {
+		sett::changingKeyLeft = true;
+		
+	}
+	if (settingsButtons[(int)SButtons::KEY_RIGHT].signal) {
+		sett::changingKeyRight = true;
+		
+	}
+
+
+
+
+	if (settingsButtons[(int)SButtons::APPLY].signal) {
+		SaveSettings();
+		if (shouldReset) {
+			subMenu = SubMenus::EXIT;
+		}
+		else {
+			subMenu = SubMenus::MAIN;
+		}
+	}
 
 	if (settingsButtons[(int)SButtons::EXIT].signal) {
 		subMenu = SubMenus::MAIN;
@@ -892,6 +1028,12 @@ void LoadLevel(lvl::LevelData& levelData)
 			m++;
 		}
 
+		if (sett::usePowers) {
+			for (int i = 0; i < 24; i++) {
+
+			}
+		}
+
 		//levelData.blocks[3].heldPowerType = pwr::PowerType::HOMING;
 
 		break;
@@ -975,6 +1117,8 @@ void LoadLevel(lvl::LevelData& levelData)
 	default:
 		break;
 	}
+
+
 
 	levelData.hiScore = stoi(utl::SearchInFile(levelFile.c_str(), "best_score"));
 	levelData.bestTime = stoi(utl::SearchInFile(levelFile.c_str(), "best_time"));

@@ -35,10 +35,10 @@ void pdl::Input(pdl::Paddle& paddle)
 {
 	paddle.currentSpeed = 0;
 
-	if (ctrl::GetKeyDown(paddle.leftKey)) {
+	if (ctrl::GetKeyDown(sett::keyLeft)) {
 		paddle.currentSpeed -= paddle.defaultSpeed;
 	}
-	if (ctrl::GetKeyDown(paddle.rightKey)) {
+	if (ctrl::GetKeyDown(sett::keyRight)) {
 		paddle.currentSpeed += paddle.defaultSpeed;
 	}
 }

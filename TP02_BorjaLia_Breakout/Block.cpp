@@ -92,11 +92,15 @@ void blk::Update(blk::Block& block, pdl::Paddle& paddle,pwr::PowerDrop& powerDro
 		break;
 	}
 	case pwr::PowerType::HOMING: {
-		block.activeTexture = mirrorTexture;
+		block.activeTexture = homingTexture;
 		break;
 	}
 	case pwr::PowerType::MULTIPLY: {
-		block.activeTexture = mirrorTexture;
+		block.activeTexture = multiplyTexture;
+		break;
+	}
+	case pwr::PowerType::COMBO: {
+		block.activeTexture = comboTexture;
 		break;
 	}
 	default:

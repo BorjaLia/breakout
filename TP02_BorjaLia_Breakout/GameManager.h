@@ -50,6 +50,12 @@ enum class Levels {
 enum class SButtons
 {
 	RENDERER,
+	FULLSCREEN,
+	RESOLUTION,
+	USE_POWERS,
+	KEY_UP,
+	KEY_LEFT,
+	KEY_RIGHT,
 	APPLY,
 	EXIT,
 	AMOUNT
@@ -80,6 +86,8 @@ enum class PButtons {
 	EXIT,
 	AMOUNT
 };
+
+void CopyDllFiles();
 
 void LoadSettings();
 void SaveSettings();

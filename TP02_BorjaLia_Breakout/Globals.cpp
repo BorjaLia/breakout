@@ -1,21 +1,21 @@
 #include "Globals.h"
 
+bool shouldReset = true;
+
 rend::GraphicsLib sett::graphics = (rend::GraphicsLib)0;
 
 bool sett::fullscreen = 0;
 vec::Vector2 sett::resolution = {1920,1080};
 
 bool sett::usePowers = 1;
-bool sett::useLargePower = 1;
-bool sett::useMirrorPower = 1;
-bool sett::useHomingPower = 1;
-bool sett::useMultiplyPower = 1;
-bool sett::useComboPower = 1;
 
 ctrl::Key sett::keyUp = (ctrl::Key)87;
 ctrl::Key sett::keyLeft = (ctrl::Key)65;
 ctrl::Key sett::keyRight = (ctrl::Key)68;
 
+bool sett::changingKeyUp = false;
+bool sett::changingKeyLeft = false;
+bool sett::changingKeyRight = false;
 
 bool devMode = false;
 
@@ -74,10 +74,10 @@ rend::SpriteData spr::defaultPaddleTexture = {};
 
 rend::SpriteData blk::normalTexture;
 rend::SpriteData blk::largeTexture;
-rend::SpriteData blk::smallTexture;
-rend::SpriteData blk::fastTexture;
-rend::SpriteData blk::slowTexture;
 rend::SpriteData blk::mirrorTexture;
+rend::SpriteData blk::homingTexture;
+rend::SpriteData blk::multiplyTexture;
+rend::SpriteData blk::comboTexture;
 
 rend::SpriteData blk::fullTexture;
 rend::SpriteData blk::mediumTexture;

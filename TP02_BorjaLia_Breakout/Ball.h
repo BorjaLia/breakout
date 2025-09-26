@@ -29,10 +29,6 @@ namespace bll {
 
 		vec::Vector2 size = { 0.008,0.008 };
 
-		//Control
-
-		ctrl::Key startKey = ctrl::Key::W;
-
 		//textures
 
 		rend::SpriteData activeTexture;

@@ -19,11 +19,6 @@ namespace pdl {
 
 		vec::Vector2 size = { 0.15,0.025 };
 
-		//Controls
-
-		ctrl::Key rightKey = ctrl::Key::D;
-		ctrl::Key leftKey = ctrl::Key::A;
-
 		//textures
 
 		rend::SpriteData activeTexture;

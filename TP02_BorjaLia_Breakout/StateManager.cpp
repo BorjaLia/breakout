@@ -19,7 +19,7 @@ void GameLoop()
 	LoadSettings();
 	LoadDefaultFiles();
 
-	rend::activeGraphics = (rend::GraphicsLib)2;
+	//rend::activeGraphics = (rend::GraphicsLib)2;
 	rend::nextGraphics = rend::activeGraphics;
 	rend::OpenWindow(rend::windowSize, gameTitle.c_str(), isFullscreen);
 	snd::StartAudioDevice();
@@ -61,10 +61,27 @@ void GameLoop()
 	btn::Container settingsContainer;
 
 	btn::Button rendererSettingsButton;
+	btn::Button fullscreenSettingsButton;
+	btn::Button resolutionSettingsButton;
+	btn::Button usePowersSettingsButton;
+	btn::Button keyUpSettingsButton;
+	btn::Button keyLeftSettingsButton;
+	btn::Button keyRightSettingsButton;
 	btn::Button applySettingsButton;
 	btn::Button exitSettingsButton;
 
-	btn::Button settingsButtons[] = { rendererSettingsButton, applySettingsButton, exitSettingsButton };
+	btn::Button settingsButtons[] = { 
+		rendererSettingsButton,
+		fullscreenSettingsButton,
+		resolutionSettingsButton,
+		usePowersSettingsButton,
+		keyUpSettingsButton,
+		keyLeftSettingsButton,
+		keyRightSettingsButton,
+		applySettingsButton,
+		exitSettingsButton,
+		applySettingsButton,
+		exitSettingsButton };
 
 	InitSettingsContext(settingsContainer, settingsButtons);
 
