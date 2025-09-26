@@ -201,6 +201,7 @@ xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Levels.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Paddle.cpp" />
     <ClCompile Include="Power.cpp" />
     <ClCompile Include="PowerDrop.cpp" />
@@ -212,6 +213,7 @@ xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Levels.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Paddle.h" />
     <ClInclude Include="Power.h" />
     <ClInclude Include="PowerDrop.h" />

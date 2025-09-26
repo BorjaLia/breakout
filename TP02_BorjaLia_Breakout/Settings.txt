@@ -1,0 +1,19 @@
+# Render engine
+graphics = 2 | 0 = NONE		1 = RAYLIB 	2 = SIGIL
+
+# Resolution
+
+fullscreen = 0 | 0 = windowed	1 = fullscreen
+
+resolution_width = 1920
+resolution_height = 1080
+
+# Power settings
+
+use_powers = 1
+
+# Key Binds
+
+key_up = 87
+key_left = 65
+key_right = 68

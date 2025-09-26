@@ -1,35 +1,11 @@
 #pragma once
 #include <string>
 #include "Utils_Borja.h"
+#include "MainMenu.h"
 #include "Globals.h"
 #include "Levels.h"
 
-enum class GameStates {
 
-	MAIN_MENU,
-	PLAYING
-};
-
-enum class SubMenus {
-
-	MAIN,
-	SETTINGS,
-	LEVEL_SELECTOR,
-	CREDTIS,
-	ENDSCREEN,
-	EXIT
-
-};
-
-// Main Menu Buttons
-enum class MMButtons
-{
-	PLAY,
-	SETTINGS,
-	CREDITS,
-	EXIT,
-	AMOUNT
-};
 
 // Levels Menu Buttons
 enum class LButtons
@@ -87,8 +63,6 @@ enum class PButtons {
 	AMOUNT
 };
 
-void CopyDllFiles();
-
 void LoadSettings();
 void SaveSettings();
 void LoadDefaultFiles();
@@ -98,7 +72,6 @@ void BackgroundMusicManager(rend::AudioData& music);
 void InitMouse(btn::Button& mouse);
 void DeInitMouse(btn::Button& mouse);
 
-void InitMainMenuContext(btn::Container& container,btn::Button buttons[]);
 void InitSettingsContext(btn::Container& container, btn::Button buttons[]);
 void InitEndScreenContext(btn::Container& container, btn::Button buttons[]);
 void InitCreditsContext(btn::Container& container, btn::Button buttons[]);
@@ -108,7 +81,6 @@ void InitPlayContext(btn::Container& playContainer, btn::Button playButtons[]);
 
 void MouseUpdate(btn::Button& mouse);
 
-void MainMenuUpdate(btn::Button mainMenuButtons[], SubMenus& subMenu);
 void LevelsUpdate(btn::Container& container, btn::Container& gridContainer, btn::Button levelsButtons[], btn::Button gridButtons[], SubMenus& subMenu, GameStates& gameState);
 void SettingsUpdate(btn::Button settingsButtons[], SubMenus& subMenu);
 void EndScreenUpdate(btn::Button endScreenButtons[], SubMenus& subMenu, GameStates& gameState, lvl::LevelData& activeLevel);
@@ -119,7 +91,6 @@ void PlayUpdate(btn::Container& playContainer, btn::Button playButtons[], SubMen
 
 void MouseDraw(btn::Button mouse);
 
-void MainMenuDraw(btn::Container mainMenuContainer,btn::Button mainMenuButtons[]);
 void LevelsDraw(btn::Container& container, btn::Container& gridContainer, btn::Button buttons[], btn::Button gridButtons[]);
 void SettingsDraw(btn::Container settingsContainer,btn::Button settingsButtons[]);
 void EndScreenDraw(btn::Container endScreenContainer,btn::Button endScreenButtons[]);

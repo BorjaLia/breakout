@@ -3,6 +3,23 @@
 #include "Utils_Borja.h"
 #include "PowerDrop.h"
 
+enum class GameStates {
+
+	MAIN_MENU,
+	PLAYING
+};
+
+enum class SubMenus {
+
+	MAIN,
+	SETTINGS,
+	LEVEL_SELECTOR,
+	CREDTIS,
+	ENDSCREEN,
+	EXIT
+
+};
+
 extern bool shouldReset;
 
 namespace sett{
