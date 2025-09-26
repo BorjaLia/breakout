@@ -6,6 +6,15 @@
 #include "Ball.h"
 #include "Block.h"
 
+
+enum class Levels {
+	LEVEL1,
+	LEVEL2,
+	LEVEL3,
+	LEVEL4,
+	AMOUNT
+};
+
 namespace lvl {
 
 
@@ -31,4 +40,9 @@ namespace lvl {
 	void NextAvailablePowerDrop(LevelData& levelData);
 	int BlocksLeft(LevelData levelData);
 
+
+	void LoadLevel(lvl::LevelData& levelData);
+	void SaveLevel(lvl::LevelData& levelData);
+	void InitLevel(lvl::LevelData& levelData);
+	void ResetLevel(lvl::LevelData& levelData);
 }
