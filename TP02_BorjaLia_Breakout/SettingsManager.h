@@ -25,3 +25,7 @@ void SaveSettings();
 void InitSettingsContext(btn::Container& container, btn::Button buttons[]);
 void SettingsUpdate(btn::Button settingsButtons[], SubMenus& subMenu);
 void SettingsDraw(btn::Container settingsContainer, btn::Button settingsButtons[]);
+
+ctrl::Key GetValidKey();
+
+void SetControlKeyText(btn::Button& button, ctrl::Key selectedKey);

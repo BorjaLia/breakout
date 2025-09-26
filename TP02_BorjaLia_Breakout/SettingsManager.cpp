@@ -143,13 +143,48 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 
 void SettingsUpdate(btn::Button settingsButtons[], SubMenus& subMenu)
 {
-	if (sett::changingKeyUp || sett::changingKeyLeft || sett::changingKeyRight) {
+	if (sett::changingKeyUp) {
 
+		ctrl::Key chosenKey = GetValidKey();
 
-
+		if (chosenKey != ctrl::Key::NULL_KEY) {
+			utl::SaveToFile(settingsFilePath.c_str(), "key_up", (int)chosenKey);
+			sett::keyUp = chosenKey;
+			sett::changingKeyUp = false;
+			SetControlKeyText(settingsButtons[(int)SButtons::KEY_UP],chosenKey);
+		}
+		else {
+			return;
+		}
 	}
+	if (sett::changingKeyLeft) {
 
+		ctrl::Key chosenKey = GetValidKey();
 
+		if (chosenKey != ctrl::Key::NULL_KEY) {
+			utl::SaveToFile(settingsFilePath.c_str(), "key_left", (int)chosenKey);
+			sett::keyLeft = chosenKey;
+			sett::changingKeyLeft = false;
+			SetControlKeyText(settingsButtons[(int)SButtons::KEY_LEFT],chosenKey);
+		}
+		else {
+			return;
+		}
+	}
+	if (sett::changingKeyRight) {
+
+		ctrl::Key chosenKey = GetValidKey();
+
+		if (chosenKey != ctrl::Key::NULL_KEY) {
+			utl::SaveToFile(settingsFilePath.c_str(), "key_right", (int)chosenKey);
+			sett::keyRight = chosenKey;
+			sett::changingKeyRight = false;
+			SetControlKeyText(settingsButtons[(int)SButtons::KEY_RIGHT],chosenKey);
+		}
+		else {
+			return;
+		}
+	}
 
 	btn::UpdateInput(settingsButtons, (int)SButtons::AMOUNT);
 
@@ -208,9 +243,6 @@ void SettingsUpdate(btn::Button settingsButtons[], SubMenus& subMenu)
 
 	}
 
-
-
-
 	if (settingsButtons[(int)SButtons::APPLY].signal) {
 		SaveSettings();
 		if (shouldReset) {
@@ -229,4 +261,52 @@ void SettingsUpdate(btn::Button settingsButtons[], SubMenus& subMenu)
 void SettingsDraw(btn::Container settingsContainer, btn::Button settingsButtons[])
 {
 	btn::Draw(settingsContainer, settingsButtons, (int)SButtons::AMOUNT);
+}
+
+ctrl::Key GetValidKey()
+{
+	ctrl::Key key = ctrl::GetKeyDown();
+
+	if (((int)key > (int)ctrl::Key::A && (int)key < (int)ctrl::Key::Z) || ((int)key > (int)ctrl::Key::RIGHT && (int)key < (int)ctrl::Key::UP)) {
+		return key;
+	}
+	else {
+		return ctrl::Key::NULL_KEY;
+	}
+
+
+}
+
+void SetControlKeyText(btn::Button& button, ctrl::Key selectedKey)
+{
+	if ((int)selectedKey <= (int)ctrl::Key::Z) {
+		button.text = (char)selectedKey;
+	}
+	else {
+		switch (selectedKey)
+		{
+		case ctrl::Key::RIGHT: {
+
+			button.text = ">";
+			break;
+		}
+		case ctrl::Key::LEFT: {
+
+			button.text = "<";
+			break;
+		}
+		case ctrl::Key::DOWN: {
+
+			button.text = "v";
+			break;
+		}
+		case ctrl::Key::UP: {
+
+			button.text = "^";
+			break;
+		}
+		default:
+			break;
+		}
+	}
 }
