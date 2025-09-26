@@ -1,0 +1,4 @@
+# Level Data
+
+best_score = 150
+best_time = 1

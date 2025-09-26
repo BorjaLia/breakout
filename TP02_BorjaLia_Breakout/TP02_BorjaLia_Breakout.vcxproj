@@ -100,6 +100,16 @@
       <AdditionalLibraryDirectories>$(SolutionDir)src;$(SolutionDir)lib\raylib-5.5_win64_msvc16\lib;$(SolutionDir)lib\BorjaLib\lib;$(SolutionDir)lib\sigil-vc2015-win64\lib;%(AdditionalIncludeDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Utils_Borja.lib;raylib.lib;winmm.lib;sigil.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)TP02_BorjaLia_Breakout\lib\sigil-vc2015-win64\lib\*.dll" "$(OutDir)" /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\config" /i /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\data" /i /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -119,6 +129,16 @@
       <AdditionalLibraryDirectories>$(SolutionDir)src;$(SolutionDir)lib\raylib-5.5_win64_msvc16\lib;$(SolutionDir)lib\BorjaLib\lib;$(SolutionDir)lib\sigil-vc2015-win64\lib;%(AdditionalIncludeDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Utils_Borja.lib;raylib.lib;winmm.lib;sigil.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)TP02_BorjaLia_Breakout\lib\sigil-vc2015-win64\lib\*.dll" "$(OutDir)" /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\config" /i /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\data" /i /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -134,6 +154,16 @@
       <AdditionalLibraryDirectories>$(SolutionDir)src;$(SolutionDir)lib\raylib-5.5_win64_msvc16\lib;$(SolutionDir)lib\BorjaLib\lib;$(SolutionDir)lib\sigil-vc2015-win64\lib;%(AdditionalIncludeDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Utils_Borja.lib;raylib.lib;winmm.lib;sigil.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)TP02_BorjaLia_Breakout\lib\sigil-vc2015-win64\lib\*.dll" "$(OutDir)" /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\config" /i /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\data" /i /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -153,6 +183,16 @@
       <AdditionalLibraryDirectories>$(SolutionDir)src;$(SolutionDir)lib\raylib-5.5_win64_msvc16\lib;$(SolutionDir)lib\BorjaLib\lib;$(SolutionDir)lib\sigil-vc2015-win64\lib;%(AdditionalIncludeDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Utils_Borja.lib;raylib.lib;winmm.lib;sigil.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)TP02_BorjaLia_Breakout\lib\sigil-vc2015-win64\lib\*.dll" "$(OutDir)" /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\config" /i /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\data" /i /y
+
+xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ball.cpp" />
