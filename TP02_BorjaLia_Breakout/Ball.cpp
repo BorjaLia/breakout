@@ -25,7 +25,7 @@ void bll::Reset(bll::Ball& ball)
 
 void bll::Input(bll::Ball& ball)
 {
-	if (ctrl::GetKeyDown(sett::keyUp)) {
+	if (ctrl::IsKeyHeldDown(sett::keyUp)) {
 		ball.isActive = true;
 	}
 }

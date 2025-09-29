@@ -1,11 +1,11 @@
 #include "Globals.h"
 
-bool shouldReset = true;
+bool changedSettings = false;
 
-rend::GraphicsLib sett::graphics = (rend::GraphicsLib)0;
+rend::GraphicsLib sett::graphics = rend::GraphicsLib::NONE;
 
-bool sett::fullscreen = 0;
-vec::Vector2 sett::resolution = {1920,1080};
+rend::WindowType sett::windowType = rend::WindowType::WINDOWED;
+rend::Resolution sett::resolution = rend::Resolution::FHD;
 
 bool sett::usePowers = 1;
 
@@ -17,7 +17,10 @@ bool sett::changingKeyUp = false;
 bool sett::changingKeyLeft = false;
 bool sett::changingKeyRight = false;
 
+float frameRate = 0;
+
 bool devMode = false;
+bool devModeChange = false;
 
 std::string settingsFilePath = "config/Settings.txt";
 std::string gameTitle = "Breakout!";

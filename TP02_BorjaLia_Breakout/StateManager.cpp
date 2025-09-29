@@ -130,6 +130,9 @@ void GameLoop()
 
 	InitPlayContext(playContainer,playButtons);
 
+	float frameUpdateCounter = 0;
+	float framesPerUpdateCounter = 0;
+
 	while (isRunning) {
 
 		//systems update
@@ -145,6 +148,14 @@ void GameLoop()
 
 		rend::deltaTime = rend::GetDeltaTime();
 
+		if (frameUpdateCounter > 0.25f) {
+			frameRate = framesPerUpdateCounter * 4;
+			frameUpdateCounter = 0;
+			framesPerUpdateCounter = 0;
+		}
+		frameUpdateCounter += rend::deltaTime;
+		framesPerUpdateCounter++;
+
 		rend::windowSize = rend::GetWindowSize();
 		rend::mousePos = rend::GetMousePos();
 
@@ -152,12 +163,18 @@ void GameLoop()
 
 		//Inputs
 
-		if (ctrl::GetKeyDown(ctrl::Key::F1)) {
-			devMode = !devMode;
+		if (ctrl::IsKeyHeldDown(ctrl::Key::F1)) {
+			if (!devModeChange) {
+				devMode = !devMode;
+			}
+			devModeChange = true;
+		}
+		else {
+			devModeChange = false;
 		}
 
 		if (devMode) {
-			if (ctrl::GetKeyDown(ctrl::Key::F2)) {
+			if (ctrl::IsKeyHeldDown(ctrl::Key::F2)) {
 				rend::ChangeRenderer();
 			}
 		}
@@ -297,6 +314,12 @@ void GameLoop()
 
 			break;
 		}
+		}
+
+		if (devMode) {
+			std::string framerateString = std::to_string((int)frameRate);
+			drw::Rectangle({ 0.025f,0.965f }, { 0.030, 0.025 }, DARKGREY);
+			drw::Text(framerateString.c_str(), rend::defaultFont, { 0.025f,0.965f }, 30, { 0,0 }, LIME);
 		}
 
 		drw::End();

@@ -54,6 +54,10 @@ void pwr::Reset(pwr::PowerDrop& powerDrop)
 
 void pwr::Update(pwr::PowerDrop& powerDrop, vec::Vector2 pos, vec::Vector2 size)
 {
+	if (!sett::usePowers) {
+		return;
+	}
+
 	if (!powerDrop.isActive) {
 		return;
 	}
@@ -118,6 +122,9 @@ void pwr::Update(pwr::PowerDrop& powerDrop, vec::Vector2 pos, vec::Vector2 size)
 
 void pwr::Draw(pwr::PowerDrop powerDrop)
 {
+	if (!sett::usePowers) {
+		return;
+	}
 	if (powerDrop.isActive) {
 		drw::Circle(powerDrop.pos, powerDrop.size, powerDrop.color);
 	}
@@ -129,6 +136,9 @@ void pwr::Sound(pwr::PowerDrop powerDrop)
 
 bool pwr::CheckCollision(pwr::PowerDrop& powerDrop, vec::Vector2 pos, vec::Vector2 size)
 {
+	if (!sett::usePowers) {
+		return false;
+	}
 	if (!(powerDrop.pos.x - powerDrop.size.x / 2 < pos.x + size.x / 2 && powerDrop.pos.x + powerDrop.size.x / 2 > pos.x - size.x / 2)) {
 		return false;
 	}

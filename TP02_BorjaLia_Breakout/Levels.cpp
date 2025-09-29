@@ -107,12 +107,6 @@ void lvl::LoadLevel(lvl::LevelData& levelData)
 			m++;
 		}
 
-		if (sett::usePowers) {
-			for (int i = 0; i < 24; i++) {
-
-			}
-		}
-
 		//levelData.blocks[3].heldPowerType = pwr::PowerType::HOMING;
 
 		break;
@@ -197,7 +191,12 @@ void lvl::LoadLevel(lvl::LevelData& levelData)
 		break;
 	}
 
-
+	if (!sett::usePowers) {
+		for (int i = 0; i < levelData.blockAmount; i++)
+		{
+			levelData.blocks[i].heldPowerType = pwr::PowerType::NONE;
+		}
+	}
 
 	levelData.hiScore = stoi(utl::SearchInFile(levelFile.c_str(), "best_score"));
 	levelData.bestTime = stoi(utl::SearchInFile(levelFile.c_str(), "best_time"));

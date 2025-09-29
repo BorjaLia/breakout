@@ -21,7 +21,6 @@ enum class SButtons
 
 void LoadSettings();
 void SaveSettings();
-
 void InitSettingsContext(btn::Container& container, btn::Button buttons[]);
 void SettingsUpdate(btn::Button settingsButtons[], SubMenus& subMenu);
 void SettingsDraw(btn::Container settingsContainer, btn::Button settingsButtons[]);

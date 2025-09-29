@@ -1,7 +1,9 @@
 #pragma once
 #include <iostream>
 #include "conio.h"
+
 //#include "windows.h"
+
 #include <fstream>
 #include <string>
 
@@ -147,12 +149,12 @@ namespace ctrl {
 		KP_ADD = 334,
 		KP_ENTER = 335,
 		KP_EQUAL = 336,
-		SIZE
+		SIZE = 349
 	};
 
 	bool IsMouseDown(ButtonMouse mouseButton);
 
-	bool GetKeyDown(Key key);
+	bool IsKeyHeldDown(Key key);
 	Key GetKeyDown();
 
 }
@@ -373,6 +375,8 @@ namespace con {
 
 namespace rend {
 
+//colors
+
 #define TRANSPARENT	{ 0, 0, 0, 0 }
 #define SEMITRANSPARENT	{ 0, 0, 0, 128 }
 
@@ -397,6 +401,25 @@ namespace rend {
 #define MINT		{ 0, 255, 128, 255 }
 #define BLUEBERRY		{ 0, 128, 255, 255 }
 
+//resolutions
+
+#define HD_RES {1280,720}
+#define FHD_RES {1920,1080}
+#define QHD_RES {2560,1440}
+#define UHD_RES {3480,2160}
+
+	enum class Resolution {
+		MANUAL,
+		HD,
+		FHD,
+		QHD,
+		UHD
+	};
+
+	enum class WindowType {
+		WINDOWED,
+		FULLSCREEN
+	};
 
 	enum class GraphicsLib {
 		NONE,
@@ -458,6 +481,8 @@ namespace rend {
 	extern rend::GraphicsLib activeGraphics;
 	extern rend::GraphicsLib nextGraphics;
 
+	extern rend::Resolution activeResolution;
+	
 	extern float deltaTime;
 
 	extern vec::Vector2 windowSize;

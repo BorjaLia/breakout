@@ -216,6 +216,11 @@ void PlaySounds(lvl::LevelData& levelData)
 
 void PowerManager(lvl::LevelData& levelData)
 {
+
+	if (!sett::usePowers) {
+		return;
+	}
+
 	pwr::largePowerTimer += rend::deltaTime;
 	pwr::mirrorPowerTimer += rend::deltaTime;
 	pwr::homingPowerTimer += rend::deltaTime;

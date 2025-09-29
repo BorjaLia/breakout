@@ -17,17 +17,16 @@ enum class SubMenus {
 	CREDTIS,
 	ENDSCREEN,
 	EXIT
-
 };
 
-extern bool shouldReset;
+extern bool changedSettings;
 
 namespace sett{
 
 	extern rend::GraphicsLib graphics;
 
-	extern bool fullscreen;
-	extern vec::Vector2 resolution;
+	extern rend::WindowType windowType;
+	extern rend::Resolution resolution;
 
 	extern bool usePowers;
 
@@ -40,7 +39,10 @@ namespace sett{
 	extern bool changingKeyRight;
 }
 
+extern float frameRate;
+
 extern bool devMode;
+extern bool devModeChange;
 
 extern std::string settingsFilePath;
 extern std::string gameTitle;

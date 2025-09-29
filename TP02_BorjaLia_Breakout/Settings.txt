@@ -5,8 +5,10 @@ graphics = 2 | 0 = NONE		1 = RAYLIB 	2 = SIGIL
 
 fullscreen = 0 | 0 = windowed	1 = fullscreen
 
-resolution_width = 1920
-resolution_height = 1080
+resolution = 2 | 0 = manual override	1 = HD	2 = FHD		3 = QHD 	4 = UHD
+
+resolution_width = 1920 | only for manual override
+resolution_height = 1080 | only for manual override
 
 # Power settings
 
@@ -14,6 +16,6 @@ use_powers = 1
 
 # Key Binds
 
-key_up = 65
+key_up = 87
 key_left = 65
 key_right = 68

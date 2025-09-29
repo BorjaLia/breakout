@@ -2,8 +2,5 @@
 #include "StateManager.h"
 
 void main() {
-	while (shouldReset) {
-		shouldReset = false;
-		GameLoop();
-	}
+	GameLoop();
 }
