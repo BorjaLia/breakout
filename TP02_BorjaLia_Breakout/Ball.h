@@ -46,7 +46,7 @@ namespace bll {
 	void Init(bll::Ball& ball);
 	void Reset(bll::Ball& ball);
 	void Input(bll::Ball& ball);
-	void Update(bll::Ball& ball,pdl::Paddle& paddle, blk::Block blocks[], int blocksAmount);
+	bool Update(bll::Ball& ball,pdl::Paddle& paddle, blk::Block blocks[], int blocksAmount);
 	void Draw(bll::Ball ball);
 	void Sound(bll::Ball ball);
 

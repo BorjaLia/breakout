@@ -1,11 +1,11 @@
 # Render engine
-graphics = 2 | 0 = NONE		1 = RAYLIB 	2 = SIGIL
+graphics = 1 | 0 = NONE		1 = RAYLIB 	2 = SIGIL
 
 # Resolution
 
-fullscreen = 0 | 0 = windowed	1 = fullscreen
+fullscreen = 1 | 0 = windowed	1 = fullscreen
 
-resolution = 2 | 0 = manual override	1 = HD	2 = FHD		3 = QHD 	4 = UHD
+resolution = 3 | 0 = manual override	1 = HD	2 = FHD		3 = QHD 	4 = UHD
 
 resolution_width = 1920 | only for manual override
 resolution_height = 1080 | only for manual override

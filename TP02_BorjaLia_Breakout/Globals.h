@@ -91,6 +91,8 @@ namespace pwr {
 	extern bool isHomingPowerDeActiveChange;
 	extern bool isComboPowerDeActiveChange;
 	extern bool isMultiplyPowerDeActiveChange;
+
+	extern float comboPowerMultiplier;
 }
 
 extern bool isGamePaused;
@@ -106,6 +108,21 @@ namespace spr {
 	extern rend::SpriteData slowPaddleTexture;
 	extern rend::SpriteData mirrorPaddleTexture;
 
+}
+
+namespace pwr {
+
+	extern rend::SpriteData largePowerDropTexture;
+	extern rend::SpriteData largePowerIcon;
+
+	extern rend::SpriteData mirrorPowerDropTexture;
+	extern rend::SpriteData mirrorPowerIcon;
+
+	extern rend::SpriteData homingPowerDropTexture;
+	extern rend::SpriteData homingPowerIcon;
+
+	extern rend::SpriteData comboPowerDropTexture;
+	extern rend::SpriteData comboPowerIcon;
 }
 
 namespace blk {

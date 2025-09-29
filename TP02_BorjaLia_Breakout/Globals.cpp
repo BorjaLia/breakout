@@ -68,12 +68,23 @@ bool pwr::isHomingPowerDeActiveChange = false;
 bool pwr::isComboPowerDeActiveChange = false;
 bool pwr::isMultiplyPowerDeActiveChange = false;
 
+float pwr::comboPowerMultiplier = 2.0f;
+
 bool isGamePaused = false;
 
 int minBallAngle = -60;
 int maxBallAngle = 60;
 
 rend::SpriteData spr::defaultPaddleTexture = {};
+
+rend::SpriteData pwr::largePowerDropTexture;
+rend::SpriteData pwr::largePowerIcon;
+rend::SpriteData pwr::mirrorPowerDropTexture;
+rend::SpriteData pwr::mirrorPowerIcon;
+rend::SpriteData pwr::homingPowerDropTexture;
+rend::SpriteData pwr::homingPowerIcon;
+rend::SpriteData pwr::comboPowerDropTexture;
+rend::SpriteData pwr::comboPowerIcon;
 
 rend::SpriteData blk::normalTexture;
 rend::SpriteData blk::largeTexture;
@@ -147,6 +158,24 @@ void InitLocalDefaults()
 	drw::InitSpriteData(menu::exitButtonHoveredTexture);
 	drw::InitSpriteData(menu::applyButtonTexture);
 	drw::InitSpriteData(menu::applyButtonHoveredTexture);
+
+	pwr::largePowerDropTexture.file = "res/sprites/BrickTexture.png";
+	pwr::largePowerIcon.file = "res/sprites/BrickTexture.png";
+	pwr::mirrorPowerDropTexture.file = "res/sprites/BrickTexture.png";
+	pwr::mirrorPowerIcon.file = "res/sprites/BrickTexture.png";
+	pwr::homingPowerDropTexture.file = "res/sprites/BrickTexture.png";
+	pwr::homingPowerIcon.file = "res/sprites/BrickTexture.png";
+	pwr::comboPowerDropTexture.file = "res/sprites/BrickTexture.png";
+	pwr::comboPowerIcon.file = "res/sprites/BrickTexture.png";
+
+	drw::InitSpriteData(pwr::largePowerDropTexture);
+	drw::InitSpriteData(pwr::largePowerIcon);
+	drw::InitSpriteData(pwr::mirrorPowerDropTexture);
+	drw::InitSpriteData(pwr::mirrorPowerIcon);
+	drw::InitSpriteData(pwr::homingPowerDropTexture);
+	drw::InitSpriteData(pwr::homingPowerIcon);
+	drw::InitSpriteData(pwr::comboPowerDropTexture);
+	drw::InitSpriteData(pwr::comboPowerIcon);
 }
 
 void DeInitLocalDefaults()
@@ -178,4 +207,13 @@ void DeInitLocalDefaults()
 	drw::DeInitSpriteData(menu::exitButtonHoveredTexture);
 	drw::DeInitSpriteData(menu::applyButtonTexture);
 	drw::DeInitSpriteData(menu::applyButtonHoveredTexture);
+
+	drw::DeInitSpriteData(pwr::largePowerDropTexture);
+	drw::DeInitSpriteData(pwr::largePowerIcon);
+	drw::DeInitSpriteData(pwr::mirrorPowerDropTexture);
+	drw::DeInitSpriteData(pwr::mirrorPowerIcon);
+	drw::DeInitSpriteData(pwr::homingPowerDropTexture);
+	drw::DeInitSpriteData(pwr::homingPowerIcon);
+	drw::DeInitSpriteData(pwr::comboPowerDropTexture);
+	drw::DeInitSpriteData(pwr::comboPowerIcon);
 }

@@ -91,11 +91,12 @@ void PlayInputUpdate(lvl::LevelData& levelData)
 	pdl::Input(levelData.paddle);
 	bll::Input(levelData.ball);
 	pdl::Update(levelData.paddle);
-	bll::Update(levelData.ball, levelData.paddle, levelData.blocks, levelData.blockAmount);
+	if (bll::Update(levelData.ball, levelData.paddle, levelData.blocks, levelData.blockAmount)) {
+		lvl::NextAvailablePowerDrop(levelData);
+	}
 
 	for (int i = 0; i < levelData.blockAmount; i++)
 	{
-		lvl::NextAvailablePowerDrop(levelData);
 		blk::Update(levelData.blocks[i], levelData.paddle, levelData.powerDrops[levelData.availablePowerDrop]);
 	}
 
@@ -195,11 +196,21 @@ void PlayDraw(btn::Container& playContainer, btn::Button playButtons[], lvl::Lev
 	std::string timer = "Time: ";
 	drw::Text((timer.append(std::to_string((int)levelTimer))).c_str(), rend::defaultFont, { 0.6f,0.965f }, 50);
 
-	if (pwr::isLargePowerActive) {
-		drw::Text("L!", rend::defaultFont, { 0.8f,0.965f }, 50);
+	//if (pwr::isLargePowerActive) {
+		Color transparency = { 255,255,255,255 };
+		if (pwr::largePowerTimer / pwr::largePowerTimerLimit > 0.5f) {
+			transparency.a = (pwr::largePowerTimerLimit / pwr::largePowerTimer) * 200 + 55;
+		}
+		drw::Sprite(pwr::largePowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 }, transparency);
+	//}
+	if (pwr::isMirrorPowerActive) {
+		drw::Sprite(pwr::mirrorPowerIcon, { 0.775,0.965f }, { 0.025f,0.025f });
 	}
 	if (pwr::isHomingPowerActive) {
-		drw::Text("H!", rend::defaultFont, { 0.9f,0.965f }, 50);
+		drw::Sprite(pwr::homingPowerIcon, { 0.825f,0.965f }, { 0.025f,0.025f });
+	}
+	if (pwr::isComboPowerActive) {
+		drw::Sprite(pwr::comboPowerIcon, { 0.875f,0.965f }, { 0.025f,0.025f });
 	}
 }
 

@@ -19,6 +19,8 @@ namespace pwr {
 		Color color;
 
 		PowerType powerType = PowerType::NONE;
+
+		rend::SpriteData activeTexture;
 	};
 
 	void Init(pwr::PowerDrop& powerDrop, vec::Vector2 pos, PowerType powerType);

@@ -15,22 +15,27 @@ void pwr::Init(pwr::PowerDrop& powerDrop, vec::Vector2 pos, PowerType powerType)
 		break;
 	case pwr::PowerType::LARGE:
 		powerDrop.color = GREEN;
+		powerDrop.activeTexture = pwr::largePowerDropTexture;
 		break;
 	case pwr::PowerType::MIRROR:
 		powerDrop.color = SKYBLUE;
+		powerDrop.activeTexture = pwr::mirrorPowerDropTexture;
 		break;
 	case pwr::PowerType::HOMING:
 		powerDrop.color = PINK;
+		powerDrop.activeTexture = pwr::homingPowerDropTexture;
 		break;
 	case pwr::PowerType::MULTIPLY:
 		powerDrop.color = ORANGE;
 		break;
 	case pwr::PowerType::COMBO:
 		powerDrop.color = DARKPURPLE;
+		powerDrop.activeTexture = pwr::comboPowerDropTexture;
 		break;
 	case pwr::PowerType::AMOUNT:
 		break;
 	default:
+		powerDrop.isActive = false;
 		break;
 	}
 
@@ -126,7 +131,8 @@ void pwr::Draw(pwr::PowerDrop powerDrop)
 		return;
 	}
 	if (powerDrop.isActive) {
-		drw::Circle(powerDrop.pos, powerDrop.size, powerDrop.color);
+		//drw::Circle(powerDrop.pos, powerDrop.size, powerDrop.color);
+		drw::Sprite(powerDrop.activeTexture,powerDrop.pos, powerDrop.size);
 	}
 }
 

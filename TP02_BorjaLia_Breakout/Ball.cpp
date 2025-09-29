@@ -30,8 +30,10 @@ void bll::Input(bll::Ball& ball)
 	}
 }
 
-void bll::Update(bll::Ball& ball, pdl::Paddle& paddle, blk::Block blocks[], int blocksAmount)
+bool bll::Update(bll::Ball& ball, pdl::Paddle& paddle, blk::Block blocks[], int blocksAmount)
 {
+	bool nextPowerDropSlot = false;
+
 	if (!ball.isActive) {
 
 		ball.vel.normalize();
@@ -49,7 +51,7 @@ void bll::Update(bll::Ball& ball, pdl::Paddle& paddle, blk::Block blocks[], int 
 
 		ball.pos = paddle.pos;
 		ball.pos.y += paddle.size.y;
-		return;
+		return false;
 	}
 
 	vec::Vector2 vel = ball.vel;
@@ -129,6 +131,11 @@ void bll::Update(bll::Ball& ball, pdl::Paddle& paddle, blk::Block blocks[], int 
 					ball.vel.x = utl::Abs(ball.vel.x);
 					ball.pos.x = blocks[b].pos.x + (blocks[b].size.x / 2) + ball.size.x;
 				}
+
+				if (blocks[b].heldPowerType != pwr::PowerType::NONE && blocks[b].currentHitPoints == 1) {
+					nextPowerDropSlot = true;
+				}
+
 			}
 			else {
 				blocks[b].isColliding = false;
@@ -158,6 +165,8 @@ void bll::Update(bll::Ball& ball, pdl::Paddle& paddle, blk::Block blocks[], int 
 			currentScore = -1;
 		}
 	}
+
+	return nextPowerDropSlot;
 }
 
 void bll::Draw(bll::Ball ball)

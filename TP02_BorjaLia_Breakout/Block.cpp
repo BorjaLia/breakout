@@ -57,7 +57,12 @@ void blk::Update(blk::Block& block, pdl::Paddle& paddle,pwr::PowerDrop& powerDro
 		block.playSound = true;
 		block.activeSound = blockHitSound;
 
-		paddle.score += block.hitScore;
+		if (pwr::isComboPowerActive) {
+			paddle.score += pwr::comboPowerMultiplier * block.hitScore;
+		}
+		else {
+			paddle.score += block.hitScore;
+		}
 	}
 	if (block.currentHitPoints == 0) {
 		block.playSound = true;
@@ -72,6 +77,7 @@ void blk::Update(blk::Block& block, pdl::Paddle& paddle,pwr::PowerDrop& powerDro
 		}
 
 		if (block.heldPowerType != pwr::PowerType::NONE) {
+			
 			pwr::Init(powerDrop,block.pos,block.heldPowerType);
 			block.heldPowerType = pwr::PowerType();
 		}
