@@ -21,6 +21,8 @@ namespace pdl {
 
 		//textures
 
+		Color color = WHITE;
+
 		rend::SpriteData activeTexture;
 
 		rend::SpriteData normalTexture;

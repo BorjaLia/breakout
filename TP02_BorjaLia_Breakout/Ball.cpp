@@ -21,6 +21,12 @@ void bll::Reset(bll::Ball& ball)
 	ball.vel = { 0,1 };
 
 	ball.size = bll::Ball().size;
+
+	ball.color = WHITE;
+	ball.color.a /= 1.8f;
+	ball.color.r = (ball.color.r + fg::mainTitlesColor.r) / 2.0f;
+	ball.color.g = (ball.color.g + fg::mainTitlesColor.g) / 2.0f;
+	ball.color.b = (ball.color.b + fg::mainTitlesColor.b) / 2.0f;
 }
 
 void bll::Input(bll::Ball& ball)

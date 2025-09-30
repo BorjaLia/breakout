@@ -78,6 +78,9 @@ int maxBallAngle = 60;
 Color bg::backgroundOverlayColor = {255,255,255,255};
 rend::SpriteData bg::defaultBackgroundOverlayTexture;
 
+Color fg::mainTitlesColor = {255,255,255,255};
+rend::SpriteData fg::mainMenusText;
+
 rend::SpriteData spr::defaultPaddleTexture = {};
 
 rend::SpriteData pwr::largePowerDropTexture;
@@ -117,8 +120,8 @@ rend::SpriteData menu::applyButtonHoveredTexture;
 
 void InitLocalDefaults()
 {
-
-	//drw::InitSpriteData(spr::defaultPaddleTexture);
+	spr::defaultPaddleTexture.file = "res/sprites/PaddleTexture.png";
+	drw::InitSpriteData(spr::defaultPaddleTexture);
 
 
 	//drw::InitSpriteData(blk::normalTexture);
@@ -142,6 +145,9 @@ void InitLocalDefaults()
 
 	bg::defaultBackgroundOverlayTexture.file = "res/sprites/BackgroundOverlay.png";
 	drw::InitSpriteData(bg::defaultBackgroundOverlayTexture);
+
+	fg::mainMenusText.file = "res/sprites/BreakoutTitle.png";
+	drw::InitSpriteData(fg::mainMenusText);
 
 	menu::playButtonTexture.file = "res/sprites/playButtonTexture.png";
 	menu::playButtonHoveredTexture.file = "res/sprites/playButtonHoverTexture.png";
@@ -186,8 +192,8 @@ void InitLocalDefaults()
 
 void DeInitLocalDefaults()
 {
-	/*drw::DeInitSpriteData(spr::defaultPaddleTexture);
-
+	drw::DeInitSpriteData(spr::defaultPaddleTexture);
+	/*
 	drw::DeInitSpriteData(blk::normalTexture);
 	drw::DeInitSpriteData(blk::largeTexture);
 	drw::DeInitSpriteData(blk::smallTexture);
@@ -198,10 +204,14 @@ void DeInitLocalDefaults()
 	drw::DeInitSpriteData(blk::fullTexture);
 	drw::DeInitSpriteData(blk::mediumTexture);
 	drw::DeInitSpriteData(blk::depletedTexture);
-
 	snd::DeInit(blk::blockHitSound);
 	snd::DeInit(blk::blockBrokenSound);
-	snd::DeInit(blk::blockBrokenPowerSound);*/
+	snd::DeInit(blk::blockBrokenPowerSound);
+	*/
+
+	drw::DeInitSpriteData(bg::defaultBackgroundOverlayTexture);
+
+	drw::DeInitSpriteData(fg::mainMenusText);
 
 	drw::DeInitSpriteData(menu::playButtonTexture);
 	drw::DeInitSpriteData(menu::playButtonHoveredTexture);

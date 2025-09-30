@@ -116,7 +116,7 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 	}
 
 	buttons[(int)SButtons::RENDERER].text = renderer;
-	buttons[(int)SButtons::RENDERER].pos = { 0.8,0.8 };
+	buttons[(int)SButtons::RENDERER].pos = { 0.7,0.65 };
 
 	btn::Init(buttons[(int)SButtons::RENDERER], container, true);
 
@@ -126,12 +126,12 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 	else {
 		buttons[(int)SButtons::FULLSCREEN].text = "Windowed";
 	}
-	buttons[(int)SButtons::FULLSCREEN].pos = { 0.8,0.7 };
+	buttons[(int)SButtons::FULLSCREEN].pos = { 0.7,0.55 };
 
 	btn::Init(buttons[(int)SButtons::FULLSCREEN], container, true);
 
 	buttons[(int)SButtons::RESOLUTION].text = "Resolution";
-	buttons[(int)SButtons::RESOLUTION].pos = { 0.8,0.6 };
+	buttons[(int)SButtons::RESOLUTION].pos = { 0.7,0.45 };
 
 	btn::Init(buttons[(int)SButtons::RESOLUTION], container, true);
 	switch (sett::resolution)
@@ -161,7 +161,7 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 	}
 
 	buttons[(int)SButtons::USE_POWERS].text = "Use Powers";
-	buttons[(int)SButtons::USE_POWERS].pos = { 0.8,0.5 };
+	buttons[(int)SButtons::USE_POWERS].pos = { 0.7,0.35 };
 
 	btn::Init(buttons[(int)SButtons::USE_POWERS], container, true);
 	if (sett::usePowers) {
@@ -172,21 +172,21 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 	}
 
 	buttons[(int)SButtons::KEY_UP].text = "Key up";
-	buttons[(int)SButtons::KEY_UP].pos = { 0.3,0.5 };
+	buttons[(int)SButtons::KEY_UP].pos = { 0.25,0.6 };
 	buttons[(int)SButtons::KEY_UP].size = { 0.1,0.1 };
 
 	btn::Init(buttons[(int)SButtons::KEY_UP], container, true);
 	SetControlKeyText(buttons[(int)SButtons::KEY_UP], sett::keyUp);
 
 	buttons[(int)SButtons::KEY_LEFT].text = "key Left";
-	buttons[(int)SButtons::KEY_LEFT].pos = { 0.2,0.4 };
+	buttons[(int)SButtons::KEY_LEFT].pos = { 0.15,0.45 };
 	buttons[(int)SButtons::KEY_LEFT].size = { 0.1,0.1 };
 
 	btn::Init(buttons[(int)SButtons::KEY_LEFT], container, true);
 	SetControlKeyText(buttons[(int)SButtons::KEY_LEFT], sett::keyLeft);
 
 	buttons[(int)SButtons::KEY_RIGHT].text = "Key Right";
-	buttons[(int)SButtons::KEY_RIGHT].pos = { 0.4,0.4 };
+	buttons[(int)SButtons::KEY_RIGHT].pos = { 0.35,0.45 };
 	buttons[(int)SButtons::KEY_RIGHT].size = { 0.1,0.1 };
 
 	btn::Init(buttons[(int)SButtons::KEY_RIGHT], container, true);
@@ -389,7 +389,14 @@ void SettingsDraw(btn::Container settingsContainer, btn::Button settingsButtons[
 {
 	btn::Draw(settingsContainer, settingsButtons, (int)SButtons::AMOUNT);
 	drw::Sprite(bg::defaultBackgroundOverlayTexture, { 0.5f,0.5f }, { 1,1 }, {}, bg::backgroundOverlayColor);
-	if (changedSettings) {
+	std::string breakoutText = "Settings";
+	drw::Text(breakoutText.c_str(), rend::defaultFont, { 0.5f,0.85f }, 100, {}, fg::mainTitlesColor);
+
+	if (sett::changingKeyUp || sett::changingKeyLeft || sett::changingKeyRight) {
+
+		drw::Text("Waiting for keyboard input", rend::defaultFont, { 0.5,0.1 }, 50, { 0,0 }, SKYBLUE);
+	}
+	else if (changedSettings) {
 		drw::Text("Some settings take effect after a reset!", rend::defaultFont, { 0.5,0.1 }, 50, { 0,0 }, RED);
 	}
 }

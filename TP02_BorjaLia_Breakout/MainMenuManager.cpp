@@ -85,4 +85,8 @@ void MainMenuDraw(btn::Container mainMenuContainer, btn::Button mainMenuButtons[
 {
 	btn::Draw(mainMenuContainer, mainMenuButtons, (int)MMButtons::AMOUNT);
 	drw::Sprite(bg::defaultBackgroundOverlayTexture, { 0.5f,0.5f }, { 1,1 }, {}, bg::backgroundOverlayColor);
+
+	//drw::Sprite(fg::mainBreakoutText, { 0.5f,0.85f }, { 0.6f,0.3f }, {},mainTitleColor);
+	std::string breakoutText = "Breakout!";
+	drw::Text(breakoutText.c_str(), rend::defaultFont, { 0.5f,0.8f }, 180, {}, fg::mainTitlesColor);
 }

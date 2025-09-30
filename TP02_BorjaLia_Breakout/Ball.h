@@ -31,6 +31,8 @@ namespace bll {
 
 		//textures
 
+		Color color = WHITE;
+
 		rend::SpriteData activeTexture;
 
 		rend::SpriteData normalTexture;

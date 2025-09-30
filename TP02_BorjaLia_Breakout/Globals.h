@@ -105,6 +105,11 @@ namespace bg {
 	extern rend::SpriteData defaultBackgroundOverlayTexture;
 }
 
+namespace fg {
+	extern Color mainTitlesColor;
+	extern rend::SpriteData mainMenusText;
+}
+
 namespace spr {
 
 	extern rend::SpriteData defaultPaddleTexture;

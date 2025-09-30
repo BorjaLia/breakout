@@ -33,6 +33,11 @@ void BackgroundOverlayColorRandomizer()
 	unsigned char b = ((32 * rng::GetRandom(1, 7)) - 1);
 	unsigned char a = ((16 * rng::GetRandom(1, 5)) - 1);
 	bg::backgroundOverlayColor = {r,g,b,a};
+
+	fg::mainTitlesColor.a = 240 - bg::backgroundOverlayColor.a;
+	fg::mainTitlesColor.r = bg::backgroundOverlayColor.r * 1.05f;
+	fg::mainTitlesColor.g = bg::backgroundOverlayColor.g * 1.05f;
+	fg::mainTitlesColor.b = bg::backgroundOverlayColor.b * 1.05f;
 }
 
 void InitMouse(btn::Button& mouse)
