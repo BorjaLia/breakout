@@ -196,21 +196,49 @@ void PlayDraw(btn::Container& playContainer, btn::Button playButtons[], lvl::Lev
 	std::string timer = "Time: ";
 	drw::Text((timer.append(std::to_string((int)levelTimer))).c_str(), rend::defaultFont, { 0.6f,0.965f }, 50);
 
-	//if (pwr::isLargePowerActive) {
-		Color transparency = { 255,255,255,255 };
-		if (pwr::largePowerTimer / pwr::largePowerTimerLimit > 0.5f) {
-			transparency.a = (pwr::largePowerTimerLimit / pwr::largePowerTimer) * 200 + 55;
+	if (pwr::isLargePowerActive) {
+		if (pwr::largePowerTimer >= pwr::largePowerTimerLimit / 4.0f) {
+			if ((int)(10.0f*pwr::largePowerTimer) % 2 == 0) {
+				drw::Sprite(pwr::largePowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+			}
 		}
-		drw::Sprite(pwr::largePowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 }, transparency);
-	//}
+		else {
+			drw::Sprite(pwr::largePowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+
+		}
+	}
 	if (pwr::isMirrorPowerActive) {
-		drw::Sprite(pwr::mirrorPowerIcon, { 0.775,0.965f }, { 0.025f,0.025f });
+		if (pwr::mirrorPowerTimer >= pwr::mirrorPowerTimerLimit / 4.0f) {
+			if ((int)(10.0f * pwr::mirrorPowerTimer) % 2 == 0) {
+				drw::Sprite(pwr::mirrorPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+			}
+		}
+		else {
+			drw::Sprite(pwr::mirrorPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+
+		}
 	}
 	if (pwr::isHomingPowerActive) {
-		drw::Sprite(pwr::homingPowerIcon, { 0.825f,0.965f }, { 0.025f,0.025f });
+		if (pwr::homingPowerTimer >= pwr::homingPowerTimerLimit / 4.0f) {
+			if ((int)(10.0f * pwr::homingPowerTimer) % 2 == 0) {
+				drw::Sprite(pwr::homingPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+			}
+		}
+		else {
+			drw::Sprite(pwr::homingPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+
+		}
 	}
 	if (pwr::isComboPowerActive) {
-		drw::Sprite(pwr::comboPowerIcon, { 0.875f,0.965f }, { 0.025f,0.025f });
+		if (pwr::comboPowerTimer >= pwr::comboPowerTimerLimit / 4.0f) {
+			if ((int)(10.0f * pwr::comboPowerTimer) % 2 == 0) {
+				drw::Sprite(pwr::comboPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+			}
+		}
+		else {
+			drw::Sprite(pwr::comboPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+
+		}
 	}
 }
 

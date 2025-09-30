@@ -119,8 +119,8 @@ void blk::Draw(blk::Block block)
 {
 	if (block.isActive) {
 	drw::Rectangle(block.pos,block.size,block.color);
-	drw::Sprite(block.activeTexture, block.pos, block.size);
-	drw::Sprite(block.activeOverlayTexture, block.pos, block.size);
+	drw::Sprite(block.activeTexture, block.pos, block.size, {},block.color);
+	drw::Sprite(block.activeOverlayTexture, block.pos, block.size, {}, block.color);
 	}
 }
 

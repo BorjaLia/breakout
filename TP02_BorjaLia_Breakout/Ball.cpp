@@ -2,7 +2,7 @@
 
 void bll::Init(bll::Ball& ball)
 {
-	ball.normalTexture.file = "res/sprites/mouseTexture.png";
+	ball.normalTexture.file = "res/sprites/BallTexture.png";
 
 	drw::InitSpriteData(ball.normalTexture);
 
@@ -171,8 +171,8 @@ bool bll::Update(bll::Ball& ball, pdl::Paddle& paddle, blk::Block blocks[], int 
 
 void bll::Draw(bll::Ball ball)
 {
-	drw::Circle(ball.pos, ball.size);
-	drw::Sprite(ball.activeTexture, ball.pos, ball.size);
+	//drw::Circle(ball.pos, ball.size);
+	drw::Sprite(ball.activeTexture, ball.pos, { 2 * ball.size.x,2 * ball.size.y });
 
 	if (!ball.isActive) {
 		//drw::Circle({ ball.pos.x + (ball.vel.x / 50.0f),ball.pos.y + (ball.vel.y / 50.0f) }, { 0.0025,0.0025 });

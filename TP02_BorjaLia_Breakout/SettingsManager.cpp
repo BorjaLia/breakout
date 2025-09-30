@@ -83,8 +83,8 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 	for (int b = 0; b < (int)SButtons::AMOUNT; b++)
 	{
 		buttons[b].signalTimerLimit = 0.1f;
-		buttons[b].size = { 0.2,0.1 };
-		buttons[b].pos = { 0.5,0.5 };
+		buttons[b].size = { 0.225,0.1 };
+		buttons[b].pos = { 0.5,0.55 };
 		buttons[b].clickedOffset = { 0,-0.1f };
 		buttons[b].textColor = WHITE;
 		buttons[b].useText = true;
@@ -172,21 +172,21 @@ void InitSettingsContext(btn::Container& container, btn::Button buttons[])
 	}
 
 	buttons[(int)SButtons::KEY_UP].text = "Key up";
-	buttons[(int)SButtons::KEY_UP].pos = { 0.5,0.7 };
+	buttons[(int)SButtons::KEY_UP].pos = { 0.3,0.5 };
 	buttons[(int)SButtons::KEY_UP].size = { 0.1,0.1 };
 
 	btn::Init(buttons[(int)SButtons::KEY_UP], container, true);
 	SetControlKeyText(buttons[(int)SButtons::KEY_UP], sett::keyUp);
 
 	buttons[(int)SButtons::KEY_LEFT].text = "key Left";
-	buttons[(int)SButtons::KEY_LEFT].pos = { 0.4,0.6 };
+	buttons[(int)SButtons::KEY_LEFT].pos = { 0.2,0.4 };
 	buttons[(int)SButtons::KEY_LEFT].size = { 0.1,0.1 };
 
 	btn::Init(buttons[(int)SButtons::KEY_LEFT], container, true);
 	SetControlKeyText(buttons[(int)SButtons::KEY_LEFT], sett::keyLeft);
 
 	buttons[(int)SButtons::KEY_RIGHT].text = "Key Right";
-	buttons[(int)SButtons::KEY_RIGHT].pos = { 0.6,0.6 };
+	buttons[(int)SButtons::KEY_RIGHT].pos = { 0.4,0.4 };
 	buttons[(int)SButtons::KEY_RIGHT].size = { 0.1,0.1 };
 
 	btn::Init(buttons[(int)SButtons::KEY_RIGHT], container, true);

@@ -2,7 +2,7 @@
 
 void LoadDefaultFiles()
 {
-	rend::defaultContainerTexture.file = "res/sprites/Background4.png";
+	rend::defaultContainerTexture.file = "res/sprites/Background5.png";
 
 	rend::defaultButtonMainTexture.file = "res/sprites/ButtonTexture.png";
 	rend::defaultButtonHoveredTexture.file = "res/sprites/ButtonHoverTexture.png";

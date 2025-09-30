@@ -1,18 +1,18 @@
 # Render engine
-graphics = 1 | 0 = NONE		1 = RAYLIB 	2 = SIGIL
+graphics = 2 | 0 = NONE		1 = RAYLIB 	2 = SIGIL
 
 # Resolution
 
-fullscreen = 1 | 0 = windowed	1 = fullscreen
+fullscreen = 0 | 0 = windowed	1 = fullscreen
 
-resolution = 3 | 0 = manual override	1 = HD	2 = FHD		3 = QHD 	4 = UHD
+resolution = 2 | 0 = manual override	1 = HD	2 = FHD		3 = QHD 	4 = UHD
 
 resolution_width = 1920 | only for manual override
 resolution_height = 1080 | only for manual override
 
 # Power settings
 
-use_powers = 1
+use_powers = 0
 
 # Key Binds
 

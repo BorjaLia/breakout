@@ -88,7 +88,7 @@ void lvl::LoadLevel(lvl::LevelData& levelData)
 			levelData.blocks[i].isActive = true;
 			levelData.blocks[i].heldPowerType = pwr::PowerType::NONE;
 
-			levelData.blocks[i].color = WHITE;
+			levelData.blocks[i].color = LIME;
 			levelData.blocks[i].playSound = false;
 			levelData.blocks[i].activeSound = blk::blockHitSound;
 
@@ -99,10 +99,12 @@ void lvl::LoadLevel(lvl::LevelData& levelData)
 			if (i >= 8) {
 				levelData.blocks[i].heldPowerType = pwr::PowerType::LARGE;
 				levelData.blocks[i].pos.y += 0.15f;
+				levelData.blocks[i].color = PINK;
 			}
 			if (i >= 16) {
 				levelData.blocks[i].heldPowerType = pwr::PowerType::HOMING;
 				levelData.blocks[i].pos.y += 0.15f;
+				levelData.blocks[i].color = YELLOW;
 			}
 			m++;
 		}
