@@ -36,7 +36,7 @@ int currentScore = 0;
 float levelTimer = 0;
 
 float pwr::largeMultiplier = 1.5f;
-float pwr::comboMultiplier = 2.0f;
+float pwr::comboMultiplier = 3.0f;
 
 float pwr::largePowerTimerLimit = 10;
 float pwr::mirrorPowerTimerLimit = 10;
@@ -74,6 +74,9 @@ bool isGamePaused = false;
 
 int minBallAngle = -60;
 int maxBallAngle = 60;
+
+Color bg::backgroundOverlayColor = {255,255,255,255};
+rend::SpriteData bg::defaultBackgroundOverlayTexture;
 
 rend::SpriteData spr::defaultPaddleTexture = {};
 
@@ -137,6 +140,9 @@ void InitLocalDefaults()
 	snd::Init(blk::blockBrokenSound);
 	snd::Init(blk::blockBrokenPowerSound);
 
+	bg::defaultBackgroundOverlayTexture.file = "res/sprites/BackgroundOverlay.png";
+	drw::InitSpriteData(bg::defaultBackgroundOverlayTexture);
+
 	menu::playButtonTexture.file = "res/sprites/playButtonTexture.png";
 	menu::playButtonHoveredTexture.file = "res/sprites/playButtonHoverTexture.png";
 	menu::settingsButtonTexture.file = "res/sprites/settingsButtonTexture.png";
@@ -159,14 +165,14 @@ void InitLocalDefaults()
 	drw::InitSpriteData(menu::applyButtonTexture);
 	drw::InitSpriteData(menu::applyButtonHoveredTexture);
 
-	pwr::largePowerDropTexture.file = "res/sprites/BrickTexture.png";
-	pwr::largePowerIcon.file = "res/sprites/BrickTexture.png";
-	pwr::mirrorPowerDropTexture.file = "res/sprites/BrickTexture.png";
-	pwr::mirrorPowerIcon.file = "res/sprites/BrickTexture.png";
-	pwr::homingPowerDropTexture.file = "res/sprites/BrickTexture.png";
-	pwr::homingPowerIcon.file = "res/sprites/BrickTexture.png";
-	pwr::comboPowerDropTexture.file = "res/sprites/BrickTexture.png";
-	pwr::comboPowerIcon.file = "res/sprites/BrickTexture.png";
+	pwr::largePowerDropTexture.file = "res/sprites/LargePowerDropTexture.png";
+	pwr::largePowerIcon.file = "res/sprites/LargeIcon.png";
+	pwr::mirrorPowerDropTexture.file = "res/sprites/MirrorPowerDropTexture.png";
+	pwr::mirrorPowerIcon.file = "res/sprites/MirrorIcon.png";
+	pwr::homingPowerDropTexture.file = "res/sprites/HomingPowerDropTexture.png";
+	pwr::homingPowerIcon.file = "res/sprites/HomingIcon.png";
+	pwr::comboPowerDropTexture.file = "res/sprites/ComboPowerDropTexture.png";
+	pwr::comboPowerIcon.file = "res/sprites/ComboIcon.png";
 
 	drw::InitSpriteData(pwr::largePowerDropTexture);
 	drw::InitSpriteData(pwr::largePowerIcon);

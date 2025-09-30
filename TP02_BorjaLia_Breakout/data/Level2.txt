@@ -1,4 +1,4 @@
 # Level Data
 
-best_score = 0
-best_time = 0
+best_score = 9000
+best_time = 76

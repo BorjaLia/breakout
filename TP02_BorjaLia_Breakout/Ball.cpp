@@ -172,14 +172,14 @@ bool bll::Update(bll::Ball& ball, pdl::Paddle& paddle, blk::Block blocks[], int 
 void bll::Draw(bll::Ball ball)
 {
 	//drw::Circle(ball.pos, ball.size);
-	drw::Sprite(ball.activeTexture, ball.pos, { 2 * ball.size.x,2 * ball.size.y });
+	drw::Sprite(ball.activeTexture, ball.pos, { 2.0f * ball.size.x,3.2f * ball.size.y });
 
 	if (!ball.isActive) {
 		//drw::Circle({ ball.pos.x + (ball.vel.x / 50.0f),ball.pos.y + (ball.vel.y / 50.0f) }, { 0.0025,0.0025 });
 	
-		drw::Circle(ball.pos + ball.vel.normalized() * 0.075f, {0.005,0.005});
-		drw::Circle(ball.pos + ball.vel.normalized() * 0.05f, {0.004,0.004});
-		drw::Circle(ball.pos + ball.vel.normalized() * 0.025f, {0.003,0.003});
+		drw::Sprite(ball.activeTexture, ball.pos + ball.vel.normalized() * 0.075f, {0.005,0.0075});
+		drw::Sprite(ball.activeTexture, ball.pos + ball.vel.normalized() * 0.05f, {0.004,0.006});
+		drw::Sprite(ball.activeTexture, ball.pos + ball.vel.normalized() * 0.025f, {0.003,0.0045});
 	}
 }
 

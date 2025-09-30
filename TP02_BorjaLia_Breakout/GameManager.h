@@ -13,6 +13,7 @@
 void LoadDefaultFiles();
 
 void BackgroundMusicManager(rend::AudioData& music);
+void BackgroundOverlayColorRandomizer();
 
 void InitMouse(btn::Button& mouse);
 void DeInitMouse(btn::Button& mouse);

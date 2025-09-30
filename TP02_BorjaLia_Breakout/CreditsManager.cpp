@@ -48,6 +48,7 @@ void CreditsUpdate(btn::Button creditsButtons[], SubMenus& subMenu)
 void CreditsDraw(btn::Container creditsContainer, btn::Button creditsButtons[])
 {
 	btn::Draw(creditsContainer, creditsButtons, (int)CButtons::AMOUNT);
+	drw::Sprite(bg::defaultBackgroundOverlayTexture, { 0.5f,0.5f }, { 1,1 }, {}, bg::backgroundOverlayColor);
 	drw::Rectangle({ 0.5,0.45 }, { 0.35,0.9 }, DARKGRAY);
 	//drw::Sprite(rend::defaultButtonHoveredTexture, { 0.5,0.25 }, { 0.2,0.6 });
 	drw::Text("Made by", rend::defaultFont, { 0.5,0.7 }, 70);

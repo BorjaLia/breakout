@@ -100,6 +100,7 @@ void EndScreenUpdate(btn::Button endScreenButtons[], SubMenus& subMenu, GameStat
 void EndScreenDraw(btn::Container endScreenContainer, btn::Button endScreenButtons[]) {
 
 	btn::Draw(endScreenContainer, endScreenButtons, (int)EButtons::AMOUNT);
+	drw::Sprite(bg::defaultBackgroundOverlayTexture, { 0.5f,0.5f }, { 1,1 }, {}, bg::backgroundOverlayColor);
 	std::string level = "Level ";
 	drw::Text(level.append(std::to_string(currentLevel)).c_str(), rend::defaultFont, { 0.5f,0.8f }, 100);
 	if (currentScore != -1) {

@@ -84,4 +84,5 @@ void MainMenuUpdate(btn::Button mainMenuButtons[], SubMenus& subMenu)
 void MainMenuDraw(btn::Container mainMenuContainer, btn::Button mainMenuButtons[])
 {
 	btn::Draw(mainMenuContainer, mainMenuButtons, (int)MMButtons::AMOUNT);
+	drw::Sprite(bg::defaultBackgroundOverlayTexture, { 0.5f,0.5f }, { 1,1 }, {}, bg::backgroundOverlayColor);
 }

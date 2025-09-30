@@ -111,7 +111,9 @@ void GameLoop()
 	snd::Init(backgroundMusic);
 
 	GameStates gameState = GameStates::MAIN_MENU;
+	GameStates lastGameState = gameState;
 	SubMenus subMenu = SubMenus::MAIN;
+	SubMenus lastSubMenu = subMenu;
 
 	btn::Container playContainer;
 
@@ -132,6 +134,8 @@ void GameLoop()
 
 	float frameUpdateCounter = 0;
 	float framesPerUpdateCounter = 0;
+
+	BackgroundOverlayColorRandomizer();
 
 	while (isRunning) {
 
@@ -178,6 +182,9 @@ void GameLoop()
 				rend::ChangeRenderer();
 			}
 		}
+
+		lastGameState = gameState;
+		lastSubMenu = subMenu;
 
 		switch (gameState)
 		{
@@ -240,7 +247,6 @@ void GameLoop()
 			break;
 		}
 
-
 		//Update
 
 
@@ -255,6 +261,10 @@ void GameLoop()
 			break;
 		default:
 			break;
+		}
+
+		if (lastSubMenu != subMenu || lastGameState != gameState) {
+			BackgroundOverlayColorRandomizer();
 		}
 
 		//Draw

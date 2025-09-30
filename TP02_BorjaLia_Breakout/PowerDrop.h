@@ -14,7 +14,7 @@ namespace pwr {
 
 		float speed = 0.5f;
 
-		vec::Vector2 size = { 0.01f,0.01f };
+		vec::Vector2 size = { 0.05f,0.05f };
 
 		Color color;
 

@@ -26,11 +26,20 @@ void BackgroundMusicManager(rend::AudioData& music)
 
 }
 
+void BackgroundOverlayColorRandomizer()
+{
+	unsigned char r = ((32 * rng::GetRandom(1, 7)) - 1);
+	unsigned char g = ((32 * rng::GetRandom(1, 7)) - 1);
+	unsigned char b = ((32 * rng::GetRandom(1, 7)) - 1);
+	unsigned char a = ((16 * rng::GetRandom(1, 5)) - 1);
+	bg::backgroundOverlayColor = {r,g,b,a};
+}
+
 void InitMouse(btn::Button& mouse)
 {
 	mouse.signalTimerLimit = 0.1f;
-	mouse.size = { 0.03,0.03 };
-	mouse.offset = { 0.01,-0.01 };
+	mouse.size = { 0.015,0.03 };
+	mouse.offset = { 0.005,-0.01 };
 	mouse.clickedOffset = { -0.1,0 };
 	mouse.useText = false;
 	mouse.useSprite = true;

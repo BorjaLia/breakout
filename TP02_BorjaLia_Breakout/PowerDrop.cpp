@@ -50,7 +50,7 @@ void pwr::Reset(pwr::PowerDrop& powerDrop)
 
 	powerDrop.speed = 0.5f;
 
-	powerDrop.size = { 0.01f,0.01f };
+	powerDrop.size = { 0.024f,0.0426f };
 
 	powerDrop.powerType = PowerType::NONE;
 
@@ -77,7 +77,7 @@ void pwr::Update(pwr::PowerDrop& powerDrop, vec::Vector2 pos, vec::Vector2 size)
 		break;
 	case pwr::PowerType::HOMING:
 
-		powerDrop.vel.rotate(utl::DegreeToRadian(45.0f * rend::deltaTime));
+		powerDrop.vel.rotate(utl::DegreeToRadian(5.0f * rend::deltaTime));
 		powerDrop.vel.y -= 0.5f;
 
 		break;

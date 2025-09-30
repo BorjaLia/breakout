@@ -122,6 +122,7 @@ void LevelsDraw(btn::Container& container, btn::Container& gridContainer, btn::B
 {
 	btn::Draw(container, buttons, (int)LButtons::AMOUNT);
 	btn::Draw(gridContainer, gridButtons, (int)Levels::AMOUNT);
+	drw::Sprite(bg::defaultBackgroundOverlayTexture, { 0.5f,0.5f }, { 1,1 }, {}, bg::backgroundOverlayColor);
 
 	for (int i = 0; i < (int)Levels::AMOUNT; i++)
 	{

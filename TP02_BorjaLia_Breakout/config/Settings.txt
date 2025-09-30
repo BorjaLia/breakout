@@ -12,7 +12,7 @@ resolution_height = 1080 | only for manual override
 
 # Power settings
 
-use_powers = 0
+use_powers = 1
 
 # Key Binds
 

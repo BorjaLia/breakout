@@ -138,7 +138,7 @@ void PlayUpdate(btn::Container& playContainer, btn::Button playButtons[], SubMen
 
 	btn::UpdateInput(playButtons, (int)PButtons::AMOUNT);
 
-	if (playButtons[(int)PButtons::PAUSE].signal) {
+	if (playButtons[(int)PButtons::PAUSE].signal || ctrl::IsKeyHeldDown(ctrl::Key::ESCAPE)) {
 		isGamePaused = true;
 	}
 	if (playButtons[(int)PButtons::RETURN].signal) {
@@ -173,6 +173,7 @@ void PlayUpdate(btn::Container& playContainer, btn::Button playButtons[], SubMen
 void PlayDraw(btn::Container& playContainer, btn::Button playButtons[], lvl::LevelData& levelData)
 {
 	btn::Draw(playContainer);
+	drw::Sprite(bg::defaultBackgroundOverlayTexture, { 0.5f,0.5f }, { 1,1 }, {}, bg::backgroundOverlayColor);
 
 	pdl::Draw(levelData.paddle);
 	bll::Draw(levelData.ball);
@@ -197,46 +198,46 @@ void PlayDraw(btn::Container& playContainer, btn::Button playButtons[], lvl::Lev
 	drw::Text((timer.append(std::to_string((int)levelTimer))).c_str(), rend::defaultFont, { 0.6f,0.965f }, 50);
 
 	if (pwr::isLargePowerActive) {
-		if (pwr::largePowerTimer >= pwr::largePowerTimerLimit / 4.0f) {
+		if (pwr::largePowerTimer >= 3.0f * pwr::largePowerTimerLimit / 4.0f) {
 			if ((int)(10.0f*pwr::largePowerTimer) % 2 == 0) {
-				drw::Sprite(pwr::largePowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+				drw::Sprite(pwr::largePowerIcon, { 0.725f,0.965f }, { 0.045f,0.045f }, { 0,0 }, LIGHTGRAY);
 			}
 		}
 		else {
-			drw::Sprite(pwr::largePowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+			drw::Sprite(pwr::largePowerIcon, { 0.725f,0.965f }, { 0.045f,0.045f }, { 0,0 }, LIGHTGRAY);
 
 		}
 	}
 	if (pwr::isMirrorPowerActive) {
-		if (pwr::mirrorPowerTimer >= pwr::mirrorPowerTimerLimit / 4.0f) {
+		if (pwr::mirrorPowerTimer >= 3.0f * pwr::mirrorPowerTimerLimit / 4.0f) {
 			if ((int)(10.0f * pwr::mirrorPowerTimer) % 2 == 0) {
-				drw::Sprite(pwr::mirrorPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+				drw::Sprite(pwr::mirrorPowerIcon, { 0.775f,0.965f }, { 0.045f,0.045f }, { 0,0 }, LIGHTGRAY);
 			}
 		}
 		else {
-			drw::Sprite(pwr::mirrorPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+			drw::Sprite(pwr::mirrorPowerIcon, { 0.775f,0.965f }, { 0.045f,0.045f }, { 0,0 }, LIGHTGRAY);
 
 		}
 	}
 	if (pwr::isHomingPowerActive) {
-		if (pwr::homingPowerTimer >= pwr::homingPowerTimerLimit / 4.0f) {
+		if (pwr::homingPowerTimer >= 3.0f * pwr::homingPowerTimerLimit / 4.0f) {
 			if ((int)(10.0f * pwr::homingPowerTimer) % 2 == 0) {
-				drw::Sprite(pwr::homingPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+				drw::Sprite(pwr::homingPowerIcon, { 0.825f,0.965f }, { 0.045f,0.045f }, { 0,0 }, LIGHTGRAY);
 			}
 		}
 		else {
-			drw::Sprite(pwr::homingPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+			drw::Sprite(pwr::homingPowerIcon, { 0.825f,0.965f }, { 0.045f,0.045f }, { 0,0 }, LIGHTGRAY);
 
 		}
 	}
 	if (pwr::isComboPowerActive) {
-		if (pwr::comboPowerTimer >= pwr::comboPowerTimerLimit / 4.0f) {
+		if (pwr::comboPowerTimer >= 3.0f * pwr::comboPowerTimerLimit / 4.0f) {
 			if ((int)(10.0f * pwr::comboPowerTimer) % 2 == 0) {
-				drw::Sprite(pwr::comboPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+				drw::Sprite(pwr::comboPowerIcon, { 0.875f,0.965f }, { 0.045f,0.045f }, { 0,0 }, LIGHTGRAY);
 			}
 		}
 		else {
-			drw::Sprite(pwr::comboPowerIcon, { 0.725f,0.965f }, { 0.025f,0.025f }, { 0,0 });
+			drw::Sprite(pwr::comboPowerIcon, { 0.875f,0.965f }, { 0.045f,0.045f }, { 0,0 }, LIGHTGRAY);
 
 		}
 	}

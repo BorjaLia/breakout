@@ -100,6 +100,11 @@ extern bool isGamePaused;
 extern int minBallAngle;
 extern int maxBallAngle;
 
+namespace bg {
+	extern Color backgroundOverlayColor;
+	extern rend::SpriteData defaultBackgroundOverlayTexture;
+}
+
 namespace spr {
 
 	extern rend::SpriteData defaultPaddleTexture;

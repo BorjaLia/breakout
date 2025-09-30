@@ -388,6 +388,7 @@ void SettingsUpdate(btn::Button settingsButtons[], SubMenus& subMenu)
 void SettingsDraw(btn::Container settingsContainer, btn::Button settingsButtons[])
 {
 	btn::Draw(settingsContainer, settingsButtons, (int)SButtons::AMOUNT);
+	drw::Sprite(bg::defaultBackgroundOverlayTexture, { 0.5f,0.5f }, { 1,1 }, {}, bg::backgroundOverlayColor);
 	if (changedSettings) {
 		drw::Text("Some settings take effect after a reset!", rend::defaultFont, { 0.5,0.1 }, 50, { 0,0 }, RED);
 	}

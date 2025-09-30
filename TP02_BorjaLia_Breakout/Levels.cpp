@@ -94,22 +94,29 @@ void lvl::LoadLevel(lvl::LevelData& levelData)
 
 			levelData.blocks[i].pos = { 0.5f + ((float)((m - 8 / 2) * levelData.blocks[i].size.x) * 1.5f), 0.6f };
 			levelData.blocks[i].pos.x += levelData.blocks[i].size.x / 1.33f;
-			levelData.blocks[i].heldPowerType = pwr::PowerType::MIRROR;
 
 			if (i >= 8) {
-				levelData.blocks[i].heldPowerType = pwr::PowerType::LARGE;
 				levelData.blocks[i].pos.y += 0.15f;
 				levelData.blocks[i].color = PINK;
 			}
 			if (i >= 16) {
-				levelData.blocks[i].heldPowerType = pwr::PowerType::HOMING;
 				levelData.blocks[i].pos.y += 0.15f;
 				levelData.blocks[i].color = YELLOW;
 			}
 			m++;
 		}
 
-		//levelData.blocks[3].heldPowerType = pwr::PowerType::HOMING;
+		levelData.blocks[17].heldPowerType = pwr::PowerType::HOMING;
+		levelData.blocks[22].heldPowerType = pwr::PowerType::HOMING;
+
+		levelData.blocks[rng::GetRandom(10, 13)].heldPowerType = pwr::PowerType::MIRROR;
+		levelData.blocks[rng::GetRandom(10, 13)].heldPowerType = pwr::PowerType::MIRROR;
+
+		levelData.blocks[rng::GetRandom(0, 7)].heldPowerType = pwr::PowerType::LARGE;
+		levelData.blocks[rng::GetRandom(0, 7)].heldPowerType = pwr::PowerType::LARGE;
+		levelData.blocks[rng::GetRandom(0, 7)].heldPowerType = pwr::PowerType::LARGE;
+
+		levelData.blocks[rng::GetRandom(0, levelData.blockAmount - 1)].heldPowerType = pwr::PowerType::COMBO;
 
 		break;
 	}
@@ -130,16 +137,28 @@ void lvl::LoadLevel(lvl::LevelData& levelData)
 				m = 0;
 			}
 
+			levelData.blocks[i].isActive = true;
+			levelData.blocks[i].heldPowerType = pwr::PowerType::NONE;
+
 			levelData.blocks[i].maxHitPoints = 2;
-			levelData.blocks[i].color = WHITE;
+			levelData.blocks[i].color = BLUEBERRY;
+			levelData.blocks[i].playSound = false;
+			levelData.blocks[i].activeSound = blk::blockHitSound;
+
 			levelData.blocks[i].pos = { 0.5f + ((float)((m - 8 / 2) * levelData.blocks[i].size.x) * 1.5f), 0.45f };
 			levelData.blocks[i].pos.x += levelData.blocks[i].size.x / 1.33f;
 
 			if (i >= 8) {
+				if (i % 2 == 0) {
+					levelData.blocks[i].heldPowerType = pwr::PowerType::HOMING;
+				}
 				levelData.blocks[i].pos.y += 0.175f;
+				levelData.blocks[i].color = SKYBLUE;
+
 			}
 			if (i >= 16) {
 				levelData.blocks[i].pos.y += 0.175f;
+				levelData.blocks[i].color = LIME;
 			}
 			m++;
 		}
@@ -151,15 +170,22 @@ void lvl::LoadLevel(lvl::LevelData& levelData)
 			}
 
 			levelData.blocks[i].maxHitPoints = 1;
-			levelData.blocks[i].color = WHITE;
 			levelData.blocks[i].pos = { 0.5f + ((float)((m - 7 / 2) * levelData.blocks[i].size.x) * 1.5f), 0.525f };
-			//levelData.blocks[i].pos.x += levelData.blocks[i].size.x;
 
+			levelData.blocks[i].color = YELLOW;
 			if (i >= 31) {
 				levelData.blocks[i].pos.y += 0.175f;
+			levelData.blocks[i].color = PURPLE;
 			}
 			m++;
 		}
+
+		levelData.blocks[rng::GetRandom(0, levelData.blockAmount - 1)].heldPowerType = pwr::PowerType::MIRROR;
+		levelData.blocks[rng::GetRandom(0, levelData.blockAmount - 1)].heldPowerType = pwr::PowerType::COMBO;
+		levelData.blocks[rng::GetRandom(0, levelData.blockAmount - 1)].heldPowerType = pwr::PowerType::COMBO;
+		levelData.blocks[rng::GetRandom(0, levelData.blockAmount - 1)].heldPowerType = pwr::PowerType::COMBO;
+		levelData.blocks[rng::GetRandom(0, levelData.blockAmount - 1)].heldPowerType = pwr::PowerType::LARGE;
+		levelData.blocks[rng::GetRandom(0, levelData.blockAmount - 1)].heldPowerType = pwr::PowerType::LARGE;
 
 		break;
 	}
@@ -172,12 +198,50 @@ void lvl::LoadLevel(lvl::LevelData& levelData)
 		levelData.paddle = pdl::Paddle();
 		levelData.ball = bll::Ball();
 
-		levelData.blockAmount = 1;
+		levelData.blockAmount = 36;
 
-		levelData.blocks[0].pos = { 0.5,0.5 };
-		levelData.blocks[0].size = { 0.3,0.2 };
-		levelData.blocks[0].maxHitPoints = 1;
+		for (int i = 0; i < levelData.blockAmount; i++)
+		{
+			if (m >= 12) {
+				m = 0;
+			}
+			levelData.blocks[i].isActive = true;
+			levelData.blocks[i].heldPowerType = pwr::PowerType::NONE;
 
+			levelData.blocks[i].maxHitPoints = 3;
+			levelData.blocks[i].color = MAGENTA;
+			levelData.blocks[i].playSound = false;
+			levelData.blocks[i].activeSound = blk::blockHitSound;
+
+			levelData.blocks[i].pos = { 0.5f + ((float)((m - 12 / 2) * levelData.blocks[i].size.x) * 1.5f), 0.45f };
+			levelData.blocks[i].pos.x += levelData.blocks[i].size.x / 0.47f;
+			levelData.blocks[i].pos.x -= (levelData.blocks[i].size.x / 4.0f) * (m);
+
+			if (i >= 12) {
+				levelData.blocks[i].pos.y += 0.175f;
+				levelData.blocks[i].color = MAROON;
+				levelData.blocks[i].maxHitPoints = 1;
+			}
+			if (i >= 24) {
+				levelData.blocks[i].pos.y += 0.175f;
+				levelData.blocks[i].color = FUSCHIA;
+				levelData.blocks[i].maxHitPoints = 3;
+			}
+
+			if (i % 2 == 0) {
+				levelData.blocks[i].pos.y += levelData.blocks[i].size.y/2.0f;
+			}
+
+			m++;
+		}
+
+		for (int i = (levelData.blockAmount / 3); i < (2 * levelData.blockAmount / 3); i++)
+		{
+			pwr::PowerType powerType = (pwr::PowerType)rng::GetRandom(1,(int)pwr::PowerType::AMOUNT);
+			levelData.blocks[i].heldPowerType = powerType;
+			levelData.blocks[i].pos.y += (0.005f * (rng::GetRandom(0, 20) - 10));
+
+		}
 
 		break;
 	}
@@ -185,6 +249,65 @@ void lvl::LoadLevel(lvl::LevelData& levelData)
 		levelData.id = 4;
 
 		levelFile = "data/level4.txt";
+
+		levelData.paddle = pdl::Paddle();
+		levelData.ball = bll::Ball();
+
+		levelData.blockAmount = 48;
+
+		for (int i = 0; i < levelData.blockAmount; i++)
+		{
+			if (m >= 4) {
+				m = 0;
+			}
+
+			levelData.blocks[i].isActive = true;
+			levelData.blocks[i].heldPowerType = pwr::PowerType::NONE;
+
+			levelData.blocks[i].maxHitPoints = 3;
+			levelData.blocks[i].color = MAGENTA;
+			levelData.blocks[i].playSound = false;
+			levelData.blocks[i].activeSound = blk::blockHitSound;
+
+			levelData.blocks[i].pos = { 0.5f + ((i % 4) - 2) * (levelData.blocks[i].size.x * 1.1f) + levelData.blocks[i].size.x / 2.0f,0.35f };
+
+			levelData.blocks[i].pos.y += (i / 4) * levelData.blocks[i].size.y * 1.5f;
+
+			if (i % 4 == 1 || i % 4 == 2) {
+				if (i > 4 && i < 8) {
+					levelData.blocks[i].heldPowerType = pwr::PowerType::COMBO;
+				}				
+				if (i > 8 && i < 12) {
+					levelData.blocks[i].heldPowerType = pwr::PowerType::LARGE;
+				}
+				if (i > 12 && i < 16) {
+					levelData.blocks[i].heldPowerType = pwr::PowerType::MIRROR;
+				}
+				if (i > 16 && i < 20) {
+					levelData.blocks[i].heldPowerType = pwr::PowerType::HOMING;
+				}
+				if (i > 20 && i < 24) {
+					levelData.blocks[i].heldPowerType = pwr::PowerType::HOMING;
+				}
+				if (i > 24 && i < 28) {
+					levelData.blocks[i].heldPowerType = pwr::PowerType::MIRROR;
+				}
+				if (i > 28 && i < 32) {
+					levelData.blocks[i].heldPowerType = pwr::PowerType::LARGE;
+				}
+				if (i > 32 && i < 36) {
+					levelData.blocks[i].heldPowerType = pwr::PowerType::COMBO;
+				}
+			}
+
+			m++;
+		}
+
+		//levelData.blocks[rng::GetRandom(5, 6)].heldPowerType = pwr::PowerType::COMBO;
+		//levelData.blocks[rng::GetRandom(9, 10)].heldPowerType = pwr::PowerType::LARGE;
+		//levelData.blocks[rng::GetRandom(13, 14)].heldPowerType = pwr::PowerType::MIRROR;
+		//levelData.blocks[rng::GetRandom(13, 14)].heldPowerType = pwr::PowerType::HOMING;
+
 		break;
 	}
 	case Levels::AMOUNT:
