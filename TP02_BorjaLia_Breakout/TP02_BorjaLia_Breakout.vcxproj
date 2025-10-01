@@ -18,6 +18,41 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Ball.h" />
+    <ClInclude Include="..\src\Block.h" />
+    <ClInclude Include="..\src\CreditsManager.h" />
+    <ClInclude Include="..\src\EndScreenManager.h" />
+    <ClInclude Include="..\src\GameManager.h" />
+    <ClInclude Include="..\src\GamePlayManager.h" />
+    <ClInclude Include="..\src\Globals.h" />
+    <ClInclude Include="..\src\LevelMenuManager.h" />
+    <ClInclude Include="..\src\Levels.h" />
+    <ClInclude Include="..\src\MainMenuManager.h" />
+    <ClInclude Include="..\src\Paddle.h" />
+    <ClInclude Include="..\src\Power.h" />
+    <ClInclude Include="..\src\PowerDrop.h" />
+    <ClInclude Include="..\src\SettingsManager.h" />
+    <ClInclude Include="..\src\StateManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Ball.cpp" />
+    <ClCompile Include="..\src\Block.cpp" />
+    <ClCompile Include="..\src\CreditsManager.cpp" />
+    <ClCompile Include="..\src\EndScreenManager.cpp" />
+    <ClCompile Include="..\src\GameManager.cpp" />
+    <ClCompile Include="..\src\GamePlayManager.cpp" />
+    <ClCompile Include="..\src\Globals.cpp" />
+    <ClCompile Include="..\src\LevelMenuManager.cpp" />
+    <ClCompile Include="..\src\Levels.cpp" />
+    <ClCompile Include="..\src\Main.cpp" />
+    <ClCompile Include="..\src\MainMenuManager.cpp" />
+    <ClCompile Include="..\src\Paddle.cpp" />
+    <ClCompile Include="..\src\Power.cpp" />
+    <ClCompile Include="..\src\PowerDrop.cpp" />
+    <ClCompile Include="..\src\SettingsManager.cpp" />
+    <ClCompile Include="..\src\StateManager.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -102,13 +137,9 @@
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)lib\sigil-vc2015-win64\lib\*.dll" "$(OutDir)" /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\config" /i /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\data" /i /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
-</Command>
+xcopy "$(SolutionDir)src\config" /i /y
+xcopy "$(SolutionDir)src\data" /i /y
+xcopy "$(SolutionDir)src\res" /i /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -132,13 +163,9 @@ xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)lib\sigil-vc2015-win64\lib\*.dll" "$(OutDir)" /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\config" /i /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\data" /i /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
-</Command>
+xcopy "$(SolutionDir)src\config" /i /y
+xcopy "$(SolutionDir)src\data" /i /y
+xcopy "$(SolutionDir)src\res" /i /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -157,13 +184,9 @@ xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)lib\sigil-vc2015-win64\lib\*.dll" "$(OutDir)" /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\config" /i /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\data" /i /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
-</Command>
+xcopy "$(SolutionDir)src\config" /i /y
+xcopy "$(SolutionDir)src\data" /i /y
+xcopy "$(SolutionDir)src\res" /i /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -187,50 +210,11 @@ xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)lib\sigil-vc2015-win64\lib\*.dll" "$(OutDir)" /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\config" /i /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\data" /i /y
-
-xcopy "$(SolutionDir)TP02_BorjaLia_Breakout\res" /i /y
-</Command>
+xcopy "$(SolutionDir)src\config" /i /y
+xcopy "$(SolutionDir)src\data" /i /y
+xcopy "$(SolutionDir)src\res" /i /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="Block.cpp" />
-    <ClCompile Include="CreditsManager.cpp" />
-    <ClCompile Include="EndScreenManager.cpp" />
-    <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="GamePlayManager.cpp" />
-    <ClCompile Include="Globals.cpp" />
-    <ClCompile Include="LevelMenuManager.cpp" />
-    <ClCompile Include="Levels.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MainMenuManager.cpp" />
-    <ClCompile Include="Paddle.cpp" />
-    <ClCompile Include="Power.cpp" />
-    <ClCompile Include="PowerDrop.cpp" />
-    <ClCompile Include="SettingsManager.cpp" />
-    <ClCompile Include="StateManager.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Ball.h" />
-    <ClInclude Include="Block.h" />
-    <ClInclude Include="CreditsManager.h" />
-    <ClInclude Include="EndScreenManager.h" />
-    <ClInclude Include="GameManager.h" />
-    <ClInclude Include="GamePlayManager.h" />
-    <ClInclude Include="Globals.h" />
-    <ClInclude Include="LevelMenuManager.h" />
-    <ClInclude Include="Levels.h" />
-    <ClInclude Include="MainMenuManager.h" />
-    <ClInclude Include="Paddle.h" />
-    <ClInclude Include="Power.h" />
-    <ClInclude Include="PowerDrop.h" />
-    <ClInclude Include="SettingsManager.h" />
-    <ClInclude Include="StateManager.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

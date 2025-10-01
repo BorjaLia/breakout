@@ -1,3 +1,5 @@
 bin/
 obj/
 .vs
+TP02_BorjaLia_Breakout/res/Temp/
+src/res/Temp/

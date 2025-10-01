@@ -1,4 +1,0 @@
-# Level Data
-
-best_score = 0
-best_time = 0
